@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +18,10 @@
 	<script type="text/javascript">
 	opener.docoument.frm.id.value="";
 	</script>
-	${userid }는 이미 사용중인 아이디입니다.
+	${users.id }는 이미 사용중인 아이디입니다.
 	</c:if>
 	<c:if test = "${result==-1 }">
-	${userid }는 사용가능한 아이디 입니다.
+	${users.id }는 사용가능한 아이디 입니다.
 	<input type="button" value="사용" class = "cancle" onclick="idok()">
 	</c:if>
 
