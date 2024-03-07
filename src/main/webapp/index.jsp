@@ -11,7 +11,7 @@
 <%
 	response.sendRedirect("ManagerList.do");
 %>
-
+테스트여용
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
