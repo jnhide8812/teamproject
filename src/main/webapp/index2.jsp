@@ -7,18 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-<%
-	response.sendRedirect("managerList.do");
-%>
-=======
-<h1>인덱스 파일입니다</h1>
-<h3>수정사항</h3>
+<h1>인덱스 파일 2입니다</h1>
 안녕하세요.
-
-<h2>1231231</h2>
->>>>>>> branch 'main' of https://github.com/jnhide8812/teamproject.git
+안녕하세용
+하이에용
+<h2>dasasd</h2>
+<h2>집에 가고 싶음 ㅋ</h2>
 </body>
-
-
 </html>
