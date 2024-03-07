@@ -46,8 +46,8 @@ public class LoginServlet extends HttpServlet {
 		String id = request.getParameter("id"); //로그인 폼에서 입력한 아이디 비번
 		String upwd = request.getParameter("upwd");
 		
-		UsersDAO uDao = UsersDAO.getInstance();//(싱글톤)객체 생성, 클래스 이름이 아닌 객체 이름으로 접근해야함
-		int result = uDao.userCheck(id, upwd); 	 
+		UsersDAO usersdao = UsersDAO.getInstance();//(싱글톤)객체 생성, 클래스 이름이 아닌 객체 이름으로 접근해야함
+		int result = usersdao.userCheck(id, upwd); 	 
 		if(result ==1) {
 			memberVo mVo = mDao.getMember(userid);
 			HttpSession session = request.getSession();
