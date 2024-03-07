@@ -12,19 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import com.shop.dto.managerVO;
+import com.shop.dto.ManagerVO;
 
 /**
  * Servlet implementation class managerWriteServlet
  */
-@WebServlet("/managerWrite.do")
-public class managerWriteServlet extends HttpServlet {
+@WebServlet("/ManagerWrite.do")
+public class ManagerWriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public managerWriteServlet() {
+    public ManagerWriteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,7 +52,7 @@ public class managerWriteServlet extends HttpServlet {
 		int price = Integer.parseInt(multi.getParameter("price"));
 		int pstock = Integer.parseInt(multi.getParameter("pstock"));
 		
-		managerVO vo = new managerVO();
+		ManagerVO vo = new ManagerVO();
 		vo.setPname(name);
 		vo.setPrice(price);
 		vo.setPstock(pstock);

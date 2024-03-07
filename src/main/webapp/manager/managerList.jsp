@@ -14,7 +14,7 @@
 	<table class="list">
 		<tr>
 			<td colspan="5" style="border:white; text-align:right">
-				<a href="managerWrite.do">상품 등록</a>
+				<a href="ManagerWrite.do">상품 등록</a>
 			</td>
 		</tr>
 		
@@ -27,7 +27,7 @@
 			<td>삭제</td>
 		</tr>
 		
-		<c:forEach var="product" items="${productList}">
+		<c:forEach var="product" items="${managerList}">
 		<tr class="recode">
 			<td>${product.code}</td>
 			<td>${product.name}</td>

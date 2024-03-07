@@ -9,12 +9,9 @@
 <body>
 <<<<<<< HEAD
 <%
-	response.sendRedirect("managerList.do");
+	response.sendRedirect("ManagerList.do");
 %>
-=======
-<h1>인덱스 파일입니다</h1>
-<h3>수정사항</h3>
-안녕하세요.
+
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======

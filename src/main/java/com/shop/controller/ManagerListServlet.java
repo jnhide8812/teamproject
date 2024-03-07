@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class managerListServlet
  */
-@WebServlet("/managerList.do")
-public class managerListServlet extends HttpServlet {
+@WebServlet("/ManagerList.do")
+public class ManagerListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public managerListServlet() {
+    public ManagerListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
