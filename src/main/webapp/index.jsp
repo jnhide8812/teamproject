@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>인덱스 파일입니다</h1>
-안녕하세요.
-<h2>1231231</h2>
+<%
+	response.sendRedirect("managerList.do");
+%>
 </body>
 </html>
