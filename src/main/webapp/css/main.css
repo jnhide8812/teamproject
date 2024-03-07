@@ -1,8 +1,10 @@
+
 header {
 	z-index: 5;
 	position: fixed;
-	width: 100%;
-	padding-top: 1.5rem;
+	width: 1050px;
+	height:119px;
+	padding-top: 36px;
 	transition: all .2s ease-in-out;
 }
 header::before {
@@ -17,9 +19,11 @@ header::before {
     transition: all .3s ease-in-out;
 }
 header .inner{
+	position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+	margin: 0px auto;
 }
 middle.h1.tit a {
     display: block;
@@ -45,4 +49,29 @@ nav ul a{
     color: #fff;
     font-size:1.2rem;
     margin-left: 3rem;
+}
+.p_tit, .price {
+	font-size: 16px;
+}
+.price {
+	font-weight: 200;
+}
+span.discount {
+	font-weight: 200;
+	color: #FA622F;
+}
+.img_wrap {
+	width: 249px;
+	height: 319px;	
+}
+.shop3 {
+	height:220px;
+}
+.ft_sns {
+	width: 30px;
+	height: 30px;
+}
+.icon_wrap {
+	width: 34px;
+	height: 34px;
 }
