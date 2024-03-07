@@ -30,7 +30,7 @@ public class CartDAO {
 		
 		List<Object> list = new ArrayList<>();
 		
-		String sql = "select  c.uname, a.pname, a.pictureurl, b.cartcnt	"
+		String sql = "select  c.uname, a.pname, a.price, a.pictureurl, b.cartcnt	"
 				+ "from product a join cart b on a.pcode=b.pcode "
 								+ "join users c on c.id=b.id "
 								+ "where b.id =?";
@@ -45,6 +45,7 @@ public class CartDAO {
 				hm.put("uname", rs.getString("uname"));
 				hm.put("pname", rs.getString("pname"));
 				hm.put("pictureurl", rs.getString("pictureurl"));
+				hm.put("price", rs.getString("price"));
 				hm.put("cartcnt", rs.getString("cartcnt"));
 				list.add(hm);
 				
