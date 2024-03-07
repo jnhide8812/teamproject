@@ -8,12 +8,18 @@
 <!-- 풋터 넣기 -->
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel = "stylesheet" type="text/css" href="css/movie.css">
+<link rel = "stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<%
 
-%> 
-ㄷㄷㄷㄷ 
+<div>
+
+
+
+</div>
+
+
+
+
 </body>
 </html>
