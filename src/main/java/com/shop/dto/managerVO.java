@@ -1,6 +1,6 @@
 package com.shop.dto;
 
-public class managerVO {
+public class ManagerVO {
 	private int pcode; //상품 코드
 	private int catecode; //카테고리 코드
 	private String pname; //상품 이름
@@ -10,7 +10,7 @@ public class managerVO {
 	private String pinfo; //상품 정보
 	private String pictureurl; //상품 사진
 	
-	public managerVO() {
+	public ManagerVO() {
 		// TODO Auto-generated constructor stub
 	}
 	public int getPcode() {
@@ -79,7 +79,7 @@ public class managerVO {
 
 	@Override
 	public String toString() {
-		return "managerVO [pcode=" + pcode + ", catecode=" + catecode + ", pname=" + pname + ", price=" + price
+		return "ManagerVO [pcode=" + pcode + ", catecode=" + catecode + ", pname=" + pname + ", price=" + price
 				+ ", pstock=" + pstock + ", pstatus=" + pstatus + ", pinfo=" + pinfo + ", pictureurl=" + pictureurl
 				+ "]";
 	}
