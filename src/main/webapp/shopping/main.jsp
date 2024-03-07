@@ -11,7 +11,7 @@
 	<header>
 		<div class="inner">
 			<h1 class="tit">
-			<a>
+			<a href="main.do">
 			</a>
 			</h1>
 		</div>
