@@ -136,7 +136,7 @@ public class ManagerDAO {
 	}
 	
 	//상품 삭제
-	private void deleteProduct(String pcode) {
+	public void deleteProduct(String pcode) {
 		String sql = "delete from product where pcode=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
