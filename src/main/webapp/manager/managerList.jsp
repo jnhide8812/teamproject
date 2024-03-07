@@ -27,8 +27,8 @@
 			<td>잔여 재고</td>
 			<td>카테고리 코드</td>
 			<td>상품 상태</td>
-			<td>수정</td>
-			<td>삭제</td>
+			<td><a href="ManagerProductUpdate.do">수정/삭제</a></td>
+			
 		</tr>
 		
 		<c:forEach var="product" items="${managerList}">
