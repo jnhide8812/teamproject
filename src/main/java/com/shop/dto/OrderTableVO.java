@@ -1,6 +1,6 @@
 package com.shop.dto;
 
-public class OrderTable {
+public class OrderTableVO {
 	private Integer ordernumber; //주문번호
 	private String id; //아이디
 	private Integer totalprice; //결제금액
