@@ -6,34 +6,34 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.shop.dto.ProductVO;
+import com.shop.dto.ManagerVO;
 
 import util.DBManager;
 
-public class ProductDAO {
-	public ProductDAO() {
+public class ManagerDAO {
+	public ManagerDAO() {
 		 
 	}
-	private static ProductDAO instance = new ProductDAO();
-	public static ProductDAO getInstance() {
+	private static ManagerDAO instance = new ManagerDAO();
+	public static ManagerDAO getInstance() {
 		return instance;
 	}
 	
 	//상품 리스트
-	public List<ProductVO> selectAllProducts(){
+	public List<ManagerVO> selectAllProducts(){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String sql = "select * from product order by code desc";
 		
-		List<ProductVO> list = new ArrayList<ProductVO>();
+		List<ManagerVO> list = new ArrayList<ManagerVO>();
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				ProductVO vo = new ProductVO();
+				ManagerVO vo = new ManagerVO();
 				vo.setPname(rs.getString("pname"));
 				vo.setPrice(rs.getInt("price"));
 				vo.setPstock(rs.getInt("pstock"));
@@ -53,7 +53,7 @@ public class ProductDAO {
 	}
 	
 	//상품 등록
-	public void insertProduct(ProductVO vo) {
+	public void insertProduct(ManagerVO vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -78,12 +78,12 @@ public class ProductDAO {
 	
 	
 	//상품 수정
-	public ProductVO selectProductByPcode(String pcode) {
+	public ManagerVO selectProductByPcode(String pcode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from product where pcode = ?";
-		ProductVO vo = null;
+		ManagerVO vo = null;
 		
 		try {
 			conn = DBManager.getConnection();
@@ -92,7 +92,7 @@ public class ProductDAO {
 			
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				vo = new ProductVO();
+				vo = new ManagerVO();
 				vo.setPcode(rs.getInt("pcode"));
 				vo.setPname(rs.getString("pname"));
 				vo.setPrice(rs.getInt("price"));
@@ -112,7 +112,7 @@ public class ProductDAO {
 	
 	
 	//상품 업데이트
-	public void updateProduct(ProductVO vo) {
+	public void updateProduct(ManagerVO vo) {
 		String sql = "update product set pname=?, price=?, pstock=?, catecode=?, pstatus=?, pinfo=?, pictureurl=? where pcode=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
