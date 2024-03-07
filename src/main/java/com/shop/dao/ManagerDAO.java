@@ -32,7 +32,7 @@ public class ManagerDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from product order by code";
+		String sql = "select * from product order by pcode";
 		
 		List<ManagerVO> list = new ArrayList<ManagerVO>();
 		try {
@@ -41,12 +41,12 @@ public class ManagerDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				ManagerVO vo = new ManagerVO();
-				vo.setPname(rs.getString("name"));
+				vo.setPname(rs.getString("pname"));
 				vo.setPrice(rs.getInt("price"));
-				vo.setPstock(rs.getInt("stock"));
+				vo.setPstock(rs.getInt("pstock"));
 				vo.setCatecode(rs.getInt("catecode"));
-				vo.setPstatus(rs.getString("status"));
-				vo.setPinfo(rs.getString("info"));
+				vo.setPstatus(rs.getString("pstatus"));
+				vo.setPinfo(rs.getString("pinfo"));
 				vo.setPictureurl(rs.getString("pictureurl"));
 				list.add(vo);
 			}
@@ -62,6 +62,26 @@ public class ManagerDAO {
 	public void insertProduct(ManagerVO vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		String sql = "insert into product(name,price,pstock,catecode,pstatus,pinfo,pictureurl) values(?,?,?,?,?,?,?)";
+		
+		try {
+			conn = DBManager.getConnection();
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getPname());
+			pstmt.setInt(2, vo.getPrice());
+			pstmt.setInt(3, vo.getPstock());
+			pstmt.setInt(4, vo.getCatecode());
+			pstmt.setString(5, vo.getPstatus());
+			pstmt.setString(6, vo.getPinfo());
+			pstmt.setString(7, vo.getPictureurl());
+			
+			pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
 		
 	}
 }

@@ -9,6 +9,7 @@ public class ManagerVO {
 	private String pstatus;
 	private String pinfo;
 	private String pictureurl;
+	
 	public int getPcode() {
 		return pcode;
 	}

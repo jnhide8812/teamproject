@@ -1,7 +1,6 @@
 package com.shop.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shop.dao.ManagerDAO;
-import com.shop.dto.ManagerVO;
-
 /**
- * Servlet implementation class managerListServlet
+ * Servlet implementation class ManagerServlet
  */
-@WebServlet("/ManagerList.do")
-public class ManagerListServlet extends HttpServlet {
+@WebServlet("/Manager.do")
+public class ManagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerListServlet() {
+    public ManagerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,9 +28,7 @@ public class ManagerListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		RequestDispatcher rd = request.getRequestDispatcher("manager/managerList.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("manager/manager.jsp");
 		rd.forward(request, response);
 	}
 
@@ -42,8 +36,8 @@ public class ManagerListServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		
 	}
 
 }

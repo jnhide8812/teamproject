@@ -15,7 +15,7 @@
 <header>
 <table >
 	<tr text-align="center">
-		<td><a href="main.do"><img src="kurly.jpeg"></a></td>
+		<td><a href="Main.do"><img src="kurly.jpeg"></a></td>
 		<td>${users.uname}관리자님 환영합니다.</td>
 	</tr>
 	<tr text-align="center">
@@ -28,11 +28,21 @@
 </header>
 <table>
 <tr>
-	<td><a href="managerWrite.do">상품 등록</a></td><td><a href="managerList.do">상품리스트</a></td>
+	<td><a href="ManagerWrite.do">상품 등록</a></td><br>
 </tr>
+
 <tr>
-	<td><a href="managerOrderList.do">주문 목록</a></td><td><a href="memberList.do">회원 관리</a></td>
+	<td><a href="ManagerList.do">상품리스트</a></td><br><hr>
 </tr>
+
+<tr>
+	<td><a href="ManagerOrderList.do">주문 목록</a></td><br>
+</tr>
+
+<tr>
+	<td><a href="MemberList.do">회원 관리</a></td>
+</tr>
+
 </table> 
 </form>
 
