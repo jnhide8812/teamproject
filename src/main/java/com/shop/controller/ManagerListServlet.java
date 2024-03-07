@@ -36,6 +36,7 @@ public class ManagerListServlet extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("manager/managerList.jsp");
 		rd.forward(request, response);
+		
 	}
 
 	/**
