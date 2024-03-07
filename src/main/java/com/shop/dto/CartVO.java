@@ -1,4 +1,4 @@
-package com.cart.vo;
+package com.shop.dto;
 
 public class CartVO {
 	private Integer cartnumber;
