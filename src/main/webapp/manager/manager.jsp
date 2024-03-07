@@ -33,7 +33,7 @@
 <tr>
 	<td><a href="managerOrderList.do">주문 목록</a></td><td><a href="memberList.do">회원 관리</a></td>
 </tr>
-</table>
+</table> 
 </form>
 
 </div>
