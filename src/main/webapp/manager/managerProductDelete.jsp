@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="wrap" align="center">
-<h1>상품 수정, 삭제 페이지</h1>
+<h1>상품 삭제 페이지</h1>
 <form action="post" name="frm" enctype="multipart/form-data">
 
    <input type="hidden" name="code" value="${product.pcode}" >
@@ -55,7 +55,7 @@
                <tr>
                   <th style="width:80px">상품 이름</th>
                   <td>
-                     <input type="text" name="name">  
+                     <input type="text" name="name">
                   </td>
                </tr>
                
@@ -94,7 +94,7 @@
    </table>
    <br>
    	<input type="hidden" name="code" value="${product.code}">
-	<input type="submit" value="상품 수정" onclick="return productCheck()">
+	<input type="submit" value="상품 삭제" onclick="return productCheck()">
 	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
 
 </form>
