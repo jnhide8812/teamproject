@@ -1,6 +1,7 @@
 package com.shop.dto;
 
-public class ManagerVO {
+
+public class ProductVO {
 	private String pname;
 	private Integer price;
 	private Integer pstock;
