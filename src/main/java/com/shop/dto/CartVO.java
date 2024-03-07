@@ -4,7 +4,6 @@ public class CartVO {
 	private Integer cartnumber;
 	private String id;
 	private Integer pcode;
-	private Integer catecode;
 	private Integer cartcnt;
 	public Integer getCartnumber() {
 		return cartnumber;
@@ -24,12 +23,6 @@ public class CartVO {
 	public void setPcode(Integer pcode) {
 		this.pcode = pcode;
 	}
-	public Integer getCatecode() {
-		return catecode;
-	}
-	public void setCatecode(Integer catecode) {
-		this.catecode = catecode;
-	}
 	public Integer getCartcnt() {
 		return cartcnt;
 	}
@@ -38,9 +31,9 @@ public class CartVO {
 	}
 	@Override
 	public String toString() {
-		return "cartVO [cartnumber=" + cartnumber + ", id=" + id + ", pcode=" + pcode + ", catecode=" + catecode
-				+ ", cartcnt=" + cartcnt + "]";
+		return "CartVO [cartnumber=" + cartnumber + ", id=" + id + ", pcode=" + pcode + ", cartcnt=" + cartcnt + "]";
 	}
+	
 	
 	
 }
