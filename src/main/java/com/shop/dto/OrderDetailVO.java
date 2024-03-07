@@ -1,6 +1,6 @@
 package com.shop.dto;
 
-public class OrederDetailVO {
+public class OrderDetailVO {
 	private Integer orderdetailnumber; // 주문상세번호
 	private Integer ordernumber; //주문번호
 	private String id;  //아이디
