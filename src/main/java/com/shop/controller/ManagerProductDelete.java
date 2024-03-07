@@ -47,7 +47,7 @@ public class ManagerProductDelete extends HttpServlet {
 		String pcode = request.getParameter("pcode");
 		ProductDAO mdao = ProductDAO.getInstance();
 		mdao.deleteProduct(pcode);
-		response.sendRedirect("managerList.do");
+		response.sendRedirect("ManagerList.do");
 	}
 
 }

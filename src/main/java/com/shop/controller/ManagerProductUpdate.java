@@ -84,7 +84,7 @@ public class ManagerProductUpdate extends HttpServlet {
 		
 		ProductDAO mdao = ProductDAO.getInstance();
 		mdao.updateProduct(mvo);
-		response.sendRedirect("managerList.do");
+		response.sendRedirect("ManagerList.do");
 		
 	}
 
