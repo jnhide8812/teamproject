@@ -24,6 +24,8 @@ header .inner{
 middle.h1.tit a {
     display: block;
     position: relative;
+    font-size: 2px;
+    color: #5F0080;
 }
 middle.h1.tit a img.mlogo {
     opacity: 1;
