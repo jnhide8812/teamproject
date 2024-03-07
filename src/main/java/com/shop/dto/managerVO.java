@@ -9,7 +9,10 @@ public class managerVO {
 	private String pstatus; //상품 상태
 	private String pinfo; //상품 정보
 	private String pictureurl; //상품 사진
-
+	
+	public managerVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getPcode() {
 		return pcode;
 	}
