@@ -1,6 +1,6 @@
 package com.cart.vo;
 
-public class cartVO {
+public class CartVO {
 	private Integer cartnumber;
 	private String id;
 	private Integer pcode;
