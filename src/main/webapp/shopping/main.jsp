@@ -11,7 +11,8 @@
 	<header>
 		<div class="inner">
 			<h1 class="tit">
-			<a href="main.do">
+			<a href="main.do" >
+			<img>
 			</a>
 			</h1>
 		</div>
