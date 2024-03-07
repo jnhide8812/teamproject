@@ -9,6 +9,7 @@ public class UsersVO {
 	private String uaddress;
 	private String ugrade;
 	private int upoint;
+	
 	public String getId() {
 		return id;
 	}
