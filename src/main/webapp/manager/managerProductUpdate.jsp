@@ -79,7 +79,7 @@
                      <textarea rows="7" cols="60" name="description">
                      
                      </textarea>
-                  </td>
+                  </td> 
                </tr>
                
                <tr>

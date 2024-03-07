@@ -13,7 +13,7 @@
 <div id="wrap" align="center">
 <h1>상품 삭제 페이지</h1>
 <form action="post" name="frm" enctype="multipart/form-data">
-
+ 
    <input type="hidden" name="code" value="${product.pcode}" >
    <input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
    <table>
