@@ -17,7 +17,7 @@ import com.shop.dto.ManagerVO;
 /**
  * Servlet implementation class managerWriteServlet
  */
-@WebServlet("/managerWrite.do")
+@WebServlet("/ManagerWrite.do")
 public class ManagerWriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

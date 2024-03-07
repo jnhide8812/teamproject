@@ -26,15 +26,7 @@ public class ManagerDAO {
 		return instance;
 	}
 	
-	public Connection getConnection() throws Exception{
-		Connection conn = null;
-		Context init = new InitialContext();
-		Context envContext = (Context)init.lookup("java:/comp/env");
-		DataSource ds = (DataSource)envContext.lookup("jdbc/shoppingmall");
-		conn = ds.getConnection();
-		return conn;
-	}
-	
+	//매니저 리스트(상품등록리스트) 출력
 	public List<ManagerVO> selectAllManager(){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -44,11 +36,24 @@ public class ManagerDAO {
 		
 		List<ManagerVO> list = new ArrayList<ManagerVO>();
 		try {
-			
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ManagerVO vo = new ManagerVO();
+				vo.setPname(rs.getString("name"));
+				vo.setPrice(rs.getInt("price"));
+				vo.setPstock(rs.getInt("stock"));
+				vo.setCatecode(rs.getInt("catecode"));
+				vo.setPinfo(rs.getString("info"));
+				vo.setPstatus(rs.getString("status"));
+				vo.setPictureurl(rs.getString("pictureurl"));
+			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			
+			DBManager.close(conn, pstmt, rs);
 		}
+		return list;
 	}
 }
