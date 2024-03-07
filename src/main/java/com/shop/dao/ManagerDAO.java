@@ -45,9 +45,10 @@ public class ManagerDAO {
 				vo.setPrice(rs.getInt("price"));
 				vo.setPstock(rs.getInt("stock"));
 				vo.setCatecode(rs.getInt("catecode"));
-				vo.setPinfo(rs.getString("info"));
 				vo.setPstatus(rs.getString("status"));
+				vo.setPinfo(rs.getString("info"));
 				vo.setPictureurl(rs.getString("pictureurl"));
+				list.add(vo);
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -55,5 +56,12 @@ public class ManagerDAO {
 			DBManager.close(conn, pstmt, rs);
 		}
 		return list;
+	}
+	
+	//매니저 리스트에 상품등록 추가
+	public void insertProduct(ManagerVO vo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
 	}
 }

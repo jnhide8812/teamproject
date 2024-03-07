@@ -93,7 +93,7 @@
 		</tr>
 	</table>
 	<br>
-	<input type="submit" value="상품 등록" onclick="location.href='managerList.do'">
+	<input type="submit" value="상품 등록" onclick="location.href='ManagerList.do'">
 </form>
 </div>
 </body>

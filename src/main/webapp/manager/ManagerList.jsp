@@ -27,13 +27,13 @@
 			<td>삭제</td>
 		</tr>
 		
-		<c:forEach var="product" items="${managerList}">
+		<c:forEach var="product" items="${ManagerList}">
 		<tr class="recode">
 			<td>${product.code}</td>
 			<td>${product.name}</td>
 			<td>${product.price}원</td>
-			<td><a href="managerProductUpdate.do?code=${product.code}">상품수정</a></td>
-			<td><a href="managerProductDelete.do?code=${product.code}">상품삭제</a></td>
+			<td><a href="ManagerProductUpdate.do?code=${product.code}">상품수정</a></td>
+			<td><a href="ManagerProductDelete.do?code=${product.code}">상품삭제</a></td>
 		</tr>
 		</c:forEach>
 	</table>
