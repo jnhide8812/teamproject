@@ -26,7 +26,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from product order by pcode desc";
+		String sql = "select * from product order by pcode desc"; 
 		
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		try {
