@@ -11,7 +11,7 @@
 </head>
 <body>
     <table>
-        <c:forEach var="product" items="${ }">
+        <c:forEach var="product" items="${ ㅇㅇㅇ}">
             <tr>
                 <td rowspan="2">
                     <img src="img/${product.pictureurl}" >
