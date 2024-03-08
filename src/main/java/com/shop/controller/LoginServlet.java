@@ -49,24 +49,21 @@ public class LoginServlet extends HttpServlet {
 		String ugrade = request.getParameter("ugrade");
 		
 		UsersDAO udao = UsersDAO.getInstance();  
-		int result = udao.userCheck(id, upwd, ugrade);
+		int result = udao.userCheck(id, upwd);
 		
-		
-		if(result == 2 || result == 3 || result == 4) {
+		if(result == 1 || result == 2) {
 			UsersVO uvo = new UsersVO();
 			uvo = udao.selectById(id); 	 
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", uvo);
 			request.setAttribute("message", "로그인에 성공했습니다");
-			url = "main.jsp";
-		}else {
-			url="user/login.jsp";
-			if(result == 1) {
+			url = "main.do";
+		}else if(result == 0) {
 				request.setAttribute("message", "비밀번호가 일치하지 않습니다");
-			}else if(result == -1) {
+		}else if(result == -1) {
 			request.setAttribute("message", "등록되지 않은 아이디입니다");
 		}
-	}
+	
 
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);

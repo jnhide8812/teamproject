@@ -21,13 +21,13 @@ public class UsersDAO {
 	}
 
 	// 사용자 체크 메소드(로그인 가능 여부)
-	public int userCheck(String id, String upwd, String ugrade) {
+	public int userCheck(String id, String upwd) {
 		int result = 1;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from users where id=?";
-
+		String sql = "select upwd, ugrade from users where id=?";
+		String ugrade = "0";
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -35,44 +35,40 @@ public class UsersDAO {
 
 			rs = pstmt.executeQuery();
 
-			if (rs.next()) {
-				// 비밀번호 일치
-				if (upwd.equals(rs.getString("upwd"))) {
-					// 회원등급 확인
-					if (ugrade.equals(rs.getString("0"))) {
-						result = 2; // 관리자로 로그인 성공
-						if (ugrade.equals("2")) {
-							result = 3; // vip회원으로 로그인 성공
-						}
-						if (ugrade.equals("1")) {
-							result = 4; // 일반회원으로 로그인 성공
+			if (rs.next()) {  
+				//비밀번호 일치
+				if(upwd.equals(rs.getString("upwd"))) {
+					//회원등급
+					if(ugrade.equals(rs.getString("ugrade"))) {
+						result=2; //관리자 로그인 성공
+						if(ugrade.equals("ugrade")) {
+							result=1;//일반회원, vip 로그인 성공
 						}
 					}
 				} else {
-					result = 1; // 비밀번호 불일치
-				}
-
-			} else {
-				result = -1; // 아이디가 존재하지 않을 때
+				result=0; //비밀번호가 맞지 않을 때
 			}
-		} catch (Exception e) {
+			}else {
+				result=-1; //아이디가 존재하지 않을때
+			}
+		}catch (Exception e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			try {
-				if (rs != null)
+				if(rs != null)
 					rs.close();
-				if (pstmt != null)
+				if(pstmt != null)
 					pstmt.close();
-				if (conn != null)
+				if(conn != null)
 					conn.close();
-
-			} catch (Exception e2) {
-
+			}catch (Exception e) {
+			
 			}
 		}
 		return result;
-	}
-
+		}
+		
+	
 	public void insertUsers(UsersVO member) {
 		System.out.println("dao");
 		String sql = "insert into users values(?,?,?,?,?,?,?,?)";
