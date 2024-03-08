@@ -16,7 +16,7 @@
 				<li><a href="#">로그인</a></li>
 			</ul>
 			<div class="middle">
-				<h1 class="tit">
+				<h1 class="tit_wrap">
 				<a href="#">
 					<img src="../icon/mlogo.png" class="mlogo" >
 				</a>
@@ -24,9 +24,9 @@
 				</h1>
 				<form action="https://search.naver.com/search.naver">
             	<div class="search">
-                	<input type="text" name="query" value="">
+                	<input type="text" placeholder="검색어를 입력해주세요" class="main_search">
                 	<button type="submit">
-                		<img src="../icon/search.png" class="search">
+                		<img src="../icon/search.png" class="search_icon">
                 	</button>
                 </div>
                </form>
