@@ -26,7 +26,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from product order by code desc";
+		String sql = "select * from product order by pcode desc"; 
 		
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		try {
@@ -41,7 +41,7 @@ public class ProductDAO {
 				vo.setPstatus(rs.getString("pstatus"));
 				vo.setPinfo(rs.getString("pinfo"));
 				vo.setPictureurl(rs.getString("pictureurl"));
-				vo.setCatecode(rs.getInt("catecode"));
+				vo.setCatecode(rs.getString("catecode"));
 				vo.setPcode(rs.getInt("pcode"));
 			}
 			
@@ -65,7 +65,7 @@ public class ProductDAO {
 			pstmt.setString(1,vo.getPname());
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setInt(3, vo.getPstock());
-			pstmt.setInt(4, vo.getCatecode());
+			pstmt.setString(4, vo.getCatecode());
 			pstmt.setString(5, vo.getPstatus());
 			pstmt.setString(6, vo.getPinfo());
 			pstmt.setString(7, vo.getPictureurl());
@@ -101,7 +101,7 @@ public class ProductDAO {
 				vo.setPstatus(rs.getString("pstatus"));
 				vo.setPinfo(rs.getString("pinfo"));
 				vo.setPictureurl(rs.getString("pictureurl"));
-				vo.setCatecode(rs.getInt("catecode"));			
+				vo.setCatecode(rs.getString("catecode"));			
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -123,7 +123,7 @@ public class ProductDAO {
 			pstmt.setString(1, vo.getPname());
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setInt(3, vo.getPstock());
-			pstmt.setInt(4, vo.getCatecode());
+			pstmt.setString(4, vo.getCatecode());
 			pstmt.setString(5, vo.getPstatus());
 			pstmt.setString(6, vo.getPinfo());
 			pstmt.setString(7, vo.getPictureurl());

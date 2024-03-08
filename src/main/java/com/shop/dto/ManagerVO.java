@@ -1,34 +1,44 @@
 package com.shop.dto;
 
-
-public class ProductVO {
+public class ManagerVO {
+	private int pcode;
 	private String pname;
-	private Integer price;
-	private Integer pstock;
+	private int price;
+	private int pstock;
+	private int catecode;
 	private String pstatus;
 	private String pinfo;
 	private String pictureurl;
-	private Integer pcode;
-	private String catecode;
 	
-	
+	public int getPcode() {
+		return pcode;
+	}
+	public void setPcode(int pcode) {
+		this.pcode = pcode;
+	}
 	public String getPname() {
 		return pname;
 	}
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public Integer getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(Integer price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-	public Integer getPstock() {
+	public int getPstock() {
 		return pstock;
 	}
-	public void setPstock(Integer pstock) {
+	public void setPstock(int pstock) {
 		this.pstock = pstock;
+	}
+	public int getCatecode() {
+		return catecode;
+	}
+	public void setCatecode(int catecode) {
+		this.catecode = catecode;
 	}
 	public String getPstatus() {
 		return pstatus;
@@ -48,28 +58,12 @@ public class ProductVO {
 	public void setPictureurl(String pictureurl) {
 		this.pictureurl = pictureurl;
 	}
-	public Integer getPcode() {
-		return pcode;
-	}
-	public void setPcode(Integer pcode) {
-		this.pcode = pcode;
-	}
-	public String getCatecode() {
-		return catecode;
-	}
-	public void setCatecode(String catecode) {
-		this.catecode = catecode;
-	}
 	@Override
 	public String toString() {
-		return "ProductVO [pname=" + pname + ", price=" + price + ", pstock=" + pstock + ", pstatus=" + pstatus
-				+ ", pinfo=" + pinfo + ", pictureurl=" + pictureurl + ", pcode=" + pcode + ", catecode=" + catecode
+		return "ManagerVO [pcode=" + pcode + ", pname=" + pname + ", price=" + price + ", pstock=" + pstock
+				+ ", catecode=" + catecode + ", pstatus=" + pstatus + ", pinfo=" + pinfo + ", pictureurl=" + pictureurl
 				+ "]";
 	}
-
-	
-		
-	
 	
 	
 }

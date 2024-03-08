@@ -12,20 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import com.shop.dao.ProductDAO;
 import com.shop.dto.ProductVO;
 
 /**
- * Servlet implementation class Update
+ * Servlet implementation class ManagerWriteServlet
  */
-@WebServlet("/managerProductUpdate.do")
-public class ManagerProductUpdate extends HttpServlet {
+@WebServlet("/ManagerWrite.do")
+public class ManagerWriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerProductUpdate() {
+    public ManagerWriteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,12 +35,7 @@ public class ManagerProductUpdate extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pcode = request.getParameter("pcode");
-		ProductDAO mdao = ProductDAO.getInstance();
-		ProductVO mvo = mdao.selectProductByPcode(pcode);
-		
-		request.setAttribute("manager", mvo);
-		RequestDispatcher rd = request.getRequestDispatcher("manager/managerProductUpdate.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("manager/managerWrite.jsp");
 		rd.forward(request, response);
 	}
 
@@ -49,42 +45,36 @@ public class ManagerProductUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		ServletContext context = getServletContext();
-		String path = context.getRealPath("upload");
-		String enctype = "UTF-8";
+		String path = context.getRealPath("img");
+		String encType = "UTF-8";
 		int sizeLimit = 20 * 1024 * 1024;
 		
-		MultipartRequest multi = new MultipartRequest(
-				request, 
-				path, 
-				sizeLimit, 
-				enctype, 
-				new DefaultFileRenamePolicy());
+		MultipartRequest multi = new MultipartRequest(request, path, sizeLimit, encType, new DefaultFileRenamePolicy());
 		
-		String pcode = multi.getParameter("pcode");
 		String pname = multi.getParameter("pname");
 		int price = Integer.parseInt(multi.getParameter("price"));
 		int pstock = Integer.parseInt(multi.getParameter("pstock"));
+		String catecode = multi.getParameter("catecode");
 		String pstatus = multi.getParameter("pstatus");
 		String pinfo = multi.getParameter("pinfo");
 		String pictureurl = multi.getParameter("pictureurl");
-		int catecode = Integer.parseInt("catecode");
 		
-		if (pictureurl == null) 
-			pictureurl = multi.getParameter("nonmakeImg");
+		ProductVO vo = new ProductVO();
+		vo.setPname(pname);
+		vo.setPrice(price);
+		vo.setPstock(pstock);
+		vo.setCatecode(catecode);
+		vo.setPstatus(pstatus);
+		vo.setPinfo(pinfo);
+		vo.setPictureurl(pictureurl);
 		
-		ProductVO mvo = new ProductVO();
-		mvo.setPcode(Integer.parseInt(pcode));
-		mvo.setPname(pname);
-		mvo.setPrice(price);
-		mvo.setPstock(pstock);
-		mvo.setPstatus(pstatus);
-		mvo.setPinfo(pinfo);
-		mvo.setPictureurl(pictureurl);
-		mvo.setCatecode(catecode);
+		System.out.println(path);
 		
-		ProductDAO mdao = ProductDAO.getInstance();
-		mdao.updateProduct(mvo);
+		ProductDAO pdao = ProductDAO.getInstance();
+		pdao.insertProduct(vo);
+		
 		response.sendRedirect("ManagerList.do");
+		
 		
 	}
 
