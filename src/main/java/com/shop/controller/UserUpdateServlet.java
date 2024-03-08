@@ -52,7 +52,7 @@ public class UserUpdateServlet extends HttpServlet {
 		String uphone= request.getParameter("uphone");
 		String ubirth = request.getParameter("ubirth");
 		String ugrade= request.getParameter("ugrade");
-		Integer upoint= Integer.parseInt(request.getParameter("upoint"));
+		int upoint= Integer.parseInt(request.getParameter("upoint"));
 		String uname = request.getParameter("uname");
 		
 	
@@ -66,8 +66,6 @@ public class UserUpdateServlet extends HttpServlet {
 		uvo.setUbirth(ubirth);
 		uvo.setUgrade(ugrade);
 		uvo.setUpoint(upoint);
-		
-		
 		
 		
 		UsersDAO udao = UsersDAO.getInstance();
