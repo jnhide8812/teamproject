@@ -32,8 +32,8 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String id= request.getParameter("id");
-		String id = "dlseka12";
+		//String id= request.getParameter("id"); 
+		String id = "dlseka12"; //로그인 만들어지면 삭제
 		UsersDAO udao = UsersDAO.getInstance();
 		
 		UsersVO uvo = udao.selectById(id);
@@ -53,7 +53,7 @@ public class UserUpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String id= request.getParameter("id");
-		System.out.println("id"+id);
+		//System.out.println("id"+id);
 		String upwd= request.getParameter("upwd");
 		String uaddress = request.getParameter("uaddress");
 		String uphone= request.getParameter("uphone");

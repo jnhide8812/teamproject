@@ -66,7 +66,7 @@
 	</tr>
 	
 	<td colspan = "2" align="center">
-		<input type="submit" value="회원가입하기" onclick="location.href='login.jsp'" id="joinBtn">
+		<input type="submit" value="회원가입하기" onclick="location.href='login.do'" id="joinBtn">
 	</td>
 	</tr>
 
