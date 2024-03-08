@@ -8,52 +8,36 @@
 <meta charset="UTF-8">
 <script type="text/javascript" src="script/shop.js"></script>
 <link rel = "stylesheet" type="text/css" href="../css/style.css">
-<title>회원가입</title>
+<title>개인정보 수정 페이지</title>
 
 </head>
 <body>
-<form action = "register.do" method="post">
+<form action = "userUpdate.do" method="post">
 	<table align = "center" width = "550">
 	<tr>
-	<td colspan = "2" align = "center">회원가입</td>
+	<td colspan = "2" align = "center">개인정보수정</td>
 	</tr>
 	<tr>
 	<td align = "center">아이디</td>
-	<td><input type = "text" name="id" placeholder="아이디 입력">
-		<input type = "button" value="중복 확인" onclick = "idCheck()">
-		<input type = "hidden" name= "reid" > 
-	</td> 
+	<td><input type = "text" name="id" readonly></td> 
 	</tr>
 	<tr>
 	<td align = "center">비밀번호</td>
-	<td><input type = "password" name="upwd" placeholder="비밀번호 입력"></td>
+	<td><input type = "password" name="upwd" readonly></td>
 	</tr>
-	<tr>
-	<td align = "center">비밀번호 확인</td>
-	<td> <input type="password" name="upwd_re" placeholder="비밀번호 재입력" onclick ="return pwdTest()"></td>
-	</tr> 
-	
+ 
 	<tr>
 	<td align = "center">이름</td>
-	<td><input type = "text" name="uname"></td> 
+	<td><input type = "text" name="uname" readonly></td> 
 	</tr>
 	<tr>
 	<td align = "center">전화번호</td>
 	<td><input type = "text" name="uphone"></td>
 	</tr>
 	
-<!--<tr>
-	<td align = "center">권한</td>
-	<td><select name ="lev">
-		<option value="0" >운영자</option>
-		<option value="1" >일반회원</option>
-	</select>
-	</td>
-	</tr> -->
-	
 	<tr>
 	<td align = "center">생년월일</td>
-	<td><input type = "text" name="ubirth"></td> 
+	<td><input type = "text" name="ubirth" readonly></td> 
 	</tr>
 	
 	<tr>
@@ -66,13 +50,9 @@
 	</tr>
 	
 	<td colspan = "2" align="center">
-		<input type="submit" value="회원가입하기" onclick="location.href='login.jsp'" id="joinBtn">
+		<input type="submit" value="수정" onclick="location.href='mypage.jsp'">
 	</td>
 	</tr>
-
-
-
-
 </table>
 </form>
 </body>

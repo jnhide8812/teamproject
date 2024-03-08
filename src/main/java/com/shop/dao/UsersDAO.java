@@ -143,4 +143,77 @@ public class UsersDAO {
 
 	}
 
+	//id 회원정보 가져오는 메소드 
+			public UsersVO selectById(String id) {
+				UsersVO uvo = null;
+				String sql = "select * from users where id=?";
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				try {
+					conn = DBManager.getConnection();
+				    pstmt = conn.prepareStatement(sql);
+				    pstmt.setString(1,id);
+				    rs = pstmt.executeQuery();
+				    if(rs.next()) {
+				    	uvo = new UsersVO();
+				    	uvo.setId(rs.getString("id"));
+				    	uvo.setUpwd(rs.getString("upwd"));
+				    	uvo.setUname(rs.getString("uname"));
+				    	uvo.setUaddress(rs.getString("uaddress"));
+				    	uvo.setUgrade(rs.getString("ugrade"));
+				    	uvo.setUbirth(rs.getString("ubirth"));
+				    	uvo.setUphone(rs.getString("uphone"));
+				    	uvo.setUpoint(rs.getInt("upoint"));
+				    	
+				    
+				    }
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					try {
+						if(rs != null)
+							rs.close();
+						if(pstmt != null)
+							pstmt.close();
+						if(conn != null)
+							conn.close();
+					} catch (Exception e2) {
+						
+					}
+					
+				} return uvo;
+			}
+			public int updateUser(UsersVO uvo) {
+				int result = -1; //정보수정 실패 시 -1 반환
+				String sql = "update users set phone=?, uaddress=? where id=?" ;
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				try {
+					conn = DBManager.getConnection();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1,uvo.getUphone());
+					pstmt.setString(2, uvo.getUaddress());
+					pstmt.setString(3, uvo.getId());
+					
+					
+					result = pstmt.executeUpdate(); //정보수정 완료시 1 반환
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					
+				try {
+					if(pstmt != null)
+						pstmt.close();
+					if(conn != null)
+						pstmt.close();
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			} return result;
+
+		}
+	
 }
