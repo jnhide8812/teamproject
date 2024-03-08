@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shop.dao.ManagerDAO;
-import com.shop.dto.ManagerVO;
+import com.shop.dao.ProductDAO;
+import com.shop.dto.ProductVO;
+
 
 /**
  * Servlet implementation class managerListServlet
@@ -32,7 +33,9 @@ public class ManagerListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		ProductDAO pdao = ProductDAO.getInstance();
+		List<ProductVO> productList = pdao.selectAllProducts();
+		request.setAttribute("productList", productList);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("manager/managerList.jsp");
 		rd.forward(request, response);

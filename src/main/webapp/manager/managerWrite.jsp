@@ -6,16 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록 페이지</title>
-<link rel="stylesheet" type="text/css" href="css/shop.css">
+<link rel="stylesheet" type="text/css" href="css/manager.css">
 <script type="text/javascript" src="script/shop.js"></script>
 </head>
 <body>
 <div id="wrap" align="center">
-<h1>상품 등록 페이지 - 관리자 페이지</h1>
+<h1>상품 등록 페이지 - 관리자</h1>
 <form action="post" name="frm" enctype="multipart/form-data">
 
 	<input type="hidden" name="pcode" value="${product.pcode}" >
 	<input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
+	<hr><hr><br><br>
 	<table>
 		<tr>
 			<td>
@@ -31,7 +32,7 @@
 			<td>
 				<table>
 					<tr>
-					<td align="center">카테고리</td>
+					<th>카테고리</th>
 						<td>
 							<select name="category">
 								<option value="1" selected>육류</option>
@@ -62,14 +63,14 @@
 					<tr>
 						<th>상품 가격</th>
 						<td>
-							<input type="text" name="price" value="${product.price}">원
+							<input type="text" name="price" value="${product.price}">&nbsp원
 						</td>
 					</tr>
 				
 					<tr>
 						<th>상품 재고</th>
 						<td>
-							<input type="text" name="pstock" value="${product.pstock}">개
+							<input type="text" name="pstock" value="${product.pstock}">&nbsp개
 						</td>
 					</tr>
 					
@@ -93,8 +94,8 @@
 		</tr>
 	</table>
 	<br>
-	<input type="submit" value="등록" onclick="return shopCheck()">
-	<input type="reset" value="다시작성">
+	<input type="submit" value="등록" onclick="return shopCheck()">&nbsp&nbsp
+	<input type="reset" value="다시작성">&nbsp&nbsp
 	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
 	
 </form>

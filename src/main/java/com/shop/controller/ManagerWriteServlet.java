@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.shop.dao.ManagerDAO;
-import com.shop.dto.ManagerVO;
+
+import com.shop.dao.ProductDAO;
+import com.shop.dto.ProductVO;
 
 /**
  * Servlet implementation class ManagerWriteServlet
@@ -58,7 +59,7 @@ public class ManagerWriteServlet extends HttpServlet {
 		String pinfo = multi.getParameter("pinfo");
 		String pictureurl = multi.getParameter("pictureurl");
 		
-		ManagerVO vo = new ManagerVO();
+		ProductVO vo = new ProductVO();
 		vo.setPname(pname);
 		vo.setPrice(price);
 		vo.setPstock(pstock);
@@ -69,8 +70,8 @@ public class ManagerWriteServlet extends HttpServlet {
 		
 		System.out.println(path);
 		
-		ManagerDAO mdao = ManagerDAO.getInstance();
-		mdao.insertProduct(vo);
+		ProductDAO pdao = ProductDAO.getInstance();
+		pdao.insertProduct(vo);
 		
 		response.sendRedirect("ManagerList.do");
 		

@@ -39,8 +39,8 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 		String pcode = request.getParameter("pcode");
 		ProductDAO mdao = ProductDAO.getInstance();
 		ProductVO mvo = mdao.selectProductByPcode(pcode);
-
 		request.setAttribute("manager", mvo);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("manager/managerProductUpdate.jsp");
 		rd.forward(request, response);
 	}
@@ -53,7 +53,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		ServletContext context = getServletContext();
-		String path = context.getRealPath("upload");
+		String path = context.getRealPath("img");
 		String enctype = "UTF-8";
 		int sizeLimit = 20 * 1024 * 1024;
 
