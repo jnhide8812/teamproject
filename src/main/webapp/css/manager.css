@@ -1,0 +1,44 @@
+#wrap{
+	width:971px;
+	margin:0 auto;
+}
+
+h1{
+	color:#7409f7;
+}
+
+hr{
+	color:#47b84d;
+}
+
+table{
+	width:100%;
+	border-collapse:collaps;
+	font-size:12px;
+	line-height: 24px;
+	font-style: bold;
+}
+
+table td, th{
+	border: #d3d3d3 solid 1px;
+	padding: 5px;
+}
+
+th{
+	background: #9caae2;
+}
+
+img{
+	width: 220px;
+	height: 300px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	text-decoration : underLine;
+	color: green;
+}

@@ -1,14 +1,14 @@
 package com.shop.dto;
 
 public class CartVO {
-	private Integer cartnumber;
+	private int cartnumber;
 	private String id;
-	private Integer pcode;
-	private Integer cartcnt;
-	public Integer getCartnumber() {
+	private int pcode;
+	private int cartcnt;
+	public int getCartnumber() {
 		return cartnumber;
 	}
-	public void setCartnumber(Integer cartnumber) {
+	public void setCartnumber(int cartnumber) {
 		this.cartnumber = cartnumber;
 	}
 	public String getId() {
@@ -17,22 +17,23 @@ public class CartVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Integer getPcode() {
+	public int getPcode() {
 		return pcode;
 	}
-	public void setPcode(Integer pcode) {
+	public void setPcode(int pcode) {
 		this.pcode = pcode;
 	}
-	public Integer getCartcnt() {
+	public int getCartcnt() {
 		return cartcnt;
 	}
-	public void setCartcnt(Integer cartcnt) {
+	public void setCartcnt(int cartcnt) {
 		this.cartcnt = cartcnt;
 	}
 	@Override
 	public String toString() {
 		return "CartVO [cartnumber=" + cartnumber + ", id=" + id + ", pcode=" + pcode + ", cartcnt=" + cartcnt + "]";
 	}
+	
 	
 	
 	

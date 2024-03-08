@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.shop.dto.CartVO;
+
 import util.DBManager;
 
 public class CartDAO {
@@ -22,7 +24,7 @@ public class CartDAO {
 		return instance;
 	}
 	
-	//아이디 눌러 장바구니 보기 
+	//아이디값으로 장바구니 보기 
 	public List<Object> selectCartById(String id){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -30,7 +32,7 @@ public class CartDAO {
 		
 		List<Object> list = new ArrayList<>();
 		
-		String sql = "select  c.uname, a.pname, a.price, a.pictureurl, b.cartcnt	"
+		String sql = "select  b.cartnumber, c.uname, a.pname, a.price, a.pictureurl, b.cartcnt	"
 				+ "from product a join cart b on a.pcode=b.pcode "
 								+ "join users c on c.id=b.id "
 								+ "where b.id =?";
@@ -41,7 +43,8 @@ public class CartDAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				Map<String,String> hm = new HashMap<>();
+				Map<String,Object> hm = new HashMap<>();
+				hm.put("cartnumber", rs.getInt("cartnumber"));
 				hm.put("uname", rs.getString("uname"));
 				hm.put("pname", rs.getString("pname"));
 				hm.put("pictureurl", rs.getString("pictureurl"));
@@ -58,5 +61,49 @@ public class CartDAO {
 		}
 		return list;
 	}
+	
+	//장바구니 담기 insert 
+	public void insertCart(CartVO cvo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into cart(id, pcode, cartcnt) values(?,?,?)";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, cvo.getId());
+			pstmt.setInt(2, cvo.getPcode());
+			pstmt.setInt(3, cvo.getCartcnt());
+			pstmt.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+				
+	}
+	
+	
+	//장바구니 넘버로 해당 항목 삭제
+	public void deleteCart(int cartnumber) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete from cart where cartnumber=?";
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, cartnumber);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+				
+	}
+	
 	
 }
