@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("member/login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("user/login.jsp");
 		rd.forward(request,response);
 		//맵핑 주소(login.do)는 get 방식을 이동해서 doget도 처리해줘야함 
 	}
@@ -45,11 +45,12 @@ public class LoginServlet extends HttpServlet {
 		String url = "user/login.jsp";
 		String id = request.getParameter("id"); //로그인 폼에서 입력한 아이디 비번
 		String upwd = request.getParameter("upwd");
+		String ugrade = request.getParameter("ugrade");
 		
 		UsersDAO usersdao = UsersDAO.getInstance();//(싱글톤)객체 생성, 클래스 이름이 아닌 객체 이름으로 접근해야함
-		int result = usersdao.userCheck(id, upwd); 	 
+		int result = usersdao.userCheck(id, upwd,ugrade); 	 
 		if(result ==1) {
-			memberVo mVo = mDao.getMember(userid);
+			UsersVO uVo = usersdao.getMember(id);
 			HttpSession session = request.getSession();
 			//세션은 값을 계속 물고 다녀서 중간에 값이 사라지거나 하지 않게 추가로 만들어주는 것
 			

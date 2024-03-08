@@ -17,7 +17,7 @@ import com.shop.dto.UsersVO;
 /**
  * Servlet implementation class RegisterServlet
  */
-@WebServlet("/Register.do")
+@WebServlet("/register.do")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,18 +33,20 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		UsersVO uvo = (UsersVO)session.getAttribute("loginUser");
-		Integer result = (Integer)session.getAttribute("result");
-		if(uvo != null&& result ==2) {
-			String url = "register.jsp";
-			RequestDispatcher rd = request.getRequestDispatcher(url);
-			rd.forward(request, response);
-			
-		}else{
-			response.sendRedirect("login.do");
-			
-		}
+		/*
+		 * HttpSession session = request.getSession(); UsersVO uvo =
+		 * (UsersVO)session.getAttribute("loginUser"); Integer result =
+		 * (Integer)session.getAttribute("result"); if(uvo != null&& result ==3) {
+		 * String url = "register.jsp"; RequestDispatcher rd =
+		 * request.getRequestDispatcher(url); rd.forward(request, response);
+		 * 
+		 * }else{ response.sendRedirect("login.do");
+		 * 
+		 * }
+		 */
+		
+		RequestDispatcher rd = request.getRequestDispatcher("user/register.jsp");
+		rd.forward(request, response);
 	}
 
 	
@@ -54,6 +56,10 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		System.out.println("어하");
+		System.out.println(request.getParameter("id"));
+		System.out.println(request.getParameter("ubirth"));
+		
 		UsersVO member = new UsersVO();
 		member.setId(request.getParameter("id"));
 		member.setUpwd(request.getParameter("upwd"));
@@ -63,15 +69,16 @@ public class RegisterServlet extends HttpServlet {
 		member.setUaddress(request.getParameter("uaddress"));
 		member.setUgrade(request.getParameter("ugrade"));
 		member.setUpoint(Integer.parseInt(request.getParameter("upoint")));
+
 		
 		UsersDAO usersdao = UsersDAO.getInstance(); 
-		usersdao.insertUsers(member);
+	    usersdao.insertUsers(member);
 		
-		request.setAttribute("loginUser", member);
-		request.setAttribute("message", "회원등록에 성공했습니다");
-		String url ="login.jsp"; 
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		/*
+		 * request.setAttribute("loginUser", member); request.setAttribute("message",
+		 * "회원등록에 성공했습니다"); String url ="login.jsp"; RequestDispatcher rd =
+		 * request.getRequestDispatcher(url); rd.forward(request, response);
+		 */
 		
 		
 		

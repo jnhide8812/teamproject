@@ -53,16 +53,21 @@
 	
 	<tr>
 	<td align = "center">생년월일</td>
-	<td><input type = "text" name="ubitrh"></td> 
+	<td><input type = "text" name="ubirth"></td> 
 	</tr>
 	
 	<tr>
 	<td align = "center">주소</td>
 	<td><input type = "text" name="uaddress"></td>
 	</tr>
+	<tr>
+	<td><input type = "hidden" name="ugrade" value="1"></td>
+	<td><input type = "hidden" name="upoint" value="0"></td>
+	</tr>
 	
 	<td colspan = "2" align="center">
-		<input type="button" value ="회원가입하기" id="joinBtn" onclick="location.href='login.jsp'">
+		<input type="submit" value="회원가입하기">
+		<input type="button" value ="로그인창으로" id="joinBtn" onclick="location.href='login.jsp'">
 	</td>
 	</tr>
 
