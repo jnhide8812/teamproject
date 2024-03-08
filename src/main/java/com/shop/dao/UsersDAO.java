@@ -186,7 +186,7 @@ public class UsersDAO {
 			}
 			public int updateUser(UsersVO uvo) {
 				int result = -1; //정보수정 실패 시 -1 반환
-				String sql = "update users set phone=?, uaddress=? where id=?" ;
+				String sql = "update users set uphone=?, uaddress=? where id=?" ;
 				Connection conn = null;
 				PreparedStatement pstmt = null;
 				try {

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.shop.dao.UsersDAO;
 import com.shop.dto.UsersVO;
@@ -31,12 +32,17 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id= request.getParameter("id");
+		//String id= request.getParameter("id");
+		String id = "dlseka12";
 		UsersDAO udao = UsersDAO.getInstance();
 		
 		UsersVO uvo = udao.selectById(id);
+		System.out.println("dkssud");
+		System.out.println(uvo.getUaddress());
 		
-		request.setAttribute("uvo", uvo);
+		HttpSession session = request.getSession();
+	
+		session.setAttribute("loginUser", uvo);
 		RequestDispatcher rd = request.getRequestDispatcher("user/userUpdatePage.jsp");
 		rd.forward(request, response);
 	}
@@ -47,12 +53,13 @@ public class UserUpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String id= request.getParameter("id");
+		System.out.println("id"+id);
 		String upwd= request.getParameter("upwd");
 		String uaddress = request.getParameter("uaddress");
 		String uphone= request.getParameter("uphone");
 		String ubirth = request.getParameter("ubirth");
 		String ugrade= request.getParameter("ugrade");
-		int upoint= Integer.parseInt(request.getParameter("upoint"));
+		Integer upoint= Integer.parseInt(request.getParameter("upoint"));
 		String uname = request.getParameter("uname");
 		
 	
@@ -70,7 +77,7 @@ public class UserUpdateServlet extends HttpServlet {
 		
 		UsersDAO udao = UsersDAO.getInstance();
 		udao.updateUser(uvo);
-		response.sendRedirect("login.do");
+		response.sendRedirect("mypage.do");
 		
 		
 		
