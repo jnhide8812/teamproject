@@ -50,8 +50,11 @@ public class LoginServlet extends HttpServlet {
 		
 		UsersDAO udao = UsersDAO.getInstance();  
 		int result = udao.userCheck(id, upwd, ugrade);
-		if(result == 2 | result == 3 | result == 4) {
-			UsersVO uvo = udao.selectById(id);
+		
+		
+		if(result == 2 || result == 3 || result == 4) {
+			UsersVO uvo = new UsersVO();
+			uvo = udao.selectById(id); 	 
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", uvo);
 			request.setAttribute("message", "로그인에 성공했습니다");
@@ -59,8 +62,8 @@ public class LoginServlet extends HttpServlet {
 		}else {
 			url="user/login.jsp";
 			if(result == 1) {
-			request.setAttribute("message", "비밀번호가 일치하지 않습니다");
-		}else if(result == -1) {
+				request.setAttribute("message", "비밀번호가 일치하지 않습니다");
+			}else if(result == -1) {
 			request.setAttribute("message", "등록되지 않은 아이디입니다");
 		}
 	}
