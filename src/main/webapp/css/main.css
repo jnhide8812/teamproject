@@ -1,108 +1,33 @@
 header {
 	z-index: 5;
 	position: fixed;
-	width: 1050px;
-	height:119px;
+	width: 100%;
+	height:100px;
 	padding-top: 36px;
 	transition: all .2s ease-in-out;
+	background-color: #FFFFFF;
+	border: 1px solid black;
 }
 header::before {
     content: "";
     display: block;
+    box-sizing: border-box;
     width:100%;
-    height:7.7rem;
+    height:190px;
     position: absolute;
     left: 0;
-    top:0;
     opacity: 0;
     transition: all .3s ease-in-out;
 }
-header .inner{
-	position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-	margin: 0px auto;
-}
-.middle {
+ul.login{
+	position: absolute;
+	right:0px;
+	top:0px;
 	display:flex;
-	justify-content: space-between;
-	
-}
-.search {
-	display: flex;
 	align-items: center;
-	justify-content: space-betweeen;
-	position: absolute; 
-	left: 325px;
-	top:-55px;
-	width: 400px;
-	height: 48px;
-	padding-left: 14px;
-	border: 1px solid #5F0080;
-	border-radius:6px;
-	background-color: white;
-	box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+	font-size: 12px;
 }
-.main_search {
-	width:300px;
-	background-color: inherit;
-	border:none;
-	outline: none;
-	font-size: 16px;
-	letter-spacing: -0.33px;
-}
-
-h1.tit_wrap a {
-    display: block;
-    position: relative;
-    font-size: 18px;
-    color: #5F0080;
-}
-h1.tit_wrap a img.mlogo {
-    opacity: 1;
-}
-.middle a img.cart {
-	display: block;
-	background: url(../icon/cart.png) no-repeat center/contain;
-    cursor: pointer;
-}
-
-nav ul{
-    display: flex;
-    align-items: right;
-}
-nav ul a{
-    display: block;
-    color: #fff;
-    font-size:12px;
-    margin-left: 3rem;
-}
-nav li.regi {
+.inner ul.regi {
+	display:block;
 	color: #5F0080;
-}
-.p_tit, .price {
-	font-size: 16px;
-}
-.price {
-	font-weight: 200;
-}
-span.discount {
-	font-weight: 200;
-	color: #FA622F;
-}
-.img_wrap {
-	width: 249px;
-	height: 319px;	
-}
-.shop3 {
-	height:220px;
-}
-.ft_sns {
-	width: 30px;
-	height: 30px;
-}
-.icon_wrap {
-	width: 34px;
-	height: 34px;
 }
