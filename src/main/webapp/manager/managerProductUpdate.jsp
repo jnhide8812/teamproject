@@ -89,7 +89,7 @@
                      <input type="file" name="pictureurl" value="${product.pictureurl}"><br>
                   </td>
                </tr>
-            </table>
+            </table> 
          </td>
       </tr>
    </table>
