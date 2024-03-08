@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 import com.shop.dao.UsersDAO;
 import com.shop.dto.UsersVO;
 
@@ -34,35 +35,36 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("user/login.jsp");
 		rd.forward(request,response);
-		
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String url = "user/login.jsp";
-		String id = request.getParameter("id"); //로그인 폼에서 입력한 아이디 비번
+		String id = request.getParameter("id"); 
 		String upwd = request.getParameter("upwd");
 		String ugrade = request.getParameter("ugrade");
 		
-		UsersDAO usersdao = UsersDAO.getInstance();//(싱글톤)객체 생성, 클래스 이름이 아닌 객체 이름으로 접근해야함
-		int result = usersdao.userCheck(id, upwd,ugrade); 	 
-		if(result ==1) {
-			UsersVO uVo = usersdao.selectById(id);
-			HttpSession session = request.getSession();
+		UsersDAO udao = UsersDAO.getInstance();  
+		int result = udao.userCheck(id, upwd);
 		
-			session.setAttribute("loginUser", uVo);
-			
-			request.setAttribute("message", "인증에 성공했습니다");
+		if(result == 1 || result == 2) {
+			UsersVO uvo = new UsersVO();
+			uvo = udao.selectById(id); 	 
+			HttpSession session = request.getSession();
+			session.setAttribute("loginUser", uvo);
+			request.setAttribute("message", "로그인에 성공했습니다");
 			url = "main.do";
 		}else if(result == 0) {
-			request.setAttribute("message", "비밀번호가 맞지 않습니다");
-			
+				request.setAttribute("message", "비밀번호가 일치하지 않습니다");
 		}else if(result == -1) {
-			request.setAttribute("message", "존재하지 않는 회원입니다");
-			
+			request.setAttribute("message", "등록되지 않은 아이디입니다");
 		}
+	
+
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}

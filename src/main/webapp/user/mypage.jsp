@@ -17,12 +17,12 @@
 			<td> ${loginUser.ugrade} ${loginUser.id }</td>
 		</tr>
 		<tr>
-			<input type="submit" value="개인정보 수정" onclick="location.href='userUpdatePage.do'">
+			<input type="submit" value="개인정보 수정" onclick="location.href='userUpdatePage.jsp'">
 		</tr>
 		<tr>
 	<td>적립금 ${loginUser.upoint}</td> 
 		<td colspan = "2" align="center">
-		<input type="submit" value="주문내역 보기" onclick="location.href='orderList.do'">
+		<input type="submit" value="주문내역 보기" onclick="location.href='orderList.jsp'">
 
 	</td>
 	</tr>

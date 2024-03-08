@@ -8,11 +8,10 @@
 <!-- 풋터 넣기 -->
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <table>
-        <c:forEach var="product" items="${productList }">
+        <c:forEach var="product" items="${ 수정 예정/이해가 잘 안됨}">
             <tr>
                 <td rowspan="2">
                     <img src="img/${product.pictureurl}" >
