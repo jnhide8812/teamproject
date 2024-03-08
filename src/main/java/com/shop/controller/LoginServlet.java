@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.daewoo.dao.MemberDAO;
-import com.daewoo.dto.memberVo;
+
 import com.shop.dao.UsersDAO;
+import com.shop.dto.UsersVO;
 
 /**
  * Servlet implementation class LoginServlet
@@ -35,36 +35,36 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("user/login.jsp");
 		rd.forward(request,response);
-		//맵핑 주소(login.do)는 get 방식을 이동해서 doget도 처리해줘야함 
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String url = "user/login.jsp";
-		String id = request.getParameter("id"); //로그인 폼에서 입력한 아이디 비번
+		String id = request.getParameter("id"); 
 		String upwd = request.getParameter("upwd");
 		String ugrade = request.getParameter("ugrade");
 		
-		UsersDAO usersdao = UsersDAO.getInstance();//(싱글톤)객체 생성, 클래스 이름이 아닌 객체 이름으로 접근해야함
-		int result = usersdao.userCheck(id, upwd,ugrade); 	 
-		if(result ==1) {
-			UsersVO uVo = usersdao.getMember(id);
+		UsersDAO udao = UsersDAO.getInstance();  
+		int result = udao.userCheck(id, upwd, ugrade);
+		if(result == 2 | result == 3 | result == 4) {
+			UsersVO uvo = udao.selectById(id);
 			HttpSession session = request.getSession();
-			//세션은 값을 계속 물고 다녀서 중간에 값이 사라지거나 하지 않게 추가로 만들어주는 것
-			
-			session.setAttribute("loginUser", mVo);
-			//mvo안에 담긴 정보를 loginuser라는 session의 변수로 만들어서 저장
-			request.setAttribute("message", "인증에 성공했습니다");
+			session.setAttribute("loginUser", uvo);
+			request.setAttribute("message", "로그인에 성공했습니다");
 			url = "main.jsp";
-		}else if(result == 0) {
-			request.setAttribute("message", "비밀번호가 맞지 않습니다");
-			
+		}else {
+			url="user/login.jsp";
+			if(result == 1) {
+			request.setAttribute("message", "비밀번호가 일치하지 않습니다");
 		}else if(result == -1) {
-			request.setAttribute("message", "존재하지 않는 회원입니다");
-			
+			request.setAttribute("message", "등록되지 않은 아이디입니다");
 		}
+	}
+
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
