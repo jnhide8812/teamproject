@@ -12,7 +12,7 @@
 <body>
 <div id="wrap" align="center">
 <h1>상품 등록 페이지 - 관리자</h1>
-<form action="post" name="frm" enctype="multipart/form-data">
+<form method="post" name="frm" enctype="multipart/form-data">
 
 	<input type="hidden" name="pcode" value="${product.pcode}" >
 	<input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
@@ -86,7 +86,7 @@
 					<tr>
 						<th>상품 사진</th>
 						<td>
-							<input type="file" name="pictureUrl"><br>
+							<input type="file" name="pictureurl"><br>
 						</td>
 					</tr>
 				</table>

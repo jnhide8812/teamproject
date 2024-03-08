@@ -9,7 +9,7 @@ public class ProductVO {
 	private String pinfo;
 	private String pictureurl;
 	private Integer pcode;
-	private Integer catecode;
+	private String catecode;
 	
 	
 	public String getPname() {
@@ -54,19 +54,20 @@ public class ProductVO {
 	public void setPcode(Integer pcode) {
 		this.pcode = pcode;
 	}
-	public Integer getCatecode() {
+	public String getCatecode() {
 		return catecode;
 	}
-	public void setCatecode(Integer catecode) {
+	public void setCatecode(String catecode) {
 		this.catecode = catecode;
 	}
-	
 	@Override
 	public String toString() {
-		return "ManagerVO [pname=" + pname + ", price=" + price + ", pstock=" + pstock + ", pstatus=" + pstatus
+		return "ProductVO [pname=" + pname + ", price=" + price + ", pstock=" + pstock + ", pstatus=" + pstatus
 				+ ", pinfo=" + pinfo + ", pictureurl=" + pictureurl + ", pcode=" + pcode + ", catecode=" + catecode
 				+ "]";
 	}
+
+	
 		
 	
 	

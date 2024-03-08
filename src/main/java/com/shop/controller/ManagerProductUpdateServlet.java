@@ -66,7 +66,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 		String pstatus = multi.getParameter("pstatus");
 		String pinfo = multi.getParameter("pinfo");
 		String pictureurl = multi.getParameter("pictureurl");
-		int catecode = Integer.parseInt("catecode");
+		String catecode = multi.getParameter("catecode");
 
 		if (pictureurl == null)
 			pictureurl = multi.getParameter("nonmakeImg");
