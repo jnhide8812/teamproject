@@ -5,7 +5,6 @@ public class OrderDetailVO {
 	private Integer ordernumber; //주문번호
 	private String id;  //아이디
 	private Integer pcode; //상품 코드
-	private Integer catecode; //카테고리코드
 	private Integer ordercnt; //상품수량
 	private String daddress; //배송주소
 	private String dname; //수령인명
@@ -33,12 +32,6 @@ public class OrderDetailVO {
 	public void setPcode(Integer pcode) {
 		this.pcode = pcode;
 	}
-	public Integer getCatecode() {
-		return catecode;
-	}
-	public void setCatecode(Integer catecode) {
-		this.catecode = catecode;
-	}
 	public Integer getOrdercnt() {
 		return ordercnt;
 	}
@@ -59,10 +52,11 @@ public class OrderDetailVO {
 	}
 	@Override
 	public String toString() {
-		return "OrederDetailVO [orderdetailnumber=" + orderdetailnumber + ", ordernumber=" + ordernumber + ", id=" + id
-				+ ", pcode=" + pcode + ", catecode=" + catecode + ", ordercnt=" + ordercnt + ", daddress=" + daddress
-				+ ", dname=" + dname + "]";
+		return "OrderDetailVO [orderdetailnumber=" + orderdetailnumber + ", ordernumber=" + ordernumber + ", id=" + id
+				+ ", pcode=" + pcode + ", ordercnt=" + ordercnt + ", daddress=" + daddress + ", dname=" + dname + "]";
 	}
+	
+	
 	
 	
 	
