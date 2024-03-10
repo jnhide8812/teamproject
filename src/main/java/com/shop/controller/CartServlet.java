@@ -33,11 +33,18 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//아이디 별로 카트 리스트 출력
+		
 		//String id = request.getParameter("loginUser.id");
 		String id = "user1";  //임시로 넣음 로그인 연결되면 삭제할것
 		CartDAO cdao = CartDAO.getInstance();
 		List<Object> cartList = cdao.selectCartById(id);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("id", id);   //세션 되면 수정할 것
 		request.setAttribute("cartList", cartList);
+		
+		//session.setAttribute("userid", mvo.getUserid());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
 		rd.forward(request, response);
@@ -47,6 +54,8 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//아이디와 pcode, cartcnt로 장바구니에 담는 메소드 호출
+		
 		request.setCharacterEncoding("utf-8");
 		//HttpSession session = request.getSession();
 		//String id = (String)session.getAttribute("id");  //로그인세션 가져오는 걸로 수정할 것
@@ -54,6 +63,7 @@ public class CartServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		int pcode = Integer.parseInt(request.getParameter("pcode"));
 		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
+		
 		
 		CartVO cvo = new CartVO();
 		cvo.setId(id);

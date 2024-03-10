@@ -1,14 +1,116 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>주문서 페이지</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<style>
+
+
+#wrap{
+	margin:5px;
+	padding:5px;
+
+}
+h1{
+	font-size:1.5em;
+	color:#5F0080;
+	font-weight: bold;
+	
+}
+#list{
+	width:600px;
+	font-size:1.2em;
+	table-layout: fixed;
+	
+}
+
+#list td, th{
+	padding:5px;
+	text-align: center;
+	vertical-align: middle;
+	border-bottom: 1px solid #5F0080;
+}
+
+#orderbox{
+	width:600px;
+	background-color: rgb(250, 250, 250);
+	border: 1px solid rgb(242,242,242);
+	margin:10px;
+	padding:30px;
+
+}
+
+#orderbox td{
+	font-size:1.3em;
+	line-height: 1em;
+	padding:20px 20px 1px 20px;
+	table-layout: fixed;
+	}
+
+</style>
+
 </head>
 <body>
+<div id="wrap" align="center">
+<h1>주문서</h1>
+<br><br>
 
+<form>
+<table id="list">
+<c:forEach var="orderList" items="${orderList }">
+<tr>
+<td>
+<input type="hidden" name="id" value="${id}">
+<input type="hidden" name="pcode[]" value="${orderList.pcode }"></td>
+<td>${orderList.pname }</td>
+<td><input type="hidden" name="ordercnt[]" value="${orderList.cartcnt }">${orderList.cartcnt }개</td>
+</tr>
+</c:forEach>
+</table>
+<br><br>
+
+
+<table id="orderbox">
+<tr>
+	<td>수령인</td>
+	<td><input type="text" name="dname" size="20">
+</tr>
+<tr>
+	<td>배송 주소</td>
+	<td><input type="text" name="daddress" size="50"></td>
+</tr>
+<tr>
+	<td>결제방법</td>
+	<td><select name="payment">
+		<option value="신용카드">신용카드</option>
+		<option value="무통장입금">무통장입금</option>
+	
+	</select></td>
+</tr>
+<tr>
+	<td>적립금 사용</td>
+	<td><input type="text" name="upoint" ></td><!--세션으로 로그인 유저의 마일리지 값 가져오기  -->
+</tr>
+<tr>
+	<td>총 결제금액</td>
+	<td>${totalprice }원</td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><input type="submit" value="결제하기"></td>
+</tr>
+<tr>
+	<td>&nbsp;</td><td></td>
+</tr>
+</table>
+</form>
+
+
+
+</div>
 
 </body>
 </html>
