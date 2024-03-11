@@ -70,7 +70,7 @@ public class UsersDAO {
 		
 	
 	public void insertUsers(UsersVO member) {
-		System.out.println("dao");
+		//System.out.println("dao");
 		String sql = "insert into users values(?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;

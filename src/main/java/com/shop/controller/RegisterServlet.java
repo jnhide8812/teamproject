@@ -29,34 +29,15 @@ public class RegisterServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * HttpSession session = request.getSession(); UsersVO uvo =
-		 * (UsersVO)session.getAttribute("loginUser"); Integer result =
-		 * (Integer)session.getAttribute("result"); if(uvo != null&& result ==3) {
-		 * String url = "register.jsp"; RequestDispatcher rd =
-		 * request.getRequestDispatcher(url); rd.forward(request, response);
-		 * 
-		 * }else{ response.sendRedirect("login.do");
-		 * 
-		 * }
-		 */
+		  response.sendRedirect("register.do");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("user/register.jsp");
-		rd.forward(request, response);
 	}
 
-	
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("어하");
+	
 		System.out.println(request.getParameter("id"));
 		System.out.println(request.getParameter("ubirth"));
 		
@@ -74,12 +55,15 @@ public class RegisterServlet extends HttpServlet {
 		UsersDAO usersdao = UsersDAO.getInstance(); 
 	    usersdao.insertUsers(member);
 		
-		/*
-		 * request.setAttribute("loginUser", member); request.setAttribute("message",
-		 * "회원등록에 성공했습니다"); String url ="login.jsp"; RequestDispatcher rd =
-		 * request.getRequestDispatcher(url); rd.forward(request, response);
-		 */
+		  request.setAttribute("loginUser", member); 
+		  request.setAttribute("message", "회원등록에 성공했습니다"); 
+		  String url ="login.do"; 
+		  System.out.println("로그인창으로 가랏");
+		  RequestDispatcher rd =request.getRequestDispatcher(url); 
+		  rd.forward(request, response);
 		
+		 
+			
 		
 		
 	}
