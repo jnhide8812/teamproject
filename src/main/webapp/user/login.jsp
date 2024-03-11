@@ -13,7 +13,7 @@
 	<form action="login.do" method="post" class="main">
 	<table class="log">
 		<tr>
-			<td colspan="1" align="center" class="tit" >로그인</td>
+			<th colspan="1" align="center" class="tit" >로그인</th>
 		</tr>
 		<tr>
 			<td><input type="text" placeholder="아이디를 입력해주세요" name="id" class="id"></td>
@@ -22,9 +22,11 @@
 			<td><input type="password" placeholder="비밀번호를 입력해주세요" name="upwd" class="pwd"></td>
 		</tr>
 		<tr>
-			<td class="fid"><a href="#">아이디 찾기</a></td>
-			<td>|</td>
-			<td class="fpwd"><a href="#">비밀번호 찾기</a></td>
+			<td class="find">
+				<a href="#">아이디 찾기</a>
+				<span class="divide"></span>
+				<a href="#">비밀번호 찾기</a>
+			</td>
 		</tr>
 		<tr>
 			<td>
