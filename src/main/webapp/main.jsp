@@ -38,7 +38,7 @@
                 	<button type="submit" class="search_icon"></button>
                 </div>
                </form>
-               <a href="cart.do" class="cart"></a>
+               <a href="cart.do" class="cart">cart</a>
         	 </div>
         	 <div class="h_bottom">
         	 	<div class="category">

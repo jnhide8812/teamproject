@@ -2,28 +2,31 @@
 *{
 	margin:0;
 	padding:0;
+	box-sizing: border-box;
 	font-family: "Noto Sans KR", sans-serif;
 	
 }
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	
 }
 a {
 	text-decoration: none;
 	color: black;
 }
-#main {
-	min-width: 1050px;
-	margin-top: 90px;
-	margin-bottom: 60px;
-	background-color: #ffffff;
-	display:block;
-	text-align:center;	
+#container {
+	background-color: #FFFFFF;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.log {
-	width:340px;
-	height: 345px;
-	
+.main {
+	height: 350px;
+	width: 340px;
+	border: 3px solid #5F0080;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	aling-items: center;
 }
