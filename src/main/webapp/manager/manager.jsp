@@ -13,7 +13,7 @@
 <header>
 	<table>
 		<tr>
-			<td><a href="main.do"><img src="kurly.jpeg"></a></td>
+			<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
 			<td>${users.uname}관리자님환영합니다.</td>
 		</tr>
 		
