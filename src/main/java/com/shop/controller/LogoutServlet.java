@@ -8,20 +8,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.shop.dao.UsersDAO;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class IdCheckServlet
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/IdCheck.do")
-public class IdCheckServlet extends HttpServlet {
+@WebServlet("/logout.do")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IdCheckServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,16 +29,11 @@ public class IdCheckServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String id = request.getParameter("id");
-		 
-		
-		UsersDAO udao = UsersDAO.getInstance();
-		int result = udao.confirmID(id);
-		request.setAttribute("id", id);
-		request.setAttribute("result", result);
-		RequestDispatcher rd = request.getRequestDispatcher("user/idCheck.jsp");
+		HttpSession session = request.getSession();
+		session.invalidate();//현재 세션을 무효화(또는 종료)시키는 메서드=로그아웃용 메서드
+		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 		rd.forward(request, response);
+		
 	}
 
 	/**

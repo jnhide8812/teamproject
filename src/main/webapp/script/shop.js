@@ -39,24 +39,42 @@ function shopCheck(){
 }
 
 //아이디 중복 체크 함수
-function idCheck(){
-   if(document.frm.id.value==""){
-      alert("아이디를 입력해주세요");
-      document.frm.id.focus();
-      return;
-   }
-   
-   var url="idCheck.do?id=" + document.frm.id.value;
-   window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200");
-   
+
+function idCheck() {
+    var id = document.frm.id.value;
+
+    if (id === "") {
+        alert("아이디를 입력해주세요");
+        document.frm.id.focus();
+        return;
+    }
+
+    $.ajax({
+        url: 'idCheck.do', // 실제 서버의 주소로 변경
+        type: 'GET',
+        data: {id: id},
+        success: function(response) {
+            // 서버에서 받은 응답(response)에 따라 처리
+            if (response === 'available') {
+                alert('사용 가능한 아이디입니다.');
+                document.frm.reid.value = id; // 중복 체크된 아이디를 숨은 필드에 저장
+            } else {
+                alert('이미 사용 중인 아이디입니다. 다른 아이디를 입력해주세요.');
+                document.frm.id.focus();
+            }
+        },
+        error: function(error) {
+            console.error('Error during id check:', error);
+        }
+    });
 }
 
-function idok(){
-   opener.frm.id.value=document.frm.id.value;
-   opener.frm.reid.value=document.frm.id.value;
-   self.close();
-   
+function idok() {
+    opener.frm.id.value = document.frm.id.value;
+    opener.frm.reid.value = document.frm.id.value;
+    self.close();
 }
+
 
 	
 function pwdTest() {

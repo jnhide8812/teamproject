@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../main.jsp" %>
 
 <!DOCTYPE html>
@@ -57,6 +58,7 @@
 				<td><input type="hidden" name="upoint"
 					value="${loginUser.upoint}"></td>
 			</tr>
+			<tr>
 			<td colspan="2" align="center"><input type="submit" value="수정"></td>
 			</tr>
 		</table>

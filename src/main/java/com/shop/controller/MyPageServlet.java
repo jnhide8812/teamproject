@@ -45,6 +45,7 @@ public class MyPageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		HttpSession session = request.getSession();
+		System.out.println("로그인 세션 연결");
 		String loginUser = (String)session.getAttribute("loginUser");
 	}
 
