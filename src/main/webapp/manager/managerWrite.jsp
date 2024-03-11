@@ -35,11 +35,11 @@
 					<th>카테고리</th>
 						<td>
 							<select name="catecode">
-								<option value="1" selected>육류</option>
-								<option value="2">과일</option>
-								<option value="3">채소</option>
-								<option value="4">가공식품</option>
-								<option value="5">유제품</option>
+								<option value="1(육류)" selected>육류</option>
+								<option value="2(과일)">과일</option>
+								<option value="3(채소)">채소</option>
+								<option value="4(가공식품)">가공식품</option>
+								<option value="5(유제품)">유제품</option>
 							</select>
 						</td>
 					</tr>

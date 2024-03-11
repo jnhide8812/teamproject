@@ -19,6 +19,7 @@
 	<form name="frm" method="post" action="ManagerOrderDetail.do">
 		<div id="wrap" align="center">
 			<h1>주문 상세 페이지 - 관리자</h1>
+			
 			<input type="hidden" name="orderdetailnumber"
 				value="${orderdetail.orderdetailnumber}">
 			<hr>
@@ -26,9 +27,9 @@
 
 			<table>
 				<tr>
-					<th style="width: 80px">수령인 이름</th>
-					<td><input type="text" name="dname"
-						value="${orderdetail.dname}" readonly></td>
+					<th style="width: 80px">아이디</th>
+					<td><input type="text" name="id"
+						value="${orderdetail.id}" readonly></td>
 				</tr>
 
 				<tr>

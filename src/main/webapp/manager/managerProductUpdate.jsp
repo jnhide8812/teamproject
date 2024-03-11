@@ -12,7 +12,7 @@
 <body>
 <div id="wrap" align="center">
 <h1>상품 수정 - 관리자</h1>
-<form action="post" name="frm" enctype="multipart/form-data">
+<form method="post" name="frm" enctype="multipart/form-data">
 
    <input type="hidden" name="pcode" value="${product.pcode}" >
    <input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
@@ -49,7 +49,7 @@
                   <td>
                      <select name="pstatus">
                         <option value="일반품목">일반품목</option>
-                        <option value=인기품목">인기품목</option>
+                        <option value=인기품목>인기품목</option>
                         <option value="할인품목">할인품목</option>
                      </select>
                   </td>
@@ -98,7 +98,7 @@
    <br>
 
    	<input type="hidden" name="pcode" value="${product.pcode}">
-	<input type="submit" value="수정완료">
+	<input type="submit" value="수정완료" onclick="return shopCheck()">
 	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
 
 

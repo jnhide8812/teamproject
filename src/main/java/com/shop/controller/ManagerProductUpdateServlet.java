@@ -36,7 +36,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Test");
+		//System.out.println("Test");
 		String pcode = request.getParameter("pcode");
 		ProductDAO pdao = ProductDAO.getInstance();
 		ProductVO pvo = pdao.selectProductByPcode(pcode);
@@ -52,6 +52,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//System.out.println("update do post 테스트");
 		request.setCharacterEncoding("UTF-8");
 		ServletContext context = getServletContext();
 		String path = context.getRealPath("img");
@@ -69,8 +70,8 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 		String pictureurl = multi.getParameter("pictureurl");
 		String catecode = multi.getParameter("catecode");
 
-		if (pictureurl == null)
-			pictureurl = multi.getParameter("nonmakeImg");
+		/*if (pictureurl == null)
+			pictureurl = multi.getParameter("nonmakeImg");*/
 
 		ProductVO pvo = new ProductVO();
 		pvo.setPcode(Integer.parseInt(pcode));
