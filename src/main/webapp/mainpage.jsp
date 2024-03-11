@@ -33,7 +33,7 @@
 			<div class="tit_wrap">
 				<h3 class="main_tit">
 					지금 가장 많이 담는 특가
-					<img src="./icon/r_errow.png" class="errow">
+					<img src="icon/r_errow.png" class="errow">
 				</h3>
 				<p class="con_txt">
 					컬리 추천 특가템 최대 50%
@@ -43,10 +43,10 @@
 				<li>
 					<a href="#">
 						<div class="img_wrap">
-							<img src="./img/apple.jpg">
+							<img src="img/apple.jpg">
 						</div>
 						<a href="#" class="cart_btn">
-							<img src="./icon/sh_cart" class="s_cart">
+							<img src="icon/sh_cart" class="s_cart">
 							담기
 						</a>
 						<h4	class="p_tit">
@@ -61,10 +61,10 @@
 				<li>
 					<a href="#">
 						<div class="img_wrap">
-							<img src="./img/apple.jpg">
+							<img src="img/apple.jpg">
 						</div>
 						<a href="#" class="cart_btn">
-							<img src="./icon/sh_cart" class="s_cart">
+							<img src="icon/sh_cart" class="s_cart">
 							담기
 						</a>
 						<h4	class="p_tit">
@@ -79,10 +79,10 @@
 				<li>
 					<a href="#">
 						<div class="img_wrap">
-							<img src="./img/apple.jpg">
+							<img src="img/apple.jpg">
 						</div>
 						<a href="#" class="cart_btn">
-							<img src="./icon/sh_cart" class="s_cart">
+							<img src="icon/sh_cart" class="s_cart">
 							담기
 						</a>
 						<h4	class="p_tit">
@@ -97,10 +97,10 @@
 				<li>
 					<a href="#">
 						<div class="img_wrap">
-							<img src="./img/apple.jpg">
+							<img src="img/apple.jpg">
 						</div>
 						<a href="#" class="cart_btn">
-							<img src="./icon/sh_cart" class="s_cart">
+							<img src="icon/sh_cart" class="s_cart">
 							담기
 						</a>
 						<h4	class="p_tit">
@@ -143,11 +143,11 @@
 			<li>
 				<a href="#">
 					<div class="img_wrap">
-						<img src="./img/apple.jpg">
+						<img src="img/apple.jpg">
 					</div>
 					
 					<a href="#" class="cart_btn">
-						<img src="./icon/sh_cart" class="s_cart">
+						<img src="icon/sh_cart" class="s_cart">
 							담기
 					</a>
 					
@@ -163,11 +163,11 @@
 			<li>
 				<a href="#">
 					<div class="img_wrap">
-						<img src="./img/apple.jpg">
+						<img src="img/apple.jpg">
 					</div>
 					
 					<a href="#" class="cart_btn">
-						<img src="./icon/sh_cart" class="s_cart">
+						<img src="icon/sh_cart" class="s_cart">
 							담기
 					</a>
 					
@@ -183,11 +183,11 @@
 			<li>
 				<a href="#">
 					<div class="img_wrap">
-						<img src="./img/apple.jpg">
+						<img src="img/apple.jpg">
 					</div>
 					
 					<a href="#" class="cart_btn">
-						<img src="./icon/sh_cart" class="s_cart">
+						<img src="icon/sh_cart" class="s_cart">
 							담기
 					</a>
 					

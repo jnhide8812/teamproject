@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,16 +13,24 @@
 <div id="container">
 	<header>
 		<div class="inner">
+		<nav class="h_top">
 			<ul>
+			<c:if test="${empty loginUser }">
 				<li class="regi"><a href="register.do">회원가입</a></li>
 				<li><a href="login.do">로그인</a></li>
+			</c:if>
+				<c:if test="${!empty loginUser }">
+					<li class="regi"><a href="logout.do">로그아웃</a></li>
+					<li><a href="mypage.do">마이페이지</a></li>
+			</c:if>
 			</ul>
+		</nav>
 			<div class="middle">
 				<h1 class="tit_wrap">
-				<a href="#">
-					<img src="icon/mlogo.png" class="mlogo" >
-				</a>
-				마켓컬리
+					<a href="#">
+						<img src="icon/mlogo.png" class="mlogo" >
+						마켓컬리
+					</a>
 				</h1>
 				<form action="https://search.naver.com/search.naver">
             	<div class="search">
@@ -29,11 +38,11 @@
                 	<button type="submit" class="search_icon"></button>
                 </div>
                </form>
-               <a href="cart.do" class="cart">cart</a>
+               <a href="cart.do" class="cart"></a>
         	 </div>
         	 <div class="h_bottom">
         	 	<div class="category">
-        	 		<img src="./icon/menu.png" class="menu">
+        	 		<img src="icon/menu.png" class="menu">
         	 		<span>카테고리</span>
         	 	</div>
         	 	<nav>
@@ -109,22 +118,22 @@
 				<ul class="sns_wrap"> 
 					<li>
 						<a href="#">
-							<img src="../icon/instagram.png" class="ft_sns">
+							<img src="icon/instagram.png" class="ft_sns">
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="../icon/facebook.png" class="ft_sns">
+							<img src="icon/facebook.png" class="ft_sns">
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="../icon/blog.png" class="ft_sns">
+							<img src="icon/blog.png" class="ft_sns">
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="../icon/post.png" class="ft_sns">
+							<img src="icon/post.png" class="ft_sns">
 						</a>
 					</li>
 					<li>
@@ -139,7 +148,7 @@
 			<div class="inner">
 				<ul class="ft_list2">
 					<li>
-						<img src="../icon/isms.png" class="icon_wrap">
+						<img src="icon/isms.png" class="icon_wrap">
 						<p class="ft_list_txt">
 							[인증범위] 컬리 쇼핑몰 서비스 개발, 운영<br>
 							(심사받지 않은 물리적 인프라 제외)<br>
@@ -147,21 +156,21 @@
 						</p>
 					</li>
 					<li>
-						<img src="../icon/ft_icon2.png" class="icon_wrap">
+						<img src="icon/ft_icon2.png" class="icon_wrap">
 						<p class="ft_list_txt">
 							개인정보보호 우수 웹사이트<br>
 							개인정보처리시스템 인증(ePRIVACY PLUS)
 						</p>
 					</li>
 					<li>
-						<img src="../icon/t_pay.png" class="icon_wrap">
+						<img src="icon/t_pay.png" class="icon_wrap">
 						<p class="ft_list_txt">
 							토스페이먼츠 구매안전(예스크로)<br>
 							서비스를 이용하실수 있습니다.
 						</p>
 					</li>
 					<li>
-						<img src="../icon/bank.png" class="icon_wrap">
+						<img src="icon/bank.png" class="icon_wrap">
 						<p class="ft_list_txt">
 							고객님이 현금으로 결제한 금액에 대한 우리은행과<br>
 							재무지급보증 계약을 채결하여 안전거래를 보장하고<br>
@@ -178,7 +187,7 @@
 					마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
 				</div>
 				<p class="con_txt">
-					<img src="../icon/c_icon.png" class="bottom">
+					<img src="icon/c_icon.png" class="bottom">
 					KURLY CORP.ALL RIGHTSRESERVED
 				</p>
 			</div>
