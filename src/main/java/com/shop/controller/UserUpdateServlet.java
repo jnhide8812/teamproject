@@ -58,6 +58,7 @@ public class UserUpdateServlet extends HttpServlet {
 		String ugrade= request.getParameter("ugrade");
 		Integer upoint= Integer.parseInt(request.getParameter("upoint"));
 		String uname = request.getParameter("uname");
+	
 		
 	
 		//회원정보를 vo객체에 저장
