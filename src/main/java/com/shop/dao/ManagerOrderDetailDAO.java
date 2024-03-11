@@ -162,17 +162,57 @@ public class ManagerOrderDetailDAO {
 			
 			
 			//주문 상세 수정
-			public ManagerOrderDetailVO selectOrderDetailByNumber(String orderdetailnumber) {
+			public ManagerOrderDetailVO selectOrderDetailByNumber(String id) {
 				Connection conn = null;
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;
-				String sql = 
+				String sql = "SELECT a.ordernumber, a.totalprice, a.orderstatus, a.ordercnt, b.orderdetailnumber, b.dnam, b.daddress, c.pname, c.price, c.pcode FROM ordertable a JOIN orderdetail b ON a.ordernumber = b.ordernumber JOIN product c ON b.pcode=c.pcode WHERE b.id='user1'";
+				ManagerOrderDetailVO vo = null;
 				
-				
+				try {
+					conn = DBManager.getConnection();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, id);
+					
+					rs = pstmt.executeQuery();
+					
+					if (rs.next()) {
+						vo = new ManagerOrderDetailVO();
+						vo.setOrdernumber(rs.getInt("ordernumber"));
+						vo.setTotalprice(rs.getInt("totalprice"));
+						vo.setOrderstatus(rs.getString("orderstatus"));
+						vo.setOrdercnt(rs.getInt("ordercnt"));
+						vo.setOrderdetailnumber(rs.getInt("orderdetailnumber"));
+						vo.setDname(rs.getString("dname"));
+						vo.setDaddress(rs.getString("daddress"));
+						vo.setPname(rs.getString("pname"));
+						vo.setPrice(rs.getInt("price"));
+						vo.setPcode(rs.getInt("pcode"));
+												
+					}
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					DBManager.close(conn, pstmt, rs);
+				}
+				return vo;
 			}
 			
-			
-			
-			
-			
-			
+			public void updateOrderstatus(ManagerOrderDetailVO vo) {
+				String sql = "update ordertable set orderstatus=? where id='user1'";
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				try {
+					conn = DBManager.getConnection();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, vo.getOrderstatus());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					DBManager.close(conn, pstmt);
+				}
+				
+			}
+						
+}
