@@ -73,3 +73,26 @@ nav.h_top ul li.regi a{
 	
 	background: url(../icon/search.png) no-repeat ;
 }
+
+footer{
+	display:flex;
+	align-items: flex-end;
+	height: 562px;
+	background-color: #ffffff;
+	width:100%;
+	position: absolute;
+	bottom:0;
+}
+
+footer.ft_shop3{
+	background-color: #f7f7f7;
+}
+img.ft_sns{
+	width: 30px;
+	height: 30px;
+}
+.icon_wrap{
+	width: 34px;
+	height: 34px;
+}
+
