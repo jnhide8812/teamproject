@@ -1,18 +1,18 @@
 package com.shop.dto;
 
 public class ManagerOrderDetailVO {
-	// orderdetail
+	//orderdetail
 	private Integer orderdetailnumber;
 	private String daddress;
 	private String dname;
-
-	// ordertable
+	
+	//ordertable
 	private Integer ordernumber;
 	private String orderstatus;
 	private Integer totalprice;
 	private Integer ordercnt;
-
-	// users
+	
+	//users
 	private String id;
 	private String upwd;
 	private String uname;
@@ -21,15 +21,18 @@ public class ManagerOrderDetailVO {
 	private String uaddress;
 	private String ugrade;
 	private Integer upoint;
-
-	// product
+	
+	//product
 	private Integer pcode;
 	private String pname;
 	private Integer price;
-
-	// cart
+	
+	//cart
 	private Integer cartcnt;
 
+	
+	
+	
 	public Integer getOrderdetailnumber() {
 		return orderdetailnumber;
 	}
@@ -191,4 +194,6 @@ public class ManagerOrderDetailVO {
 				+ ", pcode=" + pcode + ", pname=" + pname + ", price=" + price + ", cartcnt=" + cartcnt + "]";
 	}
 
+	
+	
 }
