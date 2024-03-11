@@ -1,4 +1,90 @@
-img{
-	width: 100px;
-	height: 80px;
+@import url(font.css);
+
+table{
+	width : 100%;
+	height : 120px;
+	border:3px solid #5f0080;
 }
+
+a{
+	text-decoration: none;
+}
+table th{
+	font-weight:bold;
+	text-align : left;
+	font-size: 1.5em;
+	color: #5f0080;
+}
+
+table a{
+	font-size: 16px;
+	color: #CCC;
+	text-decoration: none;
+}
+
+table a:hover{
+	font-weight: bold;
+	color: #5f0080;
+}
+
+
+
+
+
+img{
+	width: 150px;
+	height: 90px;
+	margin-left: 20px;
+}
+
+
+
+
+#item{
+	height : 120px;
+	background :#5f0080;
+	font-size: 18px;
+	padding: 30px;
+    border: 2px solid;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    line-height: 90px;
+}
+
+#item a{
+	color : white;
+	font-style: none;
+}
+
+
+#item:hover, #item:hover a{
+	font-weight: bold;
+	background: white;
+	
+	color: #5f0080;
+}
+
+
+
+
+
+
+#container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	text-decoration: none;
+	border: 1px #ccc;
+	padding: 40px;
+	
+}
+
+
+
+
+#padding{
+	padding-right: 80px;
+}
+
