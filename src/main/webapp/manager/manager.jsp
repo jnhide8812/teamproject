@@ -19,7 +19,7 @@
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
-			<a href="manager.jsp">관리자 메인으로</a>
+			<a href="manager.do">관리자 메인으로</a>
 			</td>
 	</tr>
 
@@ -28,15 +28,15 @@
 
 <div id="container">
 <div id="item">
-<p><a href="managerWrite.do">상품 등록</a></p>
+<p><a href="ManagerWrite.do">상품 등록</a></p>
 </div>
 
 <div id="item">
-<p><a href="managerList.do">상품리스트</a></p>
+<p><a href="ManagerList.do">상품리스트</a></p>
 </div>
 
 <div id="item">
-<p><a href="managerOrderList.do">주문 목록</a></p>
+<p><a href="ManagerOrderList.do">주문 목록</a></p>
 </div>
 
 <div id="item">
