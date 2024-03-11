@@ -19,7 +19,7 @@
 		
 		<tr>
 			<td colspan="7" style="border:white; text-align:right">
-			<a href="manager.jsp">관리자 메인</a>&nbsp;&nbsp;&nbsp;
+			<a href="Manager.do">관리자 메인</a>&nbsp;&nbsp;&nbsp;
 			<a href="logout.do">로그아웃</a>
 			</td>
 		</tr>
