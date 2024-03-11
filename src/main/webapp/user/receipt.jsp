@@ -59,7 +59,8 @@ h1{
 <h1>주문서</h1>
 <br><br>
 
-<form>
+<form method="post" action="receipt.do">
+
 <table id="list">
 <c:forEach var="orderList" items="${orderList }">
 <tr>
@@ -77,11 +78,11 @@ h1{
 <table id="orderbox">
 <tr>
 	<td>수령인</td>
-	<td><input type="text" name="dname" size="20">
+	<td><input type="text" name="dname" size="20" value="${loginUser.name }">
 </tr>
 <tr>
 	<td>배송 주소</td>
-	<td><input type="text" name="daddress" size="50"></td>
+	<td><input type="text" name="daddress" size="50" value="${loginUser.uaddress }"></td>
 </tr>
 <tr>
 	<td>결제방법</td>

@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 			if(result==2) {
 				url = "manager/manager.jsp";
 			}else {
-				url = "main.jsp";
+				url = "mainpage.jsp";
 			}
 				
 			

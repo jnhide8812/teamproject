@@ -36,6 +36,7 @@ public class CartServlet extends HttpServlet {
 		//아이디 별로 카트 리스트 출력
 		
 		HttpSession session = request.getSession();
+
 		String id = (String)session.getAttribute("id"); 
 		
 		CartDAO cdao = CartDAO.getInstance();
@@ -56,6 +57,7 @@ public class CartServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");  //로그인세션 가져오는 걸로 수정할 것
+		String loginUser = (String)session.getAttribute("loginUser");
 		
 		int pcode = Integer.parseInt(request.getParameter("pcode"));
 		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
