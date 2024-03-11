@@ -30,10 +30,10 @@
                         <th>카테고리</th>
                         <td><select name="catecode">
                               <option value="1" selected>육류</option>
-                              <option value="2">과일</option>
-                              <option value="3">채소</option>
-                              <option value="4">가공식품</option>
-                              <option value="5">유제품</option>
+                              <option value="2">채소</option>
+                              <option value="3">가공식품</option>
+                              <option value="4">유제품</option>
+                              <option value="5">과일</option>
                         </select></td>
                      </tr>
 
@@ -53,7 +53,7 @@
 
                      <tr>
                         <th>상품 가격</th>
-                        <td><input type="text" name="price">&nbsp원</td>
+                        <td><input type="text" name="price">&nbsp;원</td>
                      </tr>
 
                      <tr>

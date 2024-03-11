@@ -36,10 +36,10 @@
 						<td>
 							<select name="catecode">
 								<option value="1(육류)" selected>육류</option>
-								<option value="2(과일)">과일</option>
-								<option value="3(채소)">채소</option>
-								<option value="4(가공식품)">가공식품</option>
-								<option value="5(유제품)">유제품</option>
+								<option value="2(채소)">채소</option>
+								<option value="3(가공식품)">가공식품</option>
+								<option value="4(유제품)">유제품</option>
+								<option value="5(과일)">과일</option>
 							</select>
 						</td>
 					</tr>
@@ -99,7 +99,7 @@
 	<input type="submit" value="등록" onclick="return shopCheck()">&nbsp;&nbsp;
 	<input type="reset" value="다시작성">&nbsp;&nbsp;
 	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
-	
+	 
 </form>
 </div>
 </body>

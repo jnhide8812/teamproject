@@ -36,10 +36,10 @@
                   <td>
                      <select name="catecode">
                         <option value="1" selected>육류</option>
-                        <option value="2">과일</option>
-                        <option value="3">채소</option>
-                        <option value="4">가공식품</option>
-                        <option value="5">유제품</option>
+                        <option value="2">채소</option>
+                        <option value="3">가공식품</option>
+                        <option value="4">유제품</option>
+                        <option value="5">과일</option>
                      </select>
                   </td>
                </tr>
@@ -96,7 +96,7 @@
       </tr>
    </table>
    <br>
-
+ 
    	<input type="hidden" name="pcode" value="${product.pcode}">
 	<input type="submit" value="수정완료" onclick="return shopCheck()">
 	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
