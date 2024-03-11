@@ -37,8 +37,6 @@ public class UserUpdateServlet extends HttpServlet {
 		UsersDAO udao = UsersDAO.getInstance();
 		
 		UsersVO uvo = udao.selectById(id);
-		System.out.println("dkssud");
-		System.out.println(uvo.getUaddress());
 		
 		HttpSession session = request.getSession();
 	
@@ -53,7 +51,6 @@ public class UserUpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String id= request.getParameter("id");
-		System.out.println("id"+id);
 		String upwd= request.getParameter("upwd");
 		String uaddress = request.getParameter("uaddress");
 		String uphone= request.getParameter("uphone");
