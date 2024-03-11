@@ -93,7 +93,7 @@ h1{
 </tr>
 <tr>
 	<td>적립금 사용</td>
-	<td><input type="text" name="upoint" ></td><!--세션으로 로그인 유저의 마일리지 값 가져오기  -->
+	<td><input type="text" name="upoint" value="${loginUser.upoint }" ></td><!--세션으로 로그인 유저의 마일리지 값 가져오기  -->
 </tr>
 <tr>
 	<td>총 결제금액</td>
