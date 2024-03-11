@@ -56,6 +56,9 @@ public class LoginServlet extends HttpServlet {
 			uvo = udao.selectById(id); 	 
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", uvo);
+			session.setAttribute("id", uvo.getId());
+			
+			
 			request.setAttribute("message", "로그인에 성공했습니다");
 			url = "main.do";
 		}else if(result == 0) {
