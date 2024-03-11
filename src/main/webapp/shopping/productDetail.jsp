@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../shopping/main.jsp" %>
+<%@ include file="../main.jsp" %>
 
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>

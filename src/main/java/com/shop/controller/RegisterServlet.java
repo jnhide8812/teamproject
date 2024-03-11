@@ -26,11 +26,11 @@ public class RegisterServlet extends HttpServlet {
      */
     public RegisterServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  response.sendRedirect("register.do");
+		  RequestDispatcher rd = request.getRequestDispatcher("user/register.jsp");
+		  rd.forward(request, response);
 		
 	}
 

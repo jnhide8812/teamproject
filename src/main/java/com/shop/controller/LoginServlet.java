@@ -57,10 +57,16 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", uvo);
 			session.setAttribute("id", uvo.getId());
-			
+		
+			if(result==2) {
+				url = "Manager.do";
+			}else {
+				url = "main.do";
+			}
+				
 			
 			request.setAttribute("message", "로그인에 성공했습니다");
-			url = "main.do";
+			
 		}else if(result == 0) {
 				request.setAttribute("message", "비밀번호가 일치하지 않습니다");
 		}else if(result == -1) {
