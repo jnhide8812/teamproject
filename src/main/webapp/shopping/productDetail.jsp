@@ -11,20 +11,20 @@
 </head>
 <body>
     <table>
-        <c:forEach var="product" items="${ 수정 예정/이해가 잘 안됨}">
+       
             <tr>
                 <td rowspan="2">
-                    <img src="img/${product.pictureurl}" >
+                    <img src="img/${productDetail.pictureurl}" >
                 </td>
-                <td>${product.pname }</td>
+                <td>${productDetail.pname }</td>
             </tr>
             <tr>
-                <td>${product.price }</td>
+               <td style="text-align:right">${productDetail.price}원</td>
             </tr>
             <tr>
-                <td colspan="2">${product.pinfo }</td>
+                <td colspan="2">${productDetail.pinfo }</td>
             </tr>
-        </c:forEach>
+
     </table>
 </body>
 </html>
