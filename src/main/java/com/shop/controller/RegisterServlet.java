@@ -37,9 +37,6 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-	
-		System.out.println(request.getParameter("id"));
-		System.out.println(request.getParameter("ubirth"));
 		
 		UsersVO member = new UsersVO();
 		member.setId(request.getParameter("id"));
@@ -58,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
 		  request.setAttribute("loginUser", member); 
 		  request.setAttribute("message", "회원등록에 성공했습니다"); 
 		  String url ="login.do"; 
-		  System.out.println("로그인창으로 가랏");
+		 
 		  RequestDispatcher rd =request.getRequestDispatcher(url); 
 		  rd.forward(request, response);
 		

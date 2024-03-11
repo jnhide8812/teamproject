@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<form action="register.do" method="post">
+	<form action="register.do" name = "frm" method="post">
 		<table align="center" width="550">
 			<tr>
 				<td colspan="2" align="center">회원가입</td>
