@@ -2,6 +2,7 @@ package com.shop.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,7 +38,10 @@ public class ManagerOrderDetailServlet extends HttpServlet {
 		ManagerOrderDetailDAO dao = ManagerOrderDetailDAO.getInstance();
 		ManagerOrderDetailVO vo = dao.selectOrderDetailByNumber(orderdetailnumber);
 
-	}
+		request.setAttribute("manager", vo);
+		RequestDispatcher rd = request.getRequestDispatcher("manager/managerOrderDetail.jsp");
+		rd.forward(request, response);
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
