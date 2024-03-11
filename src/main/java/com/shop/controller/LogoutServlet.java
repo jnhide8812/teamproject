@@ -30,7 +30,7 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		session.invalidate();//현재 세션을 무효화(또는 종료)시키는 메서드=로그아웃용 메서드
+		session.invalidate();
 		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 		rd.forward(request, response);
 		
