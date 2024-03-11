@@ -1,23 +1,23 @@
 package com.shop.dto;
 
 public class OrderDetailVO {
-	private Integer orderdetailnumber; // 주문상세번호
-	private Integer ordernumber; //주문번호
+	private int orderdetailnumber; // 주문상세번호
+	private int ordernumber; //주문번호
 	private String id;  //아이디
-	private Integer pcode; //상품 코드
-	private Integer ordercnt; //상품수량
+	private int pcode; //상품 코드
+	private int ordercnt; //상품수량
 	private String daddress; //배송주소
 	private String dname; //수령인명
-	public Integer getOrderdetailnumber() {
+	public int getOrderdetailnumber() {
 		return orderdetailnumber;
 	}
-	public void setOrderdetailnumber(Integer orderdetailnumber) {
+	public void setOrderdetailnumber(int orderdetailnumber) {
 		this.orderdetailnumber = orderdetailnumber;
 	}
-	public Integer getOrdernumber() {
+	public int getOrdernumber() {
 		return ordernumber;
 	}
-	public void setOrdernumber(Integer ordernumber) {
+	public void setOrdernumber(int ordernumber) {
 		this.ordernumber = ordernumber;
 	}
 	public String getId() {
@@ -26,16 +26,16 @@ public class OrderDetailVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Integer getPcode() {
+	public int getPcode() {
 		return pcode;
 	}
-	public void setPcode(Integer pcode) {
+	public void setPcode(int pcode) {
 		this.pcode = pcode;
 	}
-	public Integer getOrdercnt() {
+	public int getOrdercnt() {
 		return ordercnt;
 	}
-	public void setOrdercnt(Integer ordercnt) {
+	public void setOrdercnt(int ordercnt) {
 		this.ordercnt = ordercnt;
 	}
 	public String getDaddress() {
@@ -55,6 +55,8 @@ public class OrderDetailVO {
 		return "OrderDetailVO [orderdetailnumber=" + orderdetailnumber + ", ordernumber=" + ordernumber + ", id=" + id
 				+ ", pcode=" + pcode + ", ordercnt=" + ordercnt + ", daddress=" + daddress + ", dname=" + dname + "]";
 	}
+	 
+	
 	
 	
 	

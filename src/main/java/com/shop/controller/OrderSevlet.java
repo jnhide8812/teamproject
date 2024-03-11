@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.shop.dao.OrderTableDAO;
+import com.shop.dto.OrderTableVO;
 import com.shop.dto.UsersVO;
 
 /**
@@ -58,8 +60,18 @@ public class OrderSevlet extends HttpServlet {
 		String dname = request.getParameter("dname");
 		String daddress = request.getParameter("daddress");
 		String payment = request.getParameter("payment");
-		String totalprice = request.getParameter("totalprice");		
+		int totalprice = Integer.parseInt(request.getParameter("totalprice"));		
+		String orderstatus = "주문중";  //request로 수정할 것
 		
+		OrderTableVO ovo = new OrderTableVO();
+		ovo.setId(id);
+		ovo.setTotalprice(totalprice);
+		ovo.setOrderstatus(orderstatus);
+		ovo.setPayment(payment);
+		
+		OrderTableDAO odao = OrderTableDAO.getInstance();
+		odao.insertOrder(id, totalprice, orderstatus, payment);
+				
 		
 		
 		/*체크박스 선택한 것만 표현 못함...
