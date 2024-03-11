@@ -54,10 +54,9 @@ public class CartServlet extends HttpServlet {
 		//아이디와 pcode, cartcnt로 장바구니에 담는 메소드 호출
 		
 		request.setCharacterEncoding("utf-8");
-		//HttpSession session = request.getSession();
-		//String id = (String)session.getAttribute("id");  //로그인세션 가져오는 걸로 수정할 것
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");  //로그인세션 가져오는 걸로 수정할 것
 		
-		String id = request.getParameter("id");
 		int pcode = Integer.parseInt(request.getParameter("pcode"));
 		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
 		

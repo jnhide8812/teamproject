@@ -59,9 +59,9 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("id", uvo.getId());
 		
 			if(result==2) {
-				url = "Manager.do";
+				url = "manager/manager.jsp";
 			}else {
-				url = "main.do";
+				url = "main.jsp";
 			}
 				
 			
