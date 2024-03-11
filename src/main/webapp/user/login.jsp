@@ -9,7 +9,7 @@
 <link rel = "stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
-<form action="Login.do" method="post" id="main">
+<form action="login.do" method="post" id="main">
 <table class="log">
 	<tr>
 		<td colspan="1" align="center" class="tit" >로그인</td>

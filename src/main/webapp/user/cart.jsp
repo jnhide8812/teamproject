@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="../shopping/main.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 <title>장바구니 보기</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <style>
-img{
+.cart img{
 	width:50px;
 	height:68px;
 	object-fit:cover;
@@ -40,7 +41,7 @@ h1{
 	border-bottom: 1px solid #5F0080;
 }
 
-.btn {
+.cart .btn {
 	width:8px;
 	height:8px;
 	margin:3px;
@@ -66,10 +67,10 @@ h1{
 </style>
 </head>
 <body>
-	<div id="wrap" align="center">
-		<h1>${id }님의 장바구니 리스트</h1><br>
+	<div id="wrap" class="cart" align="center">
+		<h1>${loginUser.id }님의 장바구니 리스트</h1><br>
 		<form method="post" action="receipt.do">
-			<input type="hidden" name="id" value="${id }">
+			<input type="hidden" name="id" value="${loginUser.id }">
 			<table id="list">
 				<tr>
 					<th width="1%"></th>
@@ -83,8 +84,8 @@ h1{
 				<c:forEach var="cartList" items="${cartList }">
 						
 					<tr >
-						<td><input type="checkbox" name="chk">
-							<input type="hidden" name="pcode[]" value="${cartList.pcode }">
+						<!-- <input type="checkbox" name="chk"> -->
+						<td>	<input type="hidden" name="pcode[]" value="${cartList.pcode }">
 						</td>
 						<td><a href="productDetail.do?code=${cartList.pcode }"><img src="img/${cartList.pictureurl }"></a></td>
 						<td>${cartList.pname }</td>

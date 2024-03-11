@@ -17,7 +17,7 @@ import com.shop.dto.UsersVO;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/Login.do")
+@WebServlet("/login.do")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -56,6 +56,9 @@ public class LoginServlet extends HttpServlet {
 			uvo = udao.selectById(id); 	 
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", uvo);
+			session.setAttribute("id", uvo.getId());
+			
+			
 			request.setAttribute("message", "로그인에 성공했습니다");
 			url = "main.do";
 		}else if(result == 0) {
