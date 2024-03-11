@@ -50,7 +50,7 @@
 
 				<tr>
 					<th>Total 금액</th>
-					<td><input type="text" name="totalprice">&nbsp원</td>
+					<td><input type="text" name="totalprice">&nbsp;원</td>
 				</tr>
 
 				<tr>

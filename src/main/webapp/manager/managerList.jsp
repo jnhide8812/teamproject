@@ -15,7 +15,7 @@
 	<table class="list">
 		<tr>
 			<td colspan="8" style="border:white; text-align:right">
-				<a href="ManagerWrite.do">상품 등록</a>&nbsp&nbsp&nbsp&nbsp
+				<a href="ManagerWrite.do">상품 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="Manager.do">메인 화면</a>
 			</td>
 		</tr>
@@ -33,16 +33,16 @@
 			
 		</tr>
 		
-		<c:forEach var="product" items="${managerList}">
+		<c:forEach var="productList" items="${productList}">
 		<tr class="recode">
-			<td>${product.pcode}></td>
-			<td>${product.pname}</td>
-			<td>${product.price}</td>
-			<td>${product.pstock}</td>
-			<td>${product.catecode}</td>
-			<td>${product.pstatus}</td>
-			<td><a href="ManagerProductUpdate.do?pcode=${product.pcode}">수정</a></td>
-			<td><a href="ManagerProductDelete.do?pcode=${product.pcode}">삭제</a></td>
+			<td>${productList.pcode}></td>
+			<td>${productList.pname}</td>
+			<td>${productList.price}</td>
+			<td>${productList.pstock}</td>
+			<td>${productList.catecode}</td>
+			<td>${productList.pstatus}</td>
+			<td><a href="ManagerProductUpdate.do?pcode=${productList.pcode}">수정</a></td>
+			<td><a href="ManagerProductDelete.do?pcode=${productList.pcode}">삭제</a></td>
 		</tr>
 		</c:forEach>
 	</table>
