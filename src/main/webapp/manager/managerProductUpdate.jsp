@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 등록 페이지</title>
+<title>상품 수정 페이지</title>
 <link rel="stylesheet" type="text/css" href="css/manager.css">
 <script type="text/javascript" src="script/shop.js"></script>
 </head>
@@ -34,11 +34,12 @@
                <tr>
             	  <th>카테고리</th>
                   <td>
-                     <select name="category" value="${product.catecode}">
+                     <select name="catecode">
                         <option value="1" selected>육류</option>
-                        <option value="2">채소</option>
-                        <option value="3">가공식품</option>
-                        <option value="4">유제품</option>
+                        <option value="2">과일</option>
+                        <option value="3">채소</option>
+                        <option value="4">가공식품</option>
+                        <option value="5">유제품</option>
                      </select>
                   </td>
                </tr>
@@ -46,9 +47,10 @@
                <tr>
                   <th>상품 상태</th>
                   <td>
-                     <select name="pstatus" value="${product.pstatus}">
-                        <option value="A" selected>인기품목</option>
-                        <option value="B">할인품목</option>
+                     <select name="pstatus">
+                        <option value="일반품목">일반품목</option>
+                        <option value=인기품목">인기품목</option>
+                        <option value="할인품목">할인품목</option>
                      </select>
                   </td>
                </tr>
@@ -56,28 +58,28 @@
                <tr>
                   <th style="width:80px">상품 이름</th>
                   <td>
-                     <input type="text" name="pname" value="${product.pname}" readonly>  
+                     <input type="text" name="pname" value="${product.pname}">  
                   </td>
                </tr>
                
                <tr>
                   <th>상품 가격</th>
                   <td>
-                     <input type="text" name="price" value="${product.price}">&nbsp원
+                     <input type="text" name="price" value="${product.price}">&nbsp;원
                   </td>
                </tr>
             
                <tr>
                   <th>상품 재고</th>
                   <td>
-                     <input type="text" name="pstock" value="${product.pstock}">&nbsp개
+                     <input type="text" name="pstock" value="${product.pstock}">&nbsp;개
                   </td>
                </tr>
                
                <tr>
                   <th>상품 설명</th>
                   <td>
-                     <textarea rows="7" cols="60" name="pinfo" readonly>
+                     <textarea rows="7" cols="60" name="pinfo">
                      	${product.pinfo}
                      </textarea>
                   </td> 
@@ -94,16 +96,11 @@
       </tr>
    </table>
    <br>
-<<<<<<< HEAD
+
    	<input type="hidden" name="pcode" value="${product.pcode}">
-	<input type="submit" value="수정완료" onclick="return shopCheck()">
+	<input type="submit" value="수정완료">
 	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
-	
-=======
-   	<input type="hidden" name="code" value="${product.code}">
-	<input type="submit" value="상품 수정" onclick="return productCheck()">
-	<input type="button" value="목록" onclick="location.href='ManagerList.do'">
->>>>>>> branch 'main' of https://github.com/jnhide8812/teamproject.git
+
 
 </form>
 </div>

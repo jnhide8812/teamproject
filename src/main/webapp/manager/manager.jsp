@@ -12,13 +12,13 @@
 <body>
 <header>
 	<table>
-		<tr text-align="center">
+		<tr>
 			<td><a href="Main.do"><img src="kurly.jpeg"></a></td>
 			<td>${users.uname}관리자님환영합니다.</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2" style="border:white; text-align:right">
+			<td colspan="7" style="border:white; text-align:right">
 			<a href="manager.jsp">관리자 메인</a>&nbsp&nbsp&nbsp
 			<a href="logout.do">로그아웃</a>
 			</td>
@@ -31,9 +31,8 @@
 				<ul>
 					<li><a href="ManagerWrite.do">상품 등록</a></li>
 					<br>
-					<br>
 				</ul>
-
+					
 				<ul>
 					<li><a href="ManagerList.do">상품리스트</a></li>
 					<br>

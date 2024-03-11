@@ -33,6 +33,7 @@ public class ManagerListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//System.out.println("Test");
 		ProductDAO pdao = ProductDAO.getInstance();
 		List<ProductVO> productList = pdao.selectAllProducts();
 		request.setAttribute("productList", productList);

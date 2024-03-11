@@ -22,6 +22,7 @@ public class ProductDAO {
 	
 	//상품 리스트
 	public List<ProductVO> selectAllProducts(){
+		//System.out.println("DAO연결");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -43,6 +44,7 @@ public class ProductDAO {
 				vo.setPictureurl(rs.getString("pictureurl"));
 				vo.setCatecode(rs.getString("catecode"));
 				vo.setPcode(rs.getInt("pcode"));
+				list.add(vo);
 			}
 			
 		} catch (Exception e) {
@@ -61,6 +63,7 @@ public class ProductDAO {
 		String sql = "insert into product(pname, price, pstock, catecode, pstatus, pinfo, pictureurl) values(?,?,?,?,?,?,?)";
 		try {
 			conn = DBManager.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,vo.getPname());
 			pstmt.setInt(2, vo.getPrice());
@@ -70,6 +73,7 @@ public class ProductDAO {
 			pstmt.setString(6, vo.getPinfo());
 			pstmt.setString(7, vo.getPictureurl());
 			
+			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -80,6 +84,7 @@ public class ProductDAO {
 	
 	//상품 수정
 	public ProductVO selectProductByPcode(String pcode) {
+		System.out.println("TestDAO");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -114,12 +119,14 @@ public class ProductDAO {
 	
 	//상품 업데이트
 	public void updateProduct(ProductVO vo) {
+		System.out.println("Test서블릿");
 		String sql = "update product set pname=?, price=?, pstock=?, catecode=?, pstatus=?, pinfo=?, pictureurl=? where pcode=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
+			
 			pstmt.setString(1, vo.getPname());
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setInt(3, vo.getPstock());
@@ -128,6 +135,7 @@ public class ProductDAO {
 			pstmt.setString(6, vo.getPinfo());
 			pstmt.setString(7, vo.getPictureurl());
 			pstmt.setInt(8, vo.getPcode());
+			
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

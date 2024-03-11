@@ -28,19 +28,21 @@
                   <table>
                      <tr>
                         <th>카테고리</th>
-                        <td><select name="category">
+                        <td><select name="catecode">
                               <option value="1" selected>육류</option>
-                              <option value="2">채소</option>
-                              <option value="3">가공식품</option>
-                              <option value="4">유제품</option>
+                              <option value="2">과일</option>
+                              <option value="3">채소</option>
+                              <option value="4">가공식품</option>
+                              <option value="5">유제품</option>
                         </select></td>
                      </tr>
 
                      <tr>
                         <th>상품 상태</th>
                         <td><select name="pstatus">
-                              <option value="A" selected>인기품목</option>
-                              <option value="B">할인품목</option>
+                              <option value="A" selected>일반품목</option>
+                              <option value="B">인기품목</option>
+                              <option value="C">할인품목</option>
                         </select></td>
                      </tr>
 
@@ -56,8 +58,7 @@
 
                      <tr>
                         <th>상품 재고</th>
-                        <td><input type="text" name="pstock"
-                           value="${product.stock}">&nbsp개</td>
+                        <td><input type="text" name="pstock">&nbsp;개</td>
                      </tr>
 
                      <tr>

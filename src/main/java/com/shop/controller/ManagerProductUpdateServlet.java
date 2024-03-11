@@ -36,10 +36,11 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("Test");
 		String pcode = request.getParameter("pcode");
-		ProductDAO mdao = ProductDAO.getInstance();
-		ProductVO mvo = mdao.selectProductByPcode(pcode);
-		request.setAttribute("manager", mvo);
+		ProductDAO pdao = ProductDAO.getInstance();
+		ProductVO pvo = pdao.selectProductByPcode(pcode);
+		request.setAttribute("product", pvo);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("manager/managerProductUpdate.jsp");
 		rd.forward(request, response);
@@ -59,7 +60,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 
 		MultipartRequest multi = new MultipartRequest(request, path, sizeLimit, enctype, new DefaultFileRenamePolicy());
 
-		String pcode = multi.getParameter("pcode");
+		String pcode =(multi.getParameter("pcode"));
 		String pname = multi.getParameter("pname");
 		int price = Integer.parseInt(multi.getParameter("price"));
 		int pstock = Integer.parseInt(multi.getParameter("pstock"));
@@ -71,18 +72,19 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 		if (pictureurl == null)
 			pictureurl = multi.getParameter("nonmakeImg");
 
-		ProductVO mvo = new ProductVO();
-		mvo.setPcode(Integer.parseInt(pcode));
-		mvo.setPname(pname);
-		mvo.setPrice(price);
-		mvo.setPstock(pstock);
-		mvo.setPstatus(pstatus);
-		mvo.setPinfo(pinfo); 
-		mvo.setPictureurl(pictureurl);
-		mvo.setCatecode(catecode);
+		ProductVO pvo = new ProductVO();
+		pvo.setPcode(Integer.parseInt(pcode));
+		pvo.setPname(pname);
+		pvo.setPrice(price);
+		pvo.setPstock(pstock);
+		pvo.setPstatus(pstatus);
+		pvo.setPinfo(pinfo); 
+		pvo.setPictureurl(pictureurl);
+		pvo.setCatecode(catecode);
 
-		ProductDAO mdao = ProductDAO.getInstance();
-		mdao.updateProduct(mvo);
+		ProductDAO pdao = ProductDAO.getInstance();
+		pdao.updateProduct(pvo);
+		
 		response.sendRedirect("ManagerList.do");
 
 	}
