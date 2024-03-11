@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.shop.dao.CartDAO;
 import com.shop.dto.CartVO;
+import com.shop.dto.UsersVO;
 
 /**
  * Servlet implementation class CartServlet
@@ -36,11 +37,10 @@ public class CartServlet extends HttpServlet {
 		//아이디 별로 카트 리스트 출력
 		
 		HttpSession session = request.getSession();
-
-		String id = (String)session.getAttribute("id"); 
+		UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
 		
 		CartDAO cdao = CartDAO.getInstance();
-		List<Object> cartList = cdao.selectCartById(id);
+		List<Object> cartList = cdao.selectCartById(loginUser.getId());
 		request.setAttribute("cartList", cartList);
 		
 		
@@ -56,24 +56,18 @@ public class CartServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");  //로그인세션 가져오는 걸로 수정할 것
-		String loginUser = (String)session.getAttribute("loginUser");
+		UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
 		
 		int pcode = Integer.parseInt(request.getParameter("pcode"));
 		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
 		
-		
 		CartVO cvo = new CartVO();
-		cvo.setId(id);
+		cvo.setId(loginUser.getId());
 		cvo.setPcode(pcode);
 		cvo.setCartcnt(cartcnt);
 		
 		CartDAO cdao = CartDAO.getInstance();
 		cdao.insertCart(cvo);
-		
-	
-		
-		
 		
 	}
 

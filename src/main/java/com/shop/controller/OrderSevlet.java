@@ -1,9 +1,6 @@
 package com.shop.controller;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,20 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.shop.dao.CartDAO;
 import com.shop.dto.UsersVO;
 
 /**
- * Servlet implementation class ReceiptServlet
+ * Servlet implementation class OrderSevlet
  */
-@WebServlet("/receipt.do")
-public class ReceiptServlet extends HttpServlet {
+@WebServlet("/order.do")
+public class OrderSevlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReceiptServlet() {
+    public OrderSevlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,36 +31,41 @@ public class ReceiptServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		RequestDispatcher rd = request.getRequestDispatcher("user/order.jsp");
+		rd.forward(request, response);
+				
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		//order 테이블이랑 주문 상세 테이블이 인서트 하는 sql 사용해야 함
+		//파라미터로 가져와야 하는 값 : 아이디 id, 결제금액 totalprice, 결제방법(payment 신용카드 etc)
+		//주문상세: 아이디, 상품코드(pcode), 상품수량(ordercnt), 배송주소(daddress), 수령인명(dname)
 		
+		//처리해야하는 값 : 주문상태, 주문번호ordernumber는 둘이 같은 걸로 처리해야함
+		
+		
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
+		String id = loginUser.getId();
 		
-		String totalprice = request.getParameter("totalprice");
+		String pcode[] = request.getParameterValues("pcode[]");
+		String ordercnt[] = request.getParameterValues("ordercnt[]");
+		
+		String dname = request.getParameter("dname");
+		String daddress = request.getParameter("daddress");
+		String payment = request.getParameter("payment");
+		String totalprice = request.getParameter("totalprice");		
 		
 		
-		CartDAO cdao = CartDAO.getInstance();
-		List<Object> orderList = cdao.selectCartById(loginUser.getId());
-		
-		request.setAttribute("orderList", orderList);
-		request.setAttribute("totalprice", totalprice);
-		
-		
-		
-		RequestDispatcher rd = request.getRequestDispatcher("user/receipt.jsp");
-		rd.forward(request, response);
 		
 		/*체크박스 선택한 것만 표현 못함...
-		 * String pcode[] = request.getParameterValues("pcode[]"); String cnt[] =
-		 * request.getParameterValues("cartcnt[]"); String totalprice =
+		 * String pcode[] = request.getParameterValues("pcode[]"); 
+		 * String cnt[] =request.getParameterValues("cartcnt[]");
+		 *  String totalprice =
 		 * request.getParameter("totalprice");
 		 * 
 		 * request.setAttribute("pcode[]", pcode); request.setAttribute("cnt[]", cnt);
@@ -72,6 +73,7 @@ public class ReceiptServlet extends HttpServlet {
 		 */
 		//System.out.println(Arrays.toString(pcode));
 		//System.out.println(Arrays.toString(cartcnt));
+		
 		
 	}
 

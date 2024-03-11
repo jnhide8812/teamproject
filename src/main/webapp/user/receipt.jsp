@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ include file="../main.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,13 +60,13 @@ h1{
 <h1>주문서</h1>
 <br><br>
 
-<form method="post" action="receipt.do">
+<form method="post" action="order.do">
 
 <table id="list">
 <c:forEach var="orderList" items="${orderList }">
 <tr>
 <td>
-<input type="hidden" name="id" value="${id}">
+<input type="hidden" name="id" value="${loginUser.id}">
 <input type="hidden" name="pcode[]" value="${orderList.pcode }"></td>
 <td>${orderList.pname }</td>
 <td><input type="hidden" name="ordercnt[]" value="${orderList.cartcnt }">${orderList.cartcnt }개</td>
@@ -78,7 +79,7 @@ h1{
 <table id="orderbox">
 <tr>
 	<td>수령인</td>
-	<td><input type="text" name="dname" size="20" value="${loginUser.name }">
+	<td><input type="text" name="dname" size="20" value="${loginUser.uname }">
 </tr>
 <tr>
 	<td>배송 주소</td>
