@@ -32,8 +32,8 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String id= request.getParameter("id");
-		String id = "dlseka12";
+		String id= request.getParameter("id");
+		
 		UsersDAO udao = UsersDAO.getInstance();
 		
 		UsersVO uvo = udao.selectById(id);

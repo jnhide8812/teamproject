@@ -5,7 +5,7 @@
 <html>
 <head>
 <%@ include file="../shopping/main.jsp" %>
-<!-- 풋터 넣기 -->
+
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
 <style type="text/css">
