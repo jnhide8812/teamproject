@@ -77,7 +77,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 		mvo.setPrice(price);
 		mvo.setPstock(pstock);
 		mvo.setPstatus(pstatus);
-		mvo.setPinfo(pinfo);
+		mvo.setPinfo(pinfo); 
 		mvo.setPictureurl(pictureurl);
 		mvo.setCatecode(catecode);
 
