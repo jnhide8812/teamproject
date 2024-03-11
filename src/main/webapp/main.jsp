@@ -13,26 +13,25 @@
 <div id="container">
 	<header>
 		<div class="inner">
-		<nav class="h_top">
-			<ul>
-			<c:if test="${empty loginUser }">
-				<li class="regi"><a href="register.do">회원가입</a></li>
-				<li><a href="login.do">로그인</a></li>
-			</c:if>
-				<c:if test="${!empty loginUser }">
-					<li>${loginUser.uname}님</li>
-					<li class="regi"><a href="logout.do">로그아웃</a></li>
-					<li><a href="mypage.do">마이페이지</a></li>
-			</c:if>
-			</ul>
-		</nav>
+			<nav class="h_top">
+				<ul>
+				<c:if test="${empty loginUser }">
+					<li class="regi"><a href="register.do">회원가입</a></li>
+					<li><a href="login.do">로그인</a></li>
+				</c:if>
+					<c:if test="${!empty loginUser }">
+						<li>${loginUser.uname}님</li>
+						<li class="regi"><a href="logout.do">로그아웃</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
+				</c:if>
+				</ul>
+			</nav>
+			
+			<div class="tit_wrap">
+					<div class="mainlg"></div>
+					<button class="goback">마켓컬리</button>
+			</div>
 			<div class="middle">
-				<h1 class="tit_wrap">
-					<a href="mainpage.jsp" class="goback">
-						<img src="icon/mlogo.png" alt="메인로고" class="m_logo">
-						<button class="kurly">마켓컬리</button>
-					</a>
-				</h1>
 				<form action="https://search.naver.com/search.naver">
             	<div class="search">
                 	<input type="text" placeholder="검색어를 입력해주세요" class="main_search">

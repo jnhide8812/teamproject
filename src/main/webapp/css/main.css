@@ -1,18 +1,11 @@
 .tit_wrap {
 	display: none;
 }
-.inner {
-    max-width: 1900px;
-    margin: auto;
-    position: relative;
-    height: 100%;
-}
-
 header {
 	z-index: 5;
 	position: fixed;
 	width:100%;
-	height:100px;
+	height:110px;
 	transition: all .2s ease-in-out;
 	background-color: #FFFFFF;
 }
@@ -27,7 +20,12 @@ header::before {
     opacity: 0;
     transition: all .3s ease-in-out;
 }
-
+.inner {
+    max-width: 1050px;
+    margin: auto;
+    position: relative;
+    height: 100%;
+}
 /*header-top*/
 .inner nav.h_top{
 	display:flex;
@@ -56,7 +54,7 @@ nav.h_top ul li.regi a{
 	align-items: center;
 	justify-content: space-between;
 }
-.search 
+
 .search .main_search{
 	width: 200px;
 	height: 20px;
@@ -69,11 +67,39 @@ nav.h_top ul li.regi a{
 	letter-spacing: -.3px;
 	outline:none;
 }
-.search .search_icon {
+button.search_icon {
 	
-	background: url(../icon/search.png) no-repeat ;
+	background: url(./icon/search.png) no-repeat ;
 }
 
+.h_bottom {
+	display:flex;
+	justify-content: space-between;
+	width: 840px;
+	height: 40px;
+	margin-top:10px;
+}
+img.menu {
+	margin-right: 14px;
+}
+.category span{
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.3px;
+}
+.h_bottom nav ul{
+	display:flex;
+	justify-content: center;
+	flex-direction: row;
+	padding-top: 5px;
+	line-height: 20px;
+	text-align: center;
+}
+.h_bottom nav ul li{
+	width:150px;
+	height:40px;
+}
 footer{
 	display:flex;
 	align-items: flex-end;
