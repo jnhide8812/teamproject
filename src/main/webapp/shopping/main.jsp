@@ -5,21 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div id="container">
 	<header>
 		<div class="inner">
 			<ul>
-				<li class="regi"><a href="#">회원가입</a></li>
-				<li><a href="#">로그인</a></li>
+				<li class="regi"><a href="register.do">회원가입</a></li>
+				<li><a href="login.do">로그인</a></li>
 			</ul>
 			<div class="middle">
 				<h1 class="tit_wrap">
 				<a href="#">
-					<img src="../icon/mlogo.png" class="mlogo" >
+					<img src="icon/mlogo.png" class="mlogo" >
 				</a>
 				마켓컬리
 				</h1>
@@ -29,11 +29,11 @@
                 	<button type="submit" class="search_icon"></button>
                 </div>
                </form>
-               <a href="#" class="cart">cart</a>
+               <a href="cart.do" class="cart">cart</a>
         	 </div>
         	 <div class="h_bottom">
         	 	<div class="category">
-        	 		<img src="../icon/menu.png" class="menu">
+        	 		<img src="./icon/menu.png" class="menu">
         	 		<span>카테고리</span>
         	 	</div>
         	 	<nav>

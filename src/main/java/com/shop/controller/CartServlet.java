@@ -35,8 +35,8 @@ public class CartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//아이디 별로 카트 리스트 출력
 		
-		//String id = request.getParameter("loginUser.id");
-		String id = "user1";  //임시로 넣음 로그인 연결되면 삭제할것
+		String id = request.getParameter("loginUser.id");
+		//String id = "user1";  //임시로 넣음 로그인 연결되면 삭제할것
 		CartDAO cdao = CartDAO.getInstance();
 		List<Object> cartList = cdao.selectCartById(id);
 		

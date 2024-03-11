@@ -67,9 +67,9 @@ h1{
 </head>
 <body>
 	<div id="wrap" align="center">
-		<h1>${id }님의 장바구니 리스트</h1><br>
+		<h1>${loginUser.id }님의 장바구니 리스트</h1><br>
 		<form method="post" action="receipt.do">
-			<input type="hidden" name="id" value="${id }">
+			<input type="hidden" name="id" value="${loginUser.id }">
 			<table id="list">
 				<tr>
 					<th width="1%"></th>
