@@ -51,7 +51,12 @@ nav.h_top ul li.regi a{
 	color: #5F0080;
 }
 
-
+.middle{
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.search 
 .search .main_search{
 	width: 200px;
 	height: 20px;

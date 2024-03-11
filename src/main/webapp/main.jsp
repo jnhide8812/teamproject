@@ -20,6 +20,7 @@
 				<li><a href="login.do">로그인</a></li>
 			</c:if>
 				<c:if test="${!empty loginUser }">
+					<li>${loginUser.uname}님</li>
 					<li class="regi"><a href="logout.do">로그아웃</a></li>
 					<li><a href="mypage.do">마이페이지</a></li>
 			</c:if>
@@ -27,9 +28,9 @@
 		</nav>
 			<div class="middle">
 				<h1 class="tit_wrap">
-					<a href="#">
-						<img src="icon/mlogo.png" class="mlogo" >
-						마켓컬리
+					<a href="mainpage.jsp" class="goback">
+						<img src="icon/mlogo.png" alt="메인로고" class="m_logo">
+						<button class="kurly">마켓컬리</button>
 					</a>
 				</h1>
 				<form action="https://search.naver.com/search.naver">
@@ -38,7 +39,9 @@
                 	<button type="submit" class="search_icon"></button>
                 </div>
                </form>
-               <a href="cart.do" class="cart">cart</a>
+               <a href="cart.do" class="cart">
+               		<img src="icon/h_cart.png" alt="위에 카트" class="h_cart">
+               </a>
         	 </div>
         	 <div class="h_bottom">
         	 	<div class="category">
