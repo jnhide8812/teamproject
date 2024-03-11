@@ -14,7 +14,7 @@ import com.shop.dao.UsersDAO;
 /**
  * Servlet implementation class IdCheckServlet
  */
-@WebServlet("/IdCheck.do")
+@WebServlet("/idCheck.do")
 public class IdCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,7 +32,7 @@ public class IdCheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
-		 
+		 System.out.println("아이디 중복 확인");
 		
 		UsersDAO udao = UsersDAO.getInstance();
 		int result = udao.confirmID(id);
