@@ -15,7 +15,7 @@
 <header>
 <table>
 	<tr text-align="center">
-		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
