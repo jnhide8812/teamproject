@@ -29,6 +29,7 @@ public class LogoutServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("logout");
 		HttpSession session = request.getSession();
 		session.invalidate();
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage.jsp");
