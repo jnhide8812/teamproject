@@ -19,7 +19,7 @@
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
-			<a href="manager.do">관리자 메인으로</a>
+			<a href="Manager.do">관리자 메인으로</a>
 			</td>
 	</tr>
 
