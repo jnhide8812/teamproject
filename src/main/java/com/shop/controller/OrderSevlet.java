@@ -85,12 +85,13 @@ public class OrderSevlet extends HttpServlet {
 		
 		//주문상세: 아이디, 상품코드(pcode), 상품수량(ordercnt), 배송주소(daddress), 수령인명(dname)
 		int result=0;  //주문상세에 insert 되면 1반환
+		OrderDetailVO odvo = new OrderDetailVO();
 		
 		for(int i=0; i<pcode.length;i++) {
 			int pcodei = Integer.parseInt(pcode[i]);
 			int ordercnti = Integer.parseInt(ordercnt[i]);
 			
-			OrderDetailVO odvo = new OrderDetailVO();
+			
 			odvo.setOrdernumber(ordernumber);
 			odvo.setId(id);
 			odvo.setPcode(pcodei);
@@ -102,6 +103,7 @@ public class OrderSevlet extends HttpServlet {
 			result = oddao.insertOrderDetail(odvo);  //주문상세가 등록되면 1반환
 			System.out.println("주문상세페이지에 등록 성공"+odvo);  //삭제예정
 		}	
+		
  
 		//주문 상세가 등록되면 1, 아니면 0 / 1이면 주문테이블의 상태를 주문중에서 주문완료로 변경
 		//리턴이 1이면 결제 완료로 변경하고 리턴이 0이면(주문상세 등록 실패하면) 오더테이블에서 삭제
@@ -115,8 +117,9 @@ public class OrderSevlet extends HttpServlet {
 			cdao.deleteAllByOrder(id);
 			
 		//	매니저창에서 주문확인하고 배송하면 재고에서 -1씩 하기 
-		//	request.setAttribute("orderdetail", odvo); 주문한 목록 리스트 오더컨펌에 표시하기
-			
+			request.setAttribute("ordertable", ovo); //주문한 목록 리스트 오더컨펌에 표시하기
+			request.setAttribute("orderdetail", odvo);
+			request.setAttribute("ordernumber", ordernumber); 
 			url = "user/orderConfirm.jsp";
 			
 			

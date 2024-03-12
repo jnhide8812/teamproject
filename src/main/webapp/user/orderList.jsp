@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../main.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주문 완료 페이지</title>
+<title>특정 유저의 오더리스트 보기</title>
 <style>
 
 
@@ -27,27 +26,19 @@ h1{
 	table-layout: fixed;
 	
 }
-
 </style>
-
 </head>
 <body>
-<div id="wrap" align="center">
-<h1>주문 완료</h1>
+<div id= "wrap" aling="center">
+특정 유저의 오더리스트 보기
+리스트로 구현 예정
+
 <table id="list">
-	<tr>
-		<td>주문번호 : ${ordernumber} || 결제금액 : ${ordertable.totalprice } </td>
-	</tr>
-	<tr>
-		<td> </td><td></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><a href="orderList.do">주문내역보기</a></td>
-	</tr>
+
+
 
 </table>
 
 </div>
-
 </body>
 </html>
