@@ -34,7 +34,7 @@ public class FindIdServlet extends HttpServlet {
 		rd.forward(request, response);
 		System.out.println("page 연결");
 	}
-//찾은 아이디 올릴 창 만들기
+//찾은 아이디 올릴 창 만들기!!
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
