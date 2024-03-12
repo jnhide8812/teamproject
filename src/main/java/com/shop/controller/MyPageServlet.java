@@ -32,21 +32,22 @@ public class MyPageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		        String id = request.getParameter("id"); //피코드를 이용해서 검색하고 싶으니까	
+		        String id = request.getParameter("id"); 	
 				UsersDAO udao = UsersDAO.getInstance();
 				UsersVO loginUser = udao.selectById(id);
 				request.setAttribute("loginUser", loginUser);
+				System.out.println("마이페이지 연결1");
 				RequestDispatcher rd = request.getRequestDispatcher("user/mypage.jsp");
+			
 				rd.forward(request, response);
+				System.out.println("마이페이지 연결2");
 			}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		HttpSession session = request.getSession();
-		System.out.println("로그인 세션 연결");
-		String loginUser = (String)session.getAttribute("loginUser");
+		
 	}
 
 }
