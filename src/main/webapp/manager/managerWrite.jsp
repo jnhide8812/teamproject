@@ -29,20 +29,20 @@
 	<input type="hidden" name="pcode" value="${product.pcode}" >
 	<input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
 	
-	<table class="list">
+	<table>
 		<tr>
 			<td>
 				<c:choose>
 					<c:when test="${empty product.pictureurl}">
-						<img src="img/noimg.png">
+						<img id="picture" src="img/noimg.png">
 					</c:when>
 					<c:otherwise>
-						<img src="img/${product.pictureurl}">
+						<img id="picture">
 					</c:otherwise>
 				</c:choose>
 			</td>
 			<td>
-				<table>
+				<table id="writelist">
 					<tr>
 					<th id="inner">카테고리</th>
 						<td>
@@ -101,6 +101,7 @@
 						<th id="inner">상품 사진</th>
 						<td>
 							<input type="file" name="pictureurl"><br>
+							<img id="picture"/>
 						</td>
 					</tr>
 				</table>

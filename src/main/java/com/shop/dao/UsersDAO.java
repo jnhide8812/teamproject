@@ -216,7 +216,7 @@ public class UsersDAO {
 	
 	//회원관리 리스트 출력(7)
 	public List<UsersVO> selectAllUsers(){
-		System.out.println("연결Test");
+		//System.out.println("연결Test");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

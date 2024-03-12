@@ -37,15 +37,21 @@ public class CartServlet extends HttpServlet {
 		//아이디 별로 카트 리스트 출력
 		
 		HttpSession session = request.getSession();
-		UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
-		
-		CartDAO cdao = CartDAO.getInstance();
-		List<Object> cartList = cdao.selectCartById(loginUser.getId());
-		request.setAttribute("cartList", cartList);
-		
-		
-		RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
-		rd.forward(request, response);
+	
+		if(session.getAttribute("loginUser") == null){
+			response.sendRedirect("login.do");
+		}
+		else {
+			UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
+			
+			CartDAO cdao = CartDAO.getInstance();
+			List<Object> cartList = cdao.selectCartById(loginUser.getId());
+			request.setAttribute("cartList", cartList);
+			
+			
+			RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 	/**
