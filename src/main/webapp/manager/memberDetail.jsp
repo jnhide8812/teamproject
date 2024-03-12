@@ -17,7 +17,7 @@
 			<a href="logout.do">로그아웃</a> &nbsp;
 			<a href="manager.do">관리자 메인으로</a>
 			</td>
-	</tr>
+	</tr> 
 </table>
 </header>
 <div id="wrap" align="center">
