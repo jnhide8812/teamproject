@@ -26,12 +26,11 @@
 				</c:if>
 				</ul>
 			</nav>
-			
-			<div class="tit_wrap">
-					<div class="mainlg"></div>
-					<button class="goback">마켓컬리</button>
-			</div>
 			<div class="middle">
+				<div class="logo">
+					<img src="./icon/h_logo.png" class="h_logo">
+					<h1><a href="mainpage.jsp" class="char_lg">마켓컬리</a></h1>
+				</div>
 				<form action="https://search.naver.com/search.naver">
             	<div class="search">
                 	<input type="text" placeholder="검색어를 입력해주세요" class="main_search">
@@ -42,6 +41,7 @@
                		<img src="icon/h_cart.png" alt="위에 카트" class="h_cart">
                </a>
         	 </div>
+
         	 <div class="h_bottom">
         	 	<div class="category">
         	 		<img src="icon/menu.png" class="menu">
