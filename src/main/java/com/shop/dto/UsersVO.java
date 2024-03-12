@@ -10,6 +10,8 @@ public class UsersVO {
 	private String ugrade;
 	private int upoint;
 	
+	//private void syso("삭제부탁") 
+	
 	public String getId() {
 		return id;
 	}
@@ -63,4 +65,5 @@ public class UsersVO {
 		return "UsersDTO [id=" + id + ", upwd=" + upwd + ", uname=" + uname + ", uphone=" + uphone + ", ubirth="
 				+ ubirth + ", uaddress=" + uaddress + ", ugrade=" + ugrade + ", upoint=" + upoint + "]";
 	}
+	syso
 }
