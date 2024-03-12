@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>주문서 페이지</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<style>
+<!-- <style>
 
 
 #wrap{
@@ -52,7 +52,7 @@ h1{
 	table-layout: fixed;
 	}
 
-</style>
+</style> -->
 
 </head>
 <body>
