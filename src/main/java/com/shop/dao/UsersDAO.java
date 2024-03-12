@@ -213,7 +213,7 @@ public class UsersDAO {
 		return result;
 
 	}
-	
+	 
 	//회원관리 리스트 출력(7)
 	public List<UsersVO> selectAllUsers(){
 		//System.out.println("연결Test");
