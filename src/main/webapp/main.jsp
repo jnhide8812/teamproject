@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="container">
-	<!--<header>
+	<header>
 		<div class="inner">
 			<nav class="h_top">
 				<ul>
@@ -56,7 +56,7 @@
         	 	</nav>
 			</div>
 		</div>
-	</header>  -->
+	</header>  
 	<div class="ft_line">
 	<footer>
 		<div class="ft_shop1">
