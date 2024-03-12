@@ -1,6 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,7 +11,7 @@
 <body>
 <header>
 <table>
-	<tr text-align="center">
+	<tr>
 		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">

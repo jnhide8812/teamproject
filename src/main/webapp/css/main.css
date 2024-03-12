@@ -1,3 +1,5 @@
+@import url(style.css);
+
 .tit_wrap {
 	display: none;
 }
@@ -149,16 +151,43 @@ img.menu {
 	color: rgb(51, 51, 51);
 	cursor: pointer;
 }
+
+
+
+/*footer*/
+.ft_line{
+	padding-top: 30px;
+	border-top: 1px solid rgb(247, 247, 247);
+}
+
 footer{
 	display:flex;
 	align-items: flex-end;
-	height: 562px;
+	height: 400px;
 	background-color: #ffffff;
 	width:100%;
 	position: absolute;
 	bottom:0;
+	margin: 0px auto;
 }
-
+.ft_shop1 h7.main_tit{
+	font-size: 20px;
+	font-weight:500;
+	line-height: 29px;
+	padding-bottom: 17px;
+}
+.ft_left p.con_txt{
+	display:block;
+	padding-bottom: 20px;
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: 700px;
+}
+span.num{
+	margin-left: 8px;
+	font-weight: normal;
+	font-size: 16px;
+}
 footer.ft_shop3{
 	background-color: #f7f7f7;
 }

@@ -57,17 +57,18 @@
 			</div>
 		</div>
 	</header>
+	<div class="ft_line">
 	<footer>
 		<div class="ft_shop1">
 			<div class="inner">
 			<div class="ft_left">
 				<div class="tit_wrap">
 					<h7 class="main_tit">
-						고객행복 센터
+						고객행복센터
 					</h7>
 					<p class="con_txt">
 						<span class="num">1644-1107</span>
-						월~토요일 오전7시- 오후6시
+						월~토요일 오전7시-오후6시
 					</p>
 				</div>
 				<ul class="ft_list">
@@ -140,7 +141,7 @@
 					</li>
 					<li>
 						<a href="#">
-							<img src="../icon/youtube.png" class="ft_sns">
+							<img src="icon/youtube.png" class="ft_sns">
 						</a>
 					</li>
 				</ul>
@@ -195,6 +196,7 @@
 			</div>
 		</div>
 	</footer>
+	</div>
 </div>
 </body>
 </html>

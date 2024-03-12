@@ -147,47 +147,26 @@ public class CartDAO {
 	
 	}
 	
-		//아이디값, pcode, ordercnt로 주문할 사항 보기 --삭제예정
-		public List<Object> selectReceiptByIdPcodeOrdercnt(String id, int pcode, int ordercnt){
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			List<Object> list = new ArrayList<>();
+	//주문 성공하면 카트에 있는 내역 전체 삭제
+	public void deleteAllByOrder(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete from cart where id=?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
 			
-			
-			//product a,  users c
-			
-			
-			String sql = "select a.pname, a.price, a.pictureurl,c.uname"
-					+ "from product a join "
-									+ "users c on c.id=b.id "
-									+ "where b.id =?";
-			try {
-				conn = DBManager.getConnection();
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, id);
-				rs = pstmt.executeQuery();
-				
-				while(rs.next()) {
-					Map<String,Object> hm = new HashMap<>();
-					hm.put("pcode", rs.getInt("pcode"));
-					hm.put("cartnumber", rs.getInt("cartnumber"));
-					hm.put("uname", rs.getString("uname"));
-					hm.put("pname", rs.getString("pname"));
-					hm.put("pictureurl", rs.getString("pictureurl"));
-					hm.put("price", rs.getString("price"));
-					hm.put("cartcnt", rs.getString("cartcnt"));
-					list.add(hm);
-					
-				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}finally {
-				DBManager.close(conn, pstmt, rs);
-			}
-			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
 		}
+		
+		
+	}
 	
 	
 	
