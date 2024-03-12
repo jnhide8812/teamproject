@@ -6,14 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록 페이지</title>
-<link rel="stylesheet" type="text/css" href="css/managerWrite.css">
+<link rel="stylesheet" type="text/css" href="css/manager.css">
 <script type="text/javascript" src="script/shop.js"></script>
 </head>
 <body>
 <header>
 <table>
 	<tr text-align="center">
-		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
@@ -44,7 +44,7 @@
 			<td>
 				<table>
 					<tr>
-					<th>카테고리</th>
+					<th id="inner">카테고리</th>
 						<td>
 							<select name="catecode">
 								<option value="1(육류)" selected>육류</option>
@@ -57,7 +57,7 @@
 					</tr>
 					
 					<tr>
-						<th>상품 상태</th>
+						<th id="inner">상품 상태</th>
 						<td>
 							<select name="pstatus">
 								<option value="일반품목" selected>일반품목</option>
@@ -68,28 +68,28 @@
 					</tr>
 				
 					<tr>
-						<th style="width:80px">상품 이름</th>
+						<th style="width:80px" id="inner">상품 이름</th>
 						<td>
 							<input type="text" name="pname" value="${product.pname}" size="80">
 						</td>
 					</tr>
 					
 					<tr>
-						<th>상품 가격</th>
+						<th id="inner">상품 가격</th>
 						<td>
 							<input type="text" name="price" value="${product.price}">&nbsp;원
 						</td>
 					</tr>
 				
 					<tr>
-						<th>상품 재고</th>
+						<th id="inner">상품 재고</th>
 						<td>
 							<input type="text" name="pstock" value="${product.pstock}">&nbsp;개
 						</td>
 					</tr>
 					
 					<tr>
-						<th>상품 설명</th>
+						<th id="inner">상품 설명</th>
 						<td>
 							<textarea rows="7" cols="60" name="pinfo">
 								${product.pinfo}
@@ -98,7 +98,7 @@
 					</tr>
 					
 					<tr>
-						<th>상품 사진</th>
+						<th id="inner">상품 사진</th>
 						<td>
 							<input type="file" name="pictureurl"><br>
 						</td>
