@@ -147,7 +147,7 @@ public class CartDAO {
 	
 	}
 	
-		//아이디값, pcode, ordercnt로 주문할 사항 보기 
+		//아이디값, pcode, ordercnt로 주문할 사항 보기 --삭제예정
 		public List<Object> selectReceiptByIdPcodeOrdercnt(String id, int pcode, int ordercnt){
 			Connection conn = null;
 			PreparedStatement pstmt = null;

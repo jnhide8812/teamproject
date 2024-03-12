@@ -95,11 +95,11 @@ h1{
 </tr>
 <tr>
 	<td>적립금 사용</td>
-	<td><input type="text" name="upoint" value="${loginUser.upoint }" ></td><!--세션으로 로그인 유저의 마일리지 값 가져오기  -->
+	<td><input type="text" name="upoint" value="${loginUser.upoint }" ></td><!--로그인 유저의 마일리지 값 넘지못하게 제한할것  -->
 </tr>
 <tr>
 	<td>총 결제금액</td>
-	<td>${totalprice }원</td>
+	<td>${totalprice }원 <input type ="hidden" name="totalprice" value="${totalprice }"></td>
 </tr>
 <tr>
 	<td colspan="2" align="center"><input type="submit" value="결제하기"></td>

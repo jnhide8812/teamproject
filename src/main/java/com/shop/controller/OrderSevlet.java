@@ -1,6 +1,7 @@
 package com.shop.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.shop.dao.OrderTableDAO;
+import com.shop.dto.OrderDetailVO;
 import com.shop.dto.OrderTableVO;
 import com.shop.dto.UsersVO;
 
@@ -70,9 +72,34 @@ public class OrderSevlet extends HttpServlet {
 		ovo.setPayment(payment);
 		
 		OrderTableDAO odao = OrderTableDAO.getInstance();
-		odao.insertOrder(id, totalprice, orderstatus, payment);
+		odao.insertOrder(ovo);
+		System.out.println("주문테이블에 등록성공 : "+ovo);
+		
+		int ordernumber = odao.selectOrdernumber(id);
+		System.out.println("ordernumber2: "+ordernumber);
+		
+		
+		//주문상세: 아이디, 상품코드(pcode), 상품수량(ordercnt), 배송주소(daddress), 수령인명(dname)
+		for(String a : pcode) {
+			System.out.println("pcode orderstatus: "+pcode.toString().indexOf(orderstatus));
+		}
+		
+		for(int i=0; i<pcode.length;i++) {
+			System.out.println("pcode indexof: "+pcode.toString().indexOf(i));
+		}
+		
+			
+			OrderDetailVO odvo = new OrderDetailVO();
+			odvo.setId(id);
+		//	odvo.setPcode(pcode);
+		//	odvo.setOrdercnt(ordercnt);
+			odvo.setDaddress(daddress);
+			odvo.setDname(dname);
+		
 				
 		
+		
+			System.out.println(Arrays.toString(pcode));
 		
 		/*체크박스 선택한 것만 표현 못함...
 		 * String pcode[] = request.getParameterValues("pcode[]"); 
@@ -83,6 +110,8 @@ public class OrderSevlet extends HttpServlet {
 		 * request.setAttribute("pcode[]", pcode); request.setAttribute("cnt[]", cnt);
 		 * request.setAttribute("totalprice", totalprice);
 		 */
+		
+		
 		//System.out.println(Arrays.toString(pcode));
 		//System.out.println(Arrays.toString(cartcnt));
 		
