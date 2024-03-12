@@ -1,5 +1,5 @@
 package com.shop.dto;
-
+ 
 public class OrderTableVO {
 	private int ordernumber; //주문번호
 	private String id; //아이디
