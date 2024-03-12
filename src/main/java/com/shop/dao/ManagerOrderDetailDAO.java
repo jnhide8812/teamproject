@@ -11,7 +11,7 @@ import com.shop.dto.ManagerOrderDetailVO;
 import util.DBManager;
 
 public class ManagerOrderDetailDAO {
-	
+
 	public ManagerOrderDetailDAO() {
 
 	}
@@ -20,6 +20,35 @@ public class ManagerOrderDetailDAO {
 
 	public static ManagerOrderDetailDAO getInstance() {
 		return instance;
+	}
+
+	// 주문 목록(리스트) 전용
+	public List<ManagerOrderDetailVO> selectOrderList() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select a.ordernumber, a.orderstatus, b.id, b.daddress from ordertable a join orderdetail b on a.ordernumber = b.ordernumber WHERE b.id = 'user1'";
+
+		List<ManagerOrderDetailVO> orderlist = new ArrayList<ManagerOrderDetailVO>();
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ManagerOrderDetailVO vo = new ManagerOrderDetailVO();
+				vo.setOrdernumber(rs.getInt("ordernumber"));
+				vo.setOrderstatus(rs.getString("orderstatus"));
+				vo.setId(rs.getString("id"));
+				vo.setDaddress(rs.getString("daddress"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return orderlist;
 	}
 
 	// 회원 리스트 뽑아오기(7)
@@ -196,6 +225,7 @@ public class ManagerOrderDetailDAO {
 		}
 		return vo;
 	}
+
 	// 주문 상세 수정(6)
 	public void updateOrderstatus(ManagerOrderDetailVO vo) {
 		String sql = "update ordertable set orderstatus=? where id='user1'";

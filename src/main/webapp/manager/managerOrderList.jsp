@@ -36,9 +36,9 @@
 		<tr class="recode">
 			<td><a href="ManagerOrderDetail.do?ordernumber=${orderdetail.ordernumber}"></a></td>
 			<td>${managerOrderList.id}</td>
-			<td>${managerOrderList.uaddress}</td>
+			<td>${managerOrderList.daddress}</td>
 			<td></td>
-			<td>${managerOrderList.pstatus}</td>
+			<td>${managerOrderList.orderstatus}</td>
 		</tr>
 		</c:forEach>
 		

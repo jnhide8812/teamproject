@@ -34,7 +34,7 @@ public class ManagerOrderListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("Test");
+		System.out.println("Test");
 		ManagerOrderDetailDAO modao = ManagerOrderDetailDAO.getInstance();
 		List<ManagerOrderDetailVO> managerOrderList = modao.selectAllMembers();
 		request.setAttribute("managerOrderList", managerOrderList);
