@@ -9,6 +9,7 @@ public class UsersVO {
 	private String uaddress;
 	private String ugrade;
 	private int upoint;
+
 	public String getId() {
 		return id;
 	}
@@ -62,7 +63,5 @@ public class UsersVO {
 		return "UsersVO [id=" + id + ", upwd=" + upwd + ", uname=" + uname + ", uphone=" + uphone + ", ubirth=" + ubirth
 				+ ", uaddress=" + uaddress + ", ugrade=" + ugrade + ", upoint=" + upoint + "]";
 	}
-	
-	
 
 }

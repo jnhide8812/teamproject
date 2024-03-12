@@ -15,8 +15,14 @@
 
 #writelist{
 	border: none;
+	width:100%;
+	font-size:14px;
+	line-height: 24px;
+	font-style: bold;
+	margin-top:10px;
+	margin-bottom :10px;
+	border-collapse: collapse;
 }
-
 
 table#list td, table#list th{
 	border: #CCC solid 1px;
@@ -61,6 +67,9 @@ img#logo{
 	margin-left: 20px;
 }
 
+img#picture{
+	margin: 10px;
+}
 
 
 a:hover{

@@ -11,7 +11,7 @@
 <body>
 <header>
 <table>
-	<tr text-align="center">
+	<tr>
 		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
