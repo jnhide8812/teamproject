@@ -14,12 +14,13 @@ public class OrderDetailDAO {
 	}
 	private static OrderDetailDAO instance = new OrderDetailDAO();
 	
-	private static OrderDetailDAO getInstance() {
+	public static OrderDetailDAO getInstance() {
 		return instance;
 	}
 	
 	//주문상세 테이블에 인서트하기
-	public void insertOrderDetail(OrderDetailVO odvo) {
+	public int insertOrderDetail(OrderDetailVO odvo) {
+		int result = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO orderdetail (ordernumber, id, pcode, ordercnt, daddress, dname) VALUES (?, ?, ?, ?, ?,?)";
@@ -34,7 +35,7 @@ public class OrderDetailDAO {
 			pstmt.setString(5, odvo.getDaddress());
 			pstmt.setString(6, odvo.getDname());
 			
-			pstmt.executeUpdate();
+			result = pstmt.executeUpdate();  //주문상세 등록 성공하면 1 반환
 						
 			
 		} catch (Exception e) {
@@ -42,6 +43,7 @@ public class OrderDetailDAO {
 		} finally {
 			DBManager.close(conn, pstmt);
 		}
+		return result;
 		
 	}
 	

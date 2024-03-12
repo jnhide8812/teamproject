@@ -1,7 +1,6 @@
 package com.shop.controller;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.shop.dao.CartDAO;
+import com.shop.dao.OrderDetailDAO;
 import com.shop.dao.OrderTableDAO;
 import com.shop.dto.OrderDetailVO;
 import com.shop.dto.OrderTableVO;
@@ -35,8 +36,8 @@ public class OrderSevlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("user/order.jsp");
-		rd.forward(request, response);
+		//RequestDispatcher rd = request.getRequestDispatcher("user/order.jsp");
+		//rd.forward(request, response);
 				
 	}
 
@@ -59,12 +60,14 @@ public class OrderSevlet extends HttpServlet {
 		String pcode[] = request.getParameterValues("pcode[]");
 		String ordercnt[] = request.getParameterValues("ordercnt[]");
 		
+		//주문 테이블에 넣어야할 값 4가지 
 		String dname = request.getParameter("dname");
 		String daddress = request.getParameter("daddress");
 		String payment = request.getParameter("payment");
 		int totalprice = Integer.parseInt(request.getParameter("totalprice"));		
-		String orderstatus = "주문중";  //request로 수정할 것
+		String orderstatus = "주문중";  // 수정할 것(sql도 조건 주문중으로 했음)
 		
+		//주문테이블에 인서트
 		OrderTableVO ovo = new OrderTableVO();
 		ovo.setId(id);
 		ovo.setTotalprice(totalprice);
@@ -75,31 +78,54 @@ public class OrderSevlet extends HttpServlet {
 		odao.insertOrder(ovo);
 		System.out.println("주문테이블에 등록성공 : "+ovo);
 		
+		//주문 상세테이블에 인서트 준비(주문 넘버 셀렉)
 		int ordernumber = odao.selectOrdernumber(id);
-		System.out.println("ordernumber2: "+ordernumber);
+		System.out.println("ordernumber2: "+ordernumber);  //완료되면 지울 예정
 		
 		
 		//주문상세: 아이디, 상품코드(pcode), 상품수량(ordercnt), 배송주소(daddress), 수령인명(dname)
-		for(String a : pcode) {
-			System.out.println("pcode orderstatus: "+pcode.toString().indexOf(orderstatus));
-		}
+		int result=0;  //주문상세에 insert 되면 1반환
 		
 		for(int i=0; i<pcode.length;i++) {
-			System.out.println("pcode indexof: "+pcode.toString().indexOf(i));
-		}
-		
+			int pcodei = Integer.parseInt(pcode[i]);
+			int ordercnti = Integer.parseInt(ordercnt[i]);
 			
 			OrderDetailVO odvo = new OrderDetailVO();
+			odvo.setOrdernumber(ordernumber);
 			odvo.setId(id);
-		//	odvo.setPcode(pcode);
-		//	odvo.setOrdercnt(ordercnt);
+			odvo.setPcode(pcodei);
+			odvo.setOrdercnt(ordercnti);
 			odvo.setDaddress(daddress);
 			odvo.setDname(dname);
+			
+			OrderDetailDAO oddao = OrderDetailDAO.getInstance();
+			result = oddao.insertOrderDetail(odvo);  //주문상세가 등록되면 1반환
+			System.out.println("주문상세페이지에 등록 성공"+odvo);  //삭제예정
+		}	
+ 
+		//주문 상세가 등록되면 1, 아니면 0 / 1이면 주문테이블의 상태를 주문중에서 주문완료로 변경
+		//리턴이 1이면 결제 완료로 변경하고 실패하면 오더테이블에서 삭제
+		//주문 성공하면 카트에서 해당 리스트 삭제할 것
+		//성공 실패후 이동할 장소 dispatcher 사용
+		String url = null; //주문 성공, 실패에 따라 이동 장소 변경
 		
-				
+		if(result==1) {
+			odao.updateOrderStatus(ordernumber);
+			CartDAO cdao = CartDAO.getInstance();
+			cdao.deleteAllByOrder(id);
+			
+			url = "user/order.jsp";
+			
+		}else {
+			odao.deleteOrder(ordernumber);
+			url = "user/cart.jsp";
+			
+		}
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
 		
 		
-			System.out.println(Arrays.toString(pcode));
+			
 		
 		/*체크박스 선택한 것만 표현 못함...
 		 * String pcode[] = request.getParameterValues("pcode[]"); 
@@ -111,7 +137,13 @@ public class OrderSevlet extends HttpServlet {
 		 * request.setAttribute("totalprice", totalprice);
 		 */
 		
-		
+		//	String firstString = pcode[0];
+		//	System.out.println("firstString"+firstString);	
+			
+		/*
+		 * for (String str : pcode) { String numbersOnly = str.replaceAll("[^0-9]", "");
+		 * // 숫자만 남기고 다른 문자 제거 System.out.println("numbersOnly: "+numbersOnly); }
+		 */
 		//System.out.println(Arrays.toString(pcode));
 		//System.out.println(Arrays.toString(cartcnt));
 		

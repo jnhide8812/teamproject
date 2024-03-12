@@ -71,11 +71,45 @@ public class OrderTableDAO {
 			DBManager.close(conn, pstmt, rs);
 		}
 		return 0;
-		
-		
 	}
 	
-	
+	//주문상세테이블에 주문 등록되면 주문테이블에 상태를 "주문완료"로 상태 변경
+	public void updateOrderStatus(int ordernumber) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "update ordertable set orderstatus='주문완료' where ordernumber=?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ordernumber);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+		
+	}
+	//주문상세테이블에 주문 등록 실패하면 주문 delete
+	public void deleteOrder(int ordernumber) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete from ordertable where ordernumber=?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ordernumber);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 	
 	
 }
