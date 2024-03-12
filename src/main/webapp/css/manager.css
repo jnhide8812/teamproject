@@ -11,12 +11,13 @@
 	border-collapse:collaps;
 	font-size:12px;
 	line-height: 24px;
-	font-style: bold;
+	font-style: bold;	
 }
 
 table td, th{
 	border: #d3d3d3 solid 1px;
-	padding: 5px;
+	padding : 5px;
+	
 }
 
 table {

@@ -11,6 +11,7 @@ import com.shop.dto.ManagerOrderDetailVO;
 import util.DBManager;
 
 public class ManagerOrderDetailDAO {
+	
 	public ManagerOrderDetailDAO() {
 
 	}
@@ -21,7 +22,7 @@ public class ManagerOrderDetailDAO {
 		return instance;
 	}
 
-	// 회원 리스트 뽑아오기
+	// 회원 리스트 뽑아오기(7)
 	public List<ManagerOrderDetailVO> selectAllMembers() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -43,6 +44,7 @@ public class ManagerOrderDetailDAO {
 				vo.setUaddress(rs.getString("uaddress"));
 				vo.setUgrade(rs.getString("ugrade"));
 				vo.setUpoint(rs.getInt("upoint"));
+				memberlist.add(vo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -157,7 +159,7 @@ public class ManagerOrderDetailDAO {
 		return cartlist;
 	}
 
-	// 주문 상세 수정
+	// 주문 상세 수정(6)
 	public ManagerOrderDetailVO selectOrderDetailByNumber(String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -194,7 +196,7 @@ public class ManagerOrderDetailDAO {
 		}
 		return vo;
 	}
-
+	// 주문 상세 수정(6)
 	public void updateOrderstatus(ManagerOrderDetailVO vo) {
 		String sql = "update ordertable set orderstatus=? where id='user1'";
 		Connection conn = null;

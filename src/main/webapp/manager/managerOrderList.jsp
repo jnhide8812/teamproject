@@ -32,14 +32,13 @@
 			<td>배송 상태</td>			
 		</tr>
 		
-		<c:forEach var="orderdetail" items="${managerOrderList}">
+		<c:forEach var="managerOrderList" items="${managerOrderList}">
 		<tr class="recode">
 			<td><a href="ManagerOrderDetail.do?ordernumber=${orderdetail.ordernumber}"></a></td>
-			<td>${orderdetail.id}</td>
-			<td>${orderdetail.daddress}</td>
-			<td>${product.pstock}</td>
+			<td>${managerOrderList.id}</td>
+			<td>${managerOrderList.uaddress}</td>
 			<td></td>
-			<td>${orderdetail.pstatus}</td>
+			<td>${managerOrderList.pstatus}</td>
 		</tr>
 		</c:forEach>
 		

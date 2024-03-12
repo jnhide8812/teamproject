@@ -40,7 +40,7 @@
 </div>
 
 <div id="item">
-<p><a href="memberList.do">회원 관리</a></p>
+<p><a href="MemberList.do">회원 관리</a></p>
 </div>
 
 </div>
