@@ -9,9 +9,6 @@ public class UsersVO {
 	private String uaddress;
 	private String ugrade;
 	private int upoint;
-	
-	//("삭제부탁") 
-	
 	public String getId() {
 		return id;
 	}
@@ -62,8 +59,10 @@ public class UsersVO {
 	}
 	@Override
 	public String toString() {
-		return "UsersDTO [id=" + id + ", upwd=" + upwd + ", uname=" + uname + ", uphone=" + uphone + ", ubirth="
-				+ ubirth + ", uaddress=" + uaddress + ", ugrade=" + ugrade + ", upoint=" + upoint + "]";
+		return "UsersVO [id=" + id + ", upwd=" + upwd + ", uname=" + uname + ", uphone=" + uphone + ", ubirth=" + ubirth
+				+ ", uaddress=" + uaddress + ", ugrade=" + ugrade + ", upoint=" + upoint + "]";
 	}
-	syso
+	
+	
+
 }
