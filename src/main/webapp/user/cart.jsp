@@ -21,7 +21,7 @@ h1{
 }
 
 #wrap{
-	margin:5px;
+	margin:100px;
 	padding:5px;
 
 }
@@ -66,8 +66,12 @@ h1{
 </style>
 </head>
 <body>
+
 	<div id="wrap" class="cartlist" align="center">
 		<h1>${loginUser.uname }님의 장바구니 리스트</h1><br>
+		
+
+		
 		<form method="post" action="receipt.do">
 			<input type="hidden" name="id" value="${loginUser.id }">
 			<table id="list">
@@ -81,7 +85,6 @@ h1{
 				</tr>
 				<c:set var="totalprice" value="0" />
 				<c:forEach var="cartList" items="${cartList }">
-						
 					<tr >
 						<!-- <input type="checkbox" name="chk"> -->
 						<td>	<input type="hidden" name="pcode[]" value="${cartList.pcode }">
@@ -102,7 +105,8 @@ h1{
 				</c:forEach>
 				<input type="hidden" name="totalprice" value="${totalprice }">
 			</table><br>
-
+			
+			
 			<div id="calcbox">
 				<table>
 					<tr>
@@ -148,11 +152,14 @@ h1{
 					<tr align="center">
 						<td colspan="2"><input type="submit" value="결제하기">  <input type="button" value="결제하기버튼 삭제예정" onClick="location.href='receipt.do'"></td>
 					</tr>
+					
 				</table>
 			
 			</div>
 			
 		</form>
+		
+		
 	</div>
 
 </body>
