@@ -47,4 +47,7 @@ public class OrderDetailDAO {
 		
 	}
 	
+	//주문 상세 리스트로 출력하기
+	//public List<Object> 
+	
 }

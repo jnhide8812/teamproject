@@ -104,7 +104,7 @@ public class OrderSevlet extends HttpServlet {
 		}	
  
 		//주문 상세가 등록되면 1, 아니면 0 / 1이면 주문테이블의 상태를 주문중에서 주문완료로 변경
-		//리턴이 1이면 결제 완료로 변경하고 실패하면 오더테이블에서 삭제
+		//리턴이 1이면 결제 완료로 변경하고 리턴이 0이면(주문상세 등록 실패하면) 오더테이블에서 삭제
 		//주문 성공하면 카트에서 해당 리스트 삭제할 것
 		//성공 실패후 이동할 장소 dispatcher 사용
 		String url = null; //주문 성공, 실패에 따라 이동 장소 변경
@@ -114,7 +114,11 @@ public class OrderSevlet extends HttpServlet {
 			CartDAO cdao = CartDAO.getInstance();
 			cdao.deleteAllByOrder(id);
 			
-			url = "user/order.jsp";
+		//	매니저창에서 주문확인하고 배송하면 재고에서 -1씩 하기 
+		//	request.setAttribute("orderdetail", odvo); 주문한 목록 리스트 오더컨펌에 표시하기
+			
+			url = "user/orderConfirm.jsp";
+			
 			
 		}else {
 			odao.deleteOrder(ordernumber);
@@ -126,26 +130,6 @@ public class OrderSevlet extends HttpServlet {
 		
 		
 			
-		
-		/*체크박스 선택한 것만 표현 못함...
-		 * String pcode[] = request.getParameterValues("pcode[]"); 
-		 * String cnt[] =request.getParameterValues("cartcnt[]");
-		 *  String totalprice =
-		 * request.getParameter("totalprice");
-		 * 
-		 * request.setAttribute("pcode[]", pcode); request.setAttribute("cnt[]", cnt);
-		 * request.setAttribute("totalprice", totalprice);
-		 */
-		
-		//	String firstString = pcode[0];
-		//	System.out.println("firstString"+firstString);	
-			
-		/*
-		 * for (String str : pcode) { String numbersOnly = str.replaceAll("[^0-9]", "");
-		 * // 숫자만 남기고 다른 문자 제거 System.out.println("numbersOnly: "+numbersOnly); }
-		 */
-		//System.out.println(Arrays.toString(pcode));
-		//System.out.println(Arrays.toString(cartcnt));
 		
 		
 	}

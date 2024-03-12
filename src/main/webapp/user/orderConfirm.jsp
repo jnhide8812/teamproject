@@ -8,6 +8,11 @@
 <title>주문 완료 페이지</title>
 </head>
 <body>
+<div>
+<h1>주문 완료</h1>
+
+
+</div>
 
 </body>
 </html>

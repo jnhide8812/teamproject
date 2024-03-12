@@ -3,6 +3,7 @@ package com.shop.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 import com.shop.dto.OrderTableVO;
 
@@ -110,6 +111,11 @@ public class OrderTableDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
+	
+	//주문 완료 내역 출력
+	//public List<OrderTableVO> selectOrderTable(){
+		
+	//}
 	
 	
 }

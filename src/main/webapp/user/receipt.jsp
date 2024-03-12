@@ -12,7 +12,7 @@
 
 
 #wrap{
-	margin:5px;
+	margin:100px;
 	padding:5px;
 
 }

@@ -106,7 +106,8 @@ h1{
 				<input type="hidden" name="totalprice" value="${totalprice }">
 			</table><br>
 			
-			
+			<c:choose>
+				<c:when test="${!empty cartList }">
 			<div id="calcbox">
 				<table>
 					<tr>
@@ -150,12 +151,18 @@ h1{
 						<td></td>
 					</tr>
 					<tr align="center">
-						<td colspan="2"><input type="submit" value="결제하기">  <input type="button" value="결제하기버튼 삭제예정" onClick="location.href='receipt.do'"></td>
+						<td colspan="2"><input type="submit" value="결제하기"></td>
 					</tr>
 					
 				</table>
 			
 			</div>
+			</c:when>
+			<c:otherwise>
+				<div><h2>장바구니가 비어있습니다.</h2></div>
+			</c:otherwise>
+			</c:choose>
+		
 			
 		</form>
 		
