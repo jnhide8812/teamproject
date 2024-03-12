@@ -12,63 +12,56 @@
 
 </head>
 <body>
-<div id="container">
-		<form action="register.do" name = "frm" method="post" class="big">
-			<table class="small">
-				<tr class="h">
-					<th colspan="2" align="center" class="subject">회원가입</th>
-				</tr>
-				<tr class="h">
-					<th colspan="2" class="upline"></th>
-				</tr>
-				<tr class="h">
-					<td align="center" class="name">아이디</td>
-					<td><input type="text" name="id" placeholder="아이디 입력" class="box">
-						<input type="button" value="중복 확인" onclick="idCheck()" class="idbtn"> 
-						<input type="hidden" name="reid"></td>
-				</tr>
-				<tr class="h">
-					<td align="center" class="name">비밀번호</td>
-					<td><input type="password" name="upwd" placeholder="비밀번호 입력" class="box"></td>
-				</tr>
-				<tr class="h">
-					<td align="center" class="name" >비밀번호 확인</td>
-					<td><input type="password" name="upwd_re"
-						placeholder="비밀번호 재입력" onclick="return pwdTest()" class="box"></td>
-				</tr>
-	
-				<tr class="h">
-					<td align="center" class="name">이름</td>
-					<td><input type="text" name="uname" class="box"></td>
-				</tr>
-				<tr class="h">
-					<td align="center" class="name">전화번호</td>
-					<td><input type="text" name="uphone" class="box"></td>
-				</tr>
-	
-				<tr class="h">
-					<td align="center" class="name" >생년월일</td>
-					<td><input type="text" name="ubirth" class="box"></td>
-				</tr>
-	
-				<tr class="h">
-					<td align="center" class="name">주소</td>
-					<td><input type="text" name="uaddress" class="box" ></td>
-				</tr>
-				<tr class="h">
-					<td><input type="hidden" name="ugrade" value="1"></td>
-					<td><input type="hidden" name="upoint" value="0"></td>
-				</tr>
-				<tr class="h">
-					<th colspan="2" class="dline"></th>
-				</tr>
-				<tr class="h">
-					<td colspan="2" align="center">
-					<input type="submit" value="회원가입하기"  id="joinBtn">
-					</td>
-				</tr>
-	      ${message }
-			</table>
+<div id="join_wrap">
+	<form action="register.do" name = "frm" method="post" class="big">
+	<h1>회원가입</h1>
+		<div class="upline"></div>
+		<nav>
+			<ul>
+				<li>
+					<label for="id">아이디</label>
+					<input type="text" name="id" placeholder="아이디 입력" class="box">
+					<input type="button" value="중복 확인" onclick="idCheck()" class="idbtn"> 
+					<input type="hidden" name="reid">
+				</li>
+				<li>
+					<label for="pwd">비밀번호</label>
+					<input type="password" name="upwd" placeholder="비밀번호 입력" class="box">
+				</li>
+				<li>
+					<label for="upwd_re">비밀번호 확인</label>
+					<input type="password" name="upwd_re"
+						placeholder="비밀번호 재입력" onclick="return pwdTest()" class="box">
+				</li>
+				<li>
+					<label for="name">이름</label>
+					<input type="text" name="uname" class="box">
+				</li>
+				<li>
+					<label for="phone">전화번호</label>
+					<input type="text" name="uphone" class="box">
+				</li>
+				<li>
+					<label for="phone">생년월일</label>
+					<input type="text" name="ubirth" class="box">
+				</li>
+				<li>
+					<label for="address">주소</label>
+					<input type="text" name="uaddress" class="box" >
+				</li>
+				<li>
+					<input type="hidden" name="ugrade" value="1">
+					<input type="hidden" name="upoint" value="0">
+				</li>
+				<li>
+					<div class="downline"></div>
+				</li>
+				<li class="btn_wrap">
+					<input type="submit" value="회원가입하기"  class="joinbtn">
+				</li>
+			</ul>
+		</nav>
+			${message }
 		</form>
 	</div>
 </body>
