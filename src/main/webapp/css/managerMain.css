@@ -1,75 +1,62 @@
 @import url(font.css);
 
-table{
-	width : 100%;
-	height : 120px;
-	border:3px solid #5f0080;
+table {
+	width: 100%;
+	height: 120px;
+	border: 3px solid #5f0080;
 }
 
-a{
+a {
 	text-decoration: none;
 }
-table th{
-	font-weight:bold;
-	text-align : left;
+
+table th {
+	font-weight: bold;
+	text-align: left;
 	font-size: 1.5em;
 	color: #5f0080;
 }
 
-table a{
+table a {
 	font-size: 16px;
 	color: #CCC;
 	text-decoration: none;
 }
 
-table a:hover{
+table a:hover {
 	font-weight: bold;
 	color: #5f0080;
 }
 
-
-
-
-
-img{
+img {
 	width: 150px;
 	height: 90px;
 	margin-left: 20px;
 }
 
-
-
-
-#item{
-	height : 120px;
-	background :#5f0080;
+#item {
+	height: 120px;
+	background: #5f0080;
 	font-size: 18px;
 	padding: 30px;
-    border: 2px solid;
-    margin: 10px;
-    border-radius: 5px;
-    color: white;
-    text-align: center;
-    line-height: 90px;
+	border: 2px solid;
+	margin: 10px;
+	border-radius: 5px;
+	color: white;
+	text-align: center;
+	line-height: 90px;
 }
 
-#item a{
-	color : white;
+#item a {
+	color: white;
 	font-style: none;
 }
 
-
-#item:hover, #item:hover a{
+#item:hover, #item:hover a {
 	font-weight: bold;
 	background: white;
-	
 	color: #5f0080;
 }
-
-
-
-
-
 
 #container {
 	display: grid;
@@ -78,13 +65,8 @@ img{
 	text-decoration: none;
 	border: 1px #ccc;
 	padding: 40px;
-	
 }
 
-
-
-
-#padding{
+#padding {
 	padding-right: 80px;
 }
-

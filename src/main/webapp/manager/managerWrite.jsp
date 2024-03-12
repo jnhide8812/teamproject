@@ -6,18 +6,30 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록 페이지</title>
-<link rel="stylesheet" type="text/css" href="css/manager.css">
+<link rel="stylesheet" type="text/css" href="css/managerWrite.css">
 <script type="text/javascript" src="script/shop.js"></script>
 </head>
 <body>
+<header>
+<table>
+	<tr text-align="center">
+		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<th>${users.uname}관리자님 환영합니다.</th>
+			<td align="right" id="padding">
+			<a href="logout.do">로그아웃</a> &nbsp;
+			<a href="manager.do">관리자 메인으로</a>
+			</td>
+	</tr>
+
+</table>
+</header>
 <div id="wrap" align="center">
-<h1>상품 등록 페이지 - 관리자</h1>
 <form method="post" name="frm" enctype="multipart/form-data">
 
 	<input type="hidden" name="pcode" value="${product.pcode}" >
 	<input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
-	<hr><hr><br><br>
-	<table>
+	
+	<table class="list">
 		<tr>
 			<td>
 				<c:choose>

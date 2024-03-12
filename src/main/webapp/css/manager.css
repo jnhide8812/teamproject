@@ -1,17 +1,12 @@
+@import url(font.css);
+
 #wrap{
-	width:971px;
+	width:100%;
 	margin:0 auto;
 }
 
-h1{
-	color:#7409f7;
-}
-
-hr{
-	color:#47b84d;
-}
-
-table{
+#list:table{
+	
 	width:100%;
 	border-collapse:collaps;
 	font-size:12px;
@@ -24,21 +19,46 @@ table td, th{
 	padding: 5px;
 }
 
-th{
-	background: #9caae2;
+table {
+	width: 100%;
+	height: 120px;
+	border: 3px solid #5f0080;
+}
+
+table th {
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.5em;
+	color: #5f0080;
+}
+
+table a {
+	font-size: 16px;
+	color: #CCC;
+	text-decoration: none;
+}
+
+table a:hover {
+	font-weight: bold;
+	color: #5f0080;
 }
 
 img{
-	width: 220px;
-	height: 300px;
-}
-
-a{
-	text-decoration: none;
-	color: black;
+	width: 150px;
+	height: 90px;
+	margin-left: 50px;
 }
 
 a:hover{
 	text-decoration : underLine;
-	color: green;
+	color:#5f0080;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+#padding{
+	padding-right: 80px;
 }

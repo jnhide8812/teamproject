@@ -5,21 +5,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 리스트 - 관리자 페이지</title>
+<title></title>
 <link rel="stylesheet" type="text/css" href="css/manager.css">
 </head>
 <body>
-<div id="wrap" align="center">
-	<h1>주문 목록 리스트 - 관리자</h1>
-	<hr><hr><br>
-	<table class="list">
-		<tr>
-			<td colspan="5" style="border:white; text-align:right">
-				<a href="Manager.do">메인 화면</a>
+<header>
+<table>
+	<tr text-align="center">
+		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<th>${users.uname}관리자님 환영합니다.</th>
+			<td align="right" id="padding">
+			<a href="logout.do">로그아웃</a> &nbsp;
+			<a href="manager.do">관리자 메인으로</a>
 			</td>
-		</tr>
-		
-		
+	</tr>
+</table>
+</header>
+<div id="wrap" align="center">
+	<table class="list">
+	
 		<tr>
 			<td>주문 번호</td>
 			<td>아이디</td>

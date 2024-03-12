@@ -12,9 +12,20 @@
 <link rel="stylesheet" type="text/css" href="css/manager.css">
 </head>
 <body>
+<header>
+<table>
+	<tr text-align="center">
+		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<th>${users.uname}관리자님 환영합니다.</th>
+			<td align="right" id="padding">
+			<a href="logout.do">로그아웃</a> &nbsp;
+			<a href="manager.do">관리자 메인으로</a>
+			</td>
+	</tr>
+
+</table>
+</header>
 <div id="wrap" align="center">
-	<h1>상품 리스트 - 관리자 </h1>
-	<hr><hr><br>
 	<table class="list">
 		<tr>
 			<td colspan="8" style="border:white; text-align:right">
