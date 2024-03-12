@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>장바구니 보기</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<!-- <style>
+<style>
 .cartlist img{
 	width:50px;
 	height:68px;
@@ -63,7 +63,7 @@ h1{
 
 
 
-</style> -->
+</style>
 </head>
 <body>
 	<div id="wrap" class="cartlist" align="center">
