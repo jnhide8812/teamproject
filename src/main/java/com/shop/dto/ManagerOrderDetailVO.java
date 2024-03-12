@@ -1,5 +1,5 @@
 package com.shop.dto;
-
+ 
 public class ManagerOrderDetailVO {
 	//orderdetail
 	private Integer orderdetailnumber;

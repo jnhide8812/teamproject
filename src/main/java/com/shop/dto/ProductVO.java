@@ -1,6 +1,6 @@
 package com.shop.dto;
 
-
+ 
 public class ProductVO {
 	private String pname;
 	private Integer price;

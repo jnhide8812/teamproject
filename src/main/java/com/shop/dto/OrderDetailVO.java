@@ -1,5 +1,5 @@
 package com.shop.dto;
-
+ 
 public class OrderDetailVO {
 	private int orderdetailnumber; // 주문상세번호
 	private int ordernumber; //주문번호

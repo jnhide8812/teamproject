@@ -1,5 +1,5 @@
 package com.shop.dto;
-
+ 
 public class ManagerVO {
 	private int pcode;
 	private String pname;

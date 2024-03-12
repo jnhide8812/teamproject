@@ -7,13 +7,15 @@
 
 #list{
 	width:100%;
-	border-collapse:collaps;
 	font-size:14px;
 	line-height: 24px;
 	font-style: bold;
 	border-collapse: collapse;
 }
 
+#writelist{
+	border: none;
+}
 
 
 table#list td, table#list th{
@@ -30,15 +32,20 @@ table {
 
 table th {
 	font-weight: bold;
-	text-align: center;
+	text-align: left;
 	font-size: 1.5em;
 	color: #5f0080;
+	
 }
 
 table a {
 	font-size: 16px;
 	color: #CCC;
 	text-decoration: none;
+}
+
+#little{
+	font-size: 14px;
 }
 
 table a:hover {
@@ -65,6 +72,11 @@ a {
 	text-decoration: none;
 }
 
+
+#littlepadding{
+	font-size: 14px;
+	padding-right: 20px;
+}
 
 
 
