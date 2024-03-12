@@ -26,8 +26,8 @@
 	<table id="list">
 		<tr>
 			<td colspan="8" style="border:white; text-align:right">
-				<a href="ManagerWrite.do">상품 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="Manager.do">메인 화면</a>
+				<a id="littlepadding" href="ManagerWrite.do">상품 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a id="littlepadding" href="Manager.do">메인 화면</a>
 			</td>
 		</tr> 
 		
@@ -51,8 +51,8 @@
 			<td>${productList.pstock}</td>
 			<td>${productList.catecode}</td>
 			<td align="center">${productList.pstatus}</td>
-			<td align="center"><a href="ManagerProductUpdate.do?pcode=${productList.pcode}">수정</a></td>
-			<td align="center"><a href="ManagerProductDelete.do?pcode=${productList.pcode}">삭제</a></td>
+			<td align="center"><a id="little" href="ManagerProductUpdate.do?pcode=${productList.pcode}">수정</a></td>
+			<td align="center"><a id="little" href="ManagerProductDelete.do?pcode=${productList.pcode}">삭제</a></td>
 		</tr>
 		</c:forEach>
 	</table>

@@ -70,7 +70,7 @@
 					<tr>
 						<th style="width:80px" id="inner">상품 이름</th>
 						<td>
-							<input type="text" name="pname" value="${product.pname}" size="80">
+							<input type="text" name="pname" value="${product.pname}">
 						</td>
 					</tr>
 					
