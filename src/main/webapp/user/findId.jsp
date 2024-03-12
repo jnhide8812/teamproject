@@ -31,9 +31,9 @@
 <div id="wrap">
 	<form method="post" action="findId.do">
 		<table id ="findId">
-			<tr><td>아이디 찾기</td> </tr>
-			<td> 성함 <input type ="text" name="find_id" >
-		
+			<tr ><td  rowspan="2">아이디 찾기</td>
+			<td> 성함 <input type ="text" name="find_name" ></td></tr>
+			<tr><td> 전화번호 <input type ="text" name="find_phone" ></td></tr>
 		
 		
 		
