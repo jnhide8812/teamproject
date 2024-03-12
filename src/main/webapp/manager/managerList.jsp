@@ -23,7 +23,7 @@
 </table>
 </header>
 <div id="wrap" align="center">
-	<table class="list">
+	<table id="list">
 		<tr>
 			<td colspan="8" style="border:white; text-align:right">
 				<a href="ManagerWrite.do">상품 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -32,15 +32,14 @@
 		</tr> 
 		
 		
-		<tr>
+		<tr id="textcenter">
 			<td>상품 코드</td>
 			<td>상품 이름</td>
 			<td>상품 가격</td>
 			<td>잔여 재고</td>
 			<td>카테고리 코드</td>
 			<td>상품 상태</td>
-			<td><a href="ManagerProductUpdate.do">수정</a></td>
-			<td><a href="ManagerProductDelete.do">삭제</a></td>
+			<td colspan="2">수정 / 삭제</td>
 			
 		</tr>
 		
@@ -51,9 +50,9 @@
 			<td>${productList.price}</td>
 			<td>${productList.pstock}</td>
 			<td>${productList.catecode}</td>
-			<td>${productList.pstatus}</td>
-			<td><a href="ManagerProductUpdate.do?pcode=${productList.pcode}">수정</a></td>
-			<td><a href="ManagerProductDelete.do?pcode=${productList.pcode}">삭제</a></td>
+			<td align="center">${productList.pstatus}</td>
+			<td align="center"><a href="ManagerProductUpdate.do?pcode=${productList.pcode}">수정</a></td>
+			<td align="center"><a href="ManagerProductDelete.do?pcode=${productList.pcode}">삭제</a></td>
 		</tr>
 		</c:forEach>
 	</table>

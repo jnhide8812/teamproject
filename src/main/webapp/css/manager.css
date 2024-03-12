@@ -5,19 +5,19 @@
 	margin:0 auto;
 }
 
-#list:table{
-	 
+#list{
 	width:100%;
 	border-collapse:collaps;
-	font-size:12px;
+	font-size:14px;
 	line-height: 24px;
-	font-style: bold;	
+	font-style: bold;
 }
 
-table td #list, th #list{
-	border: #d3d3d3 solid 1px;
-	padding : 5px;
-	
+
+
+table#list td, table#list th{
+	border: #CCC solid 1px;
+	padding: 5px;
 }
 
 table {
@@ -44,11 +44,15 @@ table a:hover {
 	color: #5f0080;
 }
 
+
+
 img{
 	width: 150px;
 	height: 90px;
 	margin-left: 50px;
 }
+
+
 
 a:hover{
 	text-decoration : underLine;
@@ -60,6 +64,28 @@ a {
 }
 
 
+
+
 #padding{
 	padding-right: 80px;
 }
+
+
+
+
+#textcenter{
+	text-align: center;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
