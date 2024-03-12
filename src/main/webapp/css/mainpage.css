@@ -1,1 +1,60 @@
-@import url(style.css);
+.slider_wrap{
+	height: 368px;
+	width:100%;
+}
+.slider_wrap .swiper_slide {
+	background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider_wrap .swiper-slide.s01 {
+	background-image: url(img/carrot.jpg);
+}
+.slider_wrap .swiper-slide.s02 {
+	background-image: url(img/sh12.jpg);
+}
+.slider_wrap .swiper-slide.s03 {
+	background-image: url(img/sh13.jpg);
+}
+.slider_wrap .swiper-slide.s04 {
+	background-image: url(img/sh14.jpg);
+}
+.slider_wrap .swiper-slide.s05 {
+	background-image: url(img/sh15.jpg);
+}
+.slider_wrap .swiper-slide.s06 {
+	background-image: url(img/sh16.jpg);
+}
+.slider_wrap .swiper-slide.s07 {
+	background-image: url(img/sh17.jpg);
+}
+.slider_wrap .swiper-slide.s08 {
+	background-image: url(img/sh18.jpg);
+}
+.inner {
+    max-width: 1900px;
+    height: 100%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider_wrap  .swiper-button-next:after, 
+.slider_wrap  .swiper-button-prev:after{
+    display: none;
+}
+.slider_wrap  .swiper-button-next,
+.slider_wrap  .swiper-button-prev{
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+.slider_wrap  .swiper-button-next{
+    right: 100px;
+    background-image: url(icon/s1_right.png);
+} 
+.slider_wrap  .swiper-button-prev{
+    left: 100px;
+    background-image: url(icon/s1_left.png);
+}

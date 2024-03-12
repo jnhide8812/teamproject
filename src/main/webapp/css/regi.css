@@ -20,20 +20,36 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 1050px;
 }
 .big{
-	width: 1050px;
+	width: 640px;
+	margin: 0px auto;
 	margin-top: 50px;
 	margin-bottom: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+table.small {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 th.subject{ 
-	margin-bottom: 50px;
+	padding-bottom: 50px;
 	font-size: 28px;
 	font-weight: 500;
 	text-align: center;
 	letter-spacing: -1px;
 	color: #333;
+}
+th.upline{
+	padding-bottom: 5px;
+	border-bottom: 2px solid rgb(51, 51, 51);
+	line-height: 17px;
+}
+td.name{
+	font-size: 14px;
+	
 }

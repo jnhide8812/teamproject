@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="container">
-	<header>
+	<!--<header>
 		<div class="inner">
 			<nav class="h_top">
 				<ul>
@@ -56,95 +56,92 @@
         	 	</nav>
 			</div>
 		</div>
-	</header>
+	</header>  -->
 	<div class="ft_line">
 	<footer>
 		<div class="ft_shop1">
 			<div class="inner">
-			<div class="ft_left">
-				<div class="tit_wrap">
-					<h7 class="main_tit">
-						고객행복센터
-					</h7>
-					<p class="con_txt">
-						<span class="num">1644-1107</span>
-						월~토요일 오전7시-오후6시
-					</p>
-				</div>
-				<ul class="ft_list">
-					<li>
-						<a href="#" class="ask_btn">카카오톡 문의</a>
-						<p class="list_tit">
-							월~토요일 : 오전7시 ~ 오후6시<br>
-							일/공휴일 : 오전7시 ~ 오후1시
+				<div class="ft_left">
+					<div class="box1">
+						<h2>고객행복센터</h2>
+						<p class="open">
+							1644-1107<span class="time">월~토요일 오전7시-오후6시</span>
 						</p>
-					</li>
-					<li>
-						<a href="#" class="ask_btn">1:1 문의</a>
-						<p class="list_tit">
-							365일<br>
-							고객센터 운영시간에 순차적으로 답편해드리겠습니다. 
-						</p>
-					</li>
-					<li>
-						<a href="#" class="ask_btn">대량주문 문의</a>
-						<p class="list_tit">
-							월~금요일 : 오전9시 ~ 오후6시<br>
-							점심시간 : 낮12시-오후1시 
-						</p>
-					</li>
-				</ul>
-				<span class="ask_e">
-				비회원 문의 : help@kurlycorp.com
-				</span>
-			</div>
-			</div>
-			<div class="ft_right">
-				<nav>
+					</div>
 					<ul class="ft_list">
-						<li><a href="#">컬리소개</a></li>
-						<li><a href="#">컬리소개영상</a></li>
-						<li><a href="#">투자정보</a></li>
-						<li><a href="#">인재채용</a></li>
-						<li><a href="#">이용약관</a></li>
-						<li><a href="#">개인정보처리방침</a></li>
-						<li><a href="#">이용안내</a></li>
+						<li>
+							<a href="#" class="ask_btn">카카오톡 문의</a>
+							<p class="list_tit">
+								월~토요일 : 오전7시 ~ 오후6시<br>
+								일/공휴일 : 오전7시 ~ 오후1시
+							</p>
+						</li>
+						<li>
+							<a href="#" class="ask_btn">1:1 문의</a>
+							<p class="list_tit">
+								365일<br>
+								고객센터 운영시간에 순차적으로 답편해드리겠습니다. 
+							</p>
+						</li>
+						<li>
+							<a href="#" class="ask_btn">대량주문 문의</a>
+							<p class="list_tit">
+								월~금요일 : 오전9시 ~ 오후6시<br>
+								점심시간 : 낮12시-오후1시 
+							</p>
+						</li>
 					</ul>
-				</nav>
-				<p class="address">
-					법인명(상호):주식회사 컬리 | 사업자등록번호 : 261-81-23567 <span>사업자정보 확인</span><br>
-					통신판매업 : 제 2018-서울강남-01646호<br>
-					주소 : 서울특별시 강남구 테헤란로 133, 18충 (역삼동) | 대표이사 김슬아<br>
-					채용문의 : <span>recruit@kurlycorp.com</span><br>
-					팩스 : 070-7500-6098<br>
-				</p>
-				<ul class="sns_wrap"> 
-					<li>
-						<a href="#">
-							<img src="icon/instagram.png" class="ft_sns">
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="icon/facebook.png" class="ft_sns">
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="icon/blog.png" class="ft_sns">
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="icon/post.png" class="ft_sns">
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="icon/youtube.png" class="ft_sns">
-						</a>
-					</li>
-				</ul>
+					<span class="ask_e">
+					비회원 문의 : help@kurlycorp.com
+					</span>
+				</div>
+				<div class="ft_right">
+					<nav>
+						<ul class="ft_list">
+							<li><a href="#">컬리소개</a></li>
+							<li><a href="#">컬리소개영상</a></li>
+							<li><a href="#">투자정보</a></li>
+							<li><a href="#">인재채용</a></li>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li><a href="#">이용안내</a></li>
+						</ul>
+					</nav>
+					<p class="address">
+						법인명(상호):주식회사 컬리 | 사업자등록번호 : 261-81-23567 <span>사업자정보 확인</span><br>
+						통신판매업 : 제 2018-서울강남-01646호<br>
+						주소 : 서울특별시 강남구 테헤란로 133, 18충 (역삼동) | 대표이사 김슬아<br>
+						채용문의 : <span>recruit@kurlycorp.com</span><br>
+						팩스 : 070-7500-6098<br>
+					</p>
+					<ul class="sns_wrap"> 
+						<li>
+							<a href="#">
+								<img src="icon/instagram.png" class="ft_sns">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="icon/facebook.png" class="ft_sns">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="icon/blog.png" class="ft_sns">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="icon/post.png" class="ft_sns">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="icon/youtube.png" class="ft_sns">
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div class="ft_shop2">

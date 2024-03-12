@@ -3,30 +3,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+const swiper = new Swiper(".slider_wrap", {
+    effect : 'fade', // 페이드 효과 사용
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
+</script>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/mainpage.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<!--<link rel="stylesheet" href="css/mainpage.css">  -->
 </head>
 <body>
 <jsp:include page="main.jsp"/>
 <div id="container">
 	<section class="shop1">
-		<div class="shop1_bg"></div>
-		<div class="inner">
-			<div class="tit_wrap">
-				<h2 class="main_tit">
-					아름다움을 선물하세요<br>
-					<span>두근두근 화이트데이</span>
-				</h2>
-				<p class="con_txt">
-				베스트 선물 최대 61%할인<br>
-				+최대 2만원 쿠폰 + 브랜드 혜택
-				</p>
-				<span class="date">
-				03.04 - 03.14
-				</span>
+		<div class="swiper slider_wrap">
+			<div class="inner">
+				<div class="swiper-slide s01"></div>
+				<div class="swiper-slide s02"></div>
+				<div class="swiper-slide s03"></div>
+				<div class="swiper-slide s04"></div>
+				<div class="swiper-slide s05"></div>
+				<div class="swiper-slide s06"></div>
+				<div class="swiper-slide s07"></div>
+				<div class="swiper-slide s08"></div>
 			</div>
-		</div>
+			<div class="swiper-button-next"></div>
+        	<div class="swiper-button-prev"></div>
+        	<div class="swiper-pagination"></div>
+		</div>	
 	</section>
 	<section class="shop2">
 		<div class="inner">
@@ -203,5 +217,7 @@
 		</ul>
 	</section>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
