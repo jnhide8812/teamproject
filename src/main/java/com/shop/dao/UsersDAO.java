@@ -247,5 +247,34 @@ public class UsersDAO {
 		}
 		return userlist;
 	}
+	//아이디를 찾는 메소드 
+			public String findId(String uname, String uphone) {
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				
+				String id = null;
+				String sql = "select id from users where uname=? and uphone=?";
+				try {
+					conn = DBManager.getConnection();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, uname);
+					pstmt.setString(2, uphone);
+					rs = pstmt.executeQuery();
+					
+					if(rs.next()) {
+						id= rs.getString("id");
+						
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					DBManager.close(conn, pstmt, rs);
+				}return id;
+				
+				
+				
+			}
+
 
 }
