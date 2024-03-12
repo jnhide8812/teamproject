@@ -49,7 +49,7 @@
                   <td>
                      <select name="pstatus">
                         <option value="일반품목">일반품목</option>
-                        <option value=인기품목>인기품목</option>
+                        <option value="인기품목">인기품목</option>
                         <option value="할인품목">할인품목</option>
                      </select>
                   </td>
@@ -79,9 +79,7 @@
                <tr>
                   <th>상품 설명</th>
                   <td>
-                     <textarea rows="7" cols="60" name="pinfo">
-                     	${product.pinfo}
-                     </textarea>
+                     <textarea rows="7" cols="60" name="pinfo">${product.pinfo}</textarea>
                   </td> 
                </tr>
                
