@@ -14,7 +14,7 @@
 	font-style: bold;
 }
 
-table td, th{
+table td #list, th #list{
 	border: #d3d3d3 solid 1px;
 	padding: 5px;
 }
