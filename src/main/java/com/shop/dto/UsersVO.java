@@ -10,7 +10,7 @@ public class UsersVO {
 	private String ugrade;
 	private int upoint;
 	
-	//private void syso("삭제부탁") 
+	//("삭제부탁") 
 	
 	public String getId() {
 		return id;
