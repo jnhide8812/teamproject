@@ -23,9 +23,9 @@
 		</tr>
 		<tr>
 			<td class="find">
-				<a href="findId.do">아이디 찾기</a>
+				<a href="findId.jsp">아이디 찾기</a>
 				<span class="divide"></span>
-				<a href="findPwd.do">비밀번호 찾기</a>
+				<a href="findPwd.jsp">비밀번호 찾기</a>
 			</td>
 		</tr>
 		<tr>

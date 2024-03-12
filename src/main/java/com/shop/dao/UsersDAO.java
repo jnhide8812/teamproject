@@ -184,7 +184,7 @@ public class UsersDAO {
 
 	public int updateUser(UsersVO uvo) {
 		int result = -1; // 정보수정 실패 시 -1 반환
-		String sql = "update users set uphone=?, uaddress=? where id=?";
+		String sql = "update users set uphone=?, uaddress=?, ugrade=? where id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -193,7 +193,8 @@ public class UsersDAO {
 			pstmt.setString(1, uvo.getUphone());
 			pstmt.setString(2, uvo.getUaddress());
 			pstmt.setString(3, uvo.getId());
-
+			pstmt.setString(4, uvo.getUgrade());
+			
 			result = pstmt.executeUpdate(); // 정보수정 완료시 1 반환
 
 		} catch (Exception e) {
@@ -276,5 +277,27 @@ public class UsersDAO {
 				
 			}
 
-
+			//비밀번호를 찾는 메소드
+			public String findPwd(String id, String uname, String uphone) {
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				
+				String upwd = null;
+				String sql = "select upwd from users where id=? & uname=? & uphone=?";
+				try
+				   {conn = DBManager.getConnection();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, id);	
+					pstmt.setString(2, uname);
+					pstmt.setString(3, uphone);
+					pstmt.executeQuery();
+						} catch (Exception e) {
+							e.printStackTrace();
+						}finally {
+							DBManager.close(conn, pstmt,rs);
+						}return upwd;
+				
+				
+			}
 }
