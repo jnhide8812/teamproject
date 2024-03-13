@@ -21,7 +21,7 @@
 </table>
 </header>
 <div id="wrap" align="center">
-<form method="post" name="frm" action="MemberDetail.do">
+<form method="post" action="MemberDetail.do">
 
 	<table class="list">
 		<tr>
@@ -29,15 +29,15 @@
 				<table>
 					<tr>
 					<th>아이디</th>
-						<td><input type="text" name="id" value="${orderdetail.id}"></td>
+						<td><input type="text" name="id" value="${memberDetail.id}" readonly></td>
 					</tr>
 					
 					<tr>
 						<th>회원 등급</th>
 						<td>
 							<select name="ugrade">
-								<option value="BASIC" selected>BASIC</option>
-								<option value="VIP">VIP</option>
+								<option value="1" selected>BASIC</option>
+								<option value="2">VIP</option>
 							</select>
 						</td>
 					</tr>
@@ -45,7 +45,14 @@
 					<tr>
 						<th>등록 주소</th>
 						<td>
-							<input type="text" name="daddress" value="${orderdetail.daddress}">
+							<input type="text" name="uaddress" value="${memberDetail.uaddress}">
+						</td>
+					</tr>
+					
+					<tr>
+						<th>전화 번호</th>
+						<td>
+							<input type="text" name="uphone" value="${memberDetail.uphone}">
 						</td>
 					</tr>
 				</table>

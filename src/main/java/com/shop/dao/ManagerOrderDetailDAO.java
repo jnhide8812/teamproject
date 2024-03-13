@@ -28,8 +28,8 @@ public class ManagerOrderDetailDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select a.ordernumber, a.orderstatus, b.id, b.daddress from ordertable a join orderdetail b on a.ordernumber = b.ordernumber WHERE b.id = 'user1'";
-
+		String sql = "select * from orderdetail order by ordernumber desc";
+				
 		List<ManagerOrderDetailVO> orderlist = new ArrayList<ManagerOrderDetailVO>();
 		try {
 			conn = DBManager.getConnection();
@@ -39,9 +39,10 @@ public class ManagerOrderDetailDAO {
 			while (rs.next()) {
 				ManagerOrderDetailVO vo = new ManagerOrderDetailVO();
 				vo.setOrdernumber(rs.getInt("ordernumber"));
-				vo.setOrderstatus(rs.getString("orderstatus"));
 				vo.setId(rs.getString("id"));
 				vo.setDaddress(rs.getString("daddress"));
+				vo.setOrderstatus(rs.getString("orderstatus"));
+				orderlist.add(vo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -57,7 +58,7 @@ public class ManagerOrderDetailDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from users order by code desc";
+		String sql = "select * from users order by id desc";
 
 		List<ManagerOrderDetailVO> memberlist = new ArrayList<ManagerOrderDetailVO>();
 		try {

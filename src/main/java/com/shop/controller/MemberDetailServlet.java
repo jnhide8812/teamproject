@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.shop.dao.UsersDAO;
+import com.shop.dto.UsersVO;
+
 /**
  * Servlet implementation class MemberDetailServlet
  */
@@ -28,7 +32,14 @@ public class MemberDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("member/memberDetail.jsp");
+		//System.out.println("Get");
+		String id = request.getParameter("id");
+		UsersDAO udao = UsersDAO.getInstance();
+		UsersVO memberDetail = udao.selectById(id);
+		request.setAttribute("memberDetail", memberDetail);
+		
+
+		RequestDispatcher rd = request.getRequestDispatcher("manager/memberDetail.jsp");
 		rd.forward(request, response);
 	}
 
@@ -36,8 +47,25 @@ public class MemberDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("Post서블릿");
+		request.setCharacterEncoding("UTF-8");
+		
+		String id = request.getParameter("id");
+		String ugrade = request.getParameter("ugrade");
+		String uaddress = request.getParameter("uaddress");
+		String uphone = request.getParameter("uphone");
+		
+		UsersVO uvo = new UsersVO();
+		uvo.setId(id);
+		uvo.setUgrade(ugrade);
+		uvo.setUaddress(uaddress);		
+		uvo.setUphone(uphone);
+		
+		UsersDAO udao = UsersDAO.getInstance();
+		udao.updateUser(uvo); //업데이트
+		
+		response.sendRedirect("MemberList.do");
+		
 	}
 
 }

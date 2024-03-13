@@ -28,16 +28,14 @@
 			<td>주문 번호</td>
 			<td>아이디</td>
 			<td>주 소</td>
-			<td>주문 물품</td>
 			<td>배송 상태</td>			
 		</tr>
 		
 		<c:forEach var="managerOrderList" items="${managerOrderList}">
 		<tr class="recode">
-			<td><a href="ManagerOrderDetail.do?ordernumber=${orderdetail.ordernumber}"></a></td>
+			<td><a href="ManagerOrderDetail.do?ordernumber=${managerOrderList.ordernumber}">${managerOrderList.ordernumber}</a></td>
 			<td>${managerOrderList.id}</td>
 			<td>${managerOrderList.daddress}</td>
-			<td></td>
 			<td>${managerOrderList.orderstatus}</td>
 		</tr>
 		</c:forEach>

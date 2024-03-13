@@ -61,7 +61,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 
 		MultipartRequest multi = new MultipartRequest(request, path, sizeLimit, enctype, new DefaultFileRenamePolicy());
 
-		String pcode =(multi.getParameter("pcode"));
+		String pcode =multi.getParameter("pcode");
 		String pname = multi.getParameter("pname");
 		int price = Integer.parseInt(multi.getParameter("price"));
 		int pstock = Integer.parseInt(multi.getParameter("pstock"));

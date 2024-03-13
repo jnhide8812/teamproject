@@ -28,14 +28,16 @@
 		<tr>
 			<td>회원 아이디</td>
 			<td>회원 등급</td>
-			<td>등록 주소</td>			
+			<td>등록 주소</td>		
+			<td>전화 번호</td>	
 		</tr>
 		
 		<c:forEach var="memberList" items="${memberList}">
-		<tr class="recode">
-			<td><a href="MemberDetail.do?id=${memberList.id}"></a></td>
+		<tr class="member">
+			<td><a href="MemberDetail.do?id=${memberList.id}">${memberList.id}</a></td>
 			<td>${memberList.ugrade}</td>
 			<td>${memberList.uaddress}</td>
+			<td>${memberList.uphone}</td>
 		</tr>
 		</c:forEach>
 	</table>
