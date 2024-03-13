@@ -38,7 +38,7 @@ public class SearchServlet extends HttpServlet {
 		List<ProductVO> searchResult = ProductDAO.searchProduct(searchText);
 		request.setAttribute("searchText", searchText);
 		request.setAttribute("searchResult", searchResult);
-	
+		System.out.println("검색기능");
 		RequestDispatcher rd = request.getRequestDispatcher("shopping/productDetail.jsp");
 		rd.forward(request, response);
 	}
