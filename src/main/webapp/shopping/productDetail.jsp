@@ -44,7 +44,7 @@ $(document).ready(function(){
 </head>
 <body>
     <div id="wrap">
-        <table id="product_detail">
+        <table border ="1" id="product_detail">
         	<tr>
         	<td><input type="hidden" name="pcode" value="${ pcode}">
         	</td>
@@ -66,7 +66,11 @@ $(document).ready(function(){
             </tr>
             <tr>
             	<td><input type="text" name="cartcnt" value="${cartcnt }" ></td>
-            	<td class="total-price">총 상품 금액 ${productDetail.price * cartcnt}원</td>
+            </tr>
+            <tr>	
+            <td class="total-price">총 상품 금액 ${productDetail.price * cartcnt}원</td>
+            </tr>
+            <tr>
             	<td><a href ="cart.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a></td>
             </tr>
         </table>
