@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body> 
 <div id="container">
 	<header>
 		<div class="inner">
