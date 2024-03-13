@@ -161,7 +161,7 @@ public class ProductDAO {
 		}
 	}
 	
-	//검색 기능
+	//검색 메서드
 	public List<ProductVO> searchProduct(String searchText){
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		
