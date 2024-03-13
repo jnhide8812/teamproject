@@ -42,6 +42,7 @@ h1{
 	border: 1px solid rgb(242,242,242);
 	margin:10px;
 	padding:30px;
+	align:center;
 
 }
 
@@ -93,10 +94,14 @@ h1{
 	
 	</select></td>
 </tr>
+<!--로그인 유저의 마일리지 값 넘지못하게 제한할것
+
 <tr>
 	<td>적립금 사용</td>
-	<td><input type="text" name="upoint" value="${loginUser.upoint }" ></td><!--로그인 유저의 마일리지 값 넘지못하게 제한할것  -->
-</tr>
+	<td><input type="text" name="upoint" value="${loginUser.upoint }" ></td>   
+</tr> 
+
+-->
 <tr>
 	<td>총 결제금액</td>
 	<td>${totalprice }원 <input type ="hidden" name="totalprice" value="${totalprice }"></td>

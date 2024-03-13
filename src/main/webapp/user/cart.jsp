@@ -59,7 +59,7 @@ h1{
 	line-height: 1em;
 	padding:20px 20px 1px 20px;
 	table-layout: fixed;
-	}
+}
 
 
 

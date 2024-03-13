@@ -3,7 +3,10 @@ package com.shop.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.shop.dto.OrderTableVO;
 
@@ -113,9 +116,79 @@ public class OrderTableDAO {
 	}
 	
 	//주문 완료 내역 출력
-	//public List<OrderTableVO> selectOrderTable(){
+	public List<OrderTableVO> selectOrderTableById(String id){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from ordertable where id=? order by ordernumber desc";
+		List<OrderTableVO> list = new ArrayList<OrderTableVO>();
 		
-	//}
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				OrderTableVO ovo = new OrderTableVO();
+				ovo.setOrdernumber(rs.getInt("ordernumber"));
+				ovo.setId(rs.getString("id"));
+				ovo.setTotalprice(rs.getInt("totalprice"));
+				ovo.setOrderstatus(rs.getString("orderstatus"));
+				ovo.setPayment(rs.getString("payment"));
+				
+				list.add(ovo);
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return list;
+		
+	}
+	
+	
+	//개인 주문 내역 정보 전부 출력 ---- 사용XXXX
+		public List<Object> selectOrderListById(String id){
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = "select c.pname, a.ordernumber, a.id, a.totalprice, a.orderstatus, a.payment, b.orderdetailnumber, b.pcode, b.ordercnt, b.daddress, b.dname from ordertable a join orderdetail b on a.ordernumber = b.ordernumber join product c on b.pcode=c.pcode where a.id=? order by ordernumber desc";
+			List<Object> list = new ArrayList<>();
+			
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					Map<String,Object> hm = new HashMap<>();
+					hm.put("pname", rs.getString("pname"));
+					hm.put("ordernumber", rs.getInt("ordernumber"));
+					hm.put("id", rs.getString("id"));
+					hm.put("totalprice", rs.getInt("totalprice"));
+					hm.put("orderstatus", rs.getString("orderstatus"));
+					hm.put("payment", rs.getString("payment"));
+					hm.put("orderdetailnumber", rs.getInt("orderdetailnumber"));
+					hm.put("pcode", rs.getInt("pcode"));
+					hm.put("ordercnt", rs.getInt("ordercnt"));
+					hm.put("daddress", rs.getString("daddress"));
+					hm.put("dname", rs.getString("dname"));
+					
+					list.add(hm);
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			return list;
+			
+		}
 	
 	
 }

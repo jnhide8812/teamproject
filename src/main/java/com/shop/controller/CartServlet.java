@@ -58,22 +58,7 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//아이디와 pcode, cartcnt로 장바구니에 담는 메소드 호출
 		
-		request.setCharacterEncoding("utf-8");
-		HttpSession session = request.getSession();
-		UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
-		
-		int pcode = Integer.parseInt(request.getParameter("pcode"));
-		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
-		
-		CartVO cvo = new CartVO();
-		cvo.setId(loginUser.getId());
-		cvo.setPcode(pcode);
-		cvo.setCartcnt(cartcnt);
-		
-		CartDAO cdao = CartDAO.getInstance();
-		cdao.insertCart(cvo);
 		
 	}
 

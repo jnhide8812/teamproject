@@ -1,9 +1,6 @@
 package com.shop.controller;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,21 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.shop.dao.OrderTableDAO;
-import com.shop.dto.OrderTableVO;
+import com.shop.dao.CartDAO;
+import com.shop.dto.CartVO;
 import com.shop.dto.UsersVO;
 
 /**
- * Servlet implementation class OrderListServlet
+ * Servlet implementation class CartInsertSevlet
  */
-@WebServlet("/orderList.do")
-public class OrderListServlet extends HttpServlet {
+@WebServlet("/cartInsert.do")
+public class CartInsertSevlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OrderListServlet() {
+    public CartInsertSevlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,24 +31,25 @@ public class OrderListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 아이디와 pcode, cartcnt로 장바구니에 담는 메소드 호출
+
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		if (session.getAttribute("loginUser") == null) 
-		{
-			response.sendRedirect("login.do");
-		} else {
-			UsersVO loginUser = (UsersVO) session.getAttribute("loginUser");
-			OrderTableDAO odao = OrderTableDAO.getInstance();
-			
-		//	List<Object> orderList = odao.selectOrderListById(loginUser.getId());
-			List<OrderTableVO> orderList = odao.selectOrderTableById(loginUser.getId());
-			request.setAttribute("orderList", orderList);
-			
-			
-			RequestDispatcher rd = request.getRequestDispatcher("user/orderList.jsp");
-			rd.forward(request, response);
+		UsersVO loginUser = (UsersVO) session.getAttribute("loginUser");
 
-		}
+		int pcode = Integer.parseInt(request.getParameter("pcode"));
+		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
 
+		CartVO cvo = new CartVO();
+		cvo.setId(loginUser.getId());
+		cvo.setPcode(pcode);
+		cvo.setCartcnt(cartcnt);
+
+		CartDAO cdao = CartDAO.getInstance();
+		cdao.insertCart(cvo);
+		
+		
 	}
 
 	/**
