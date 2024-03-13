@@ -37,6 +37,8 @@ public class MainServlet extends HttpServlet {
 		List<ProductVO> product = pdao.selectSellProduct();
 		request.setAttribute("product", product);
 		
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage.jsp");
 		rd.forward(request, response);
 				
