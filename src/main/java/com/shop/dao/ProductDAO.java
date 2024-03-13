@@ -202,38 +202,42 @@ public class ProductDAO {
 		
 
 
-//검색 기능
-	public List<ProductVO> searchProduct(String searchText){
-		List<ProductVO> list = new ArrayList<ProductVO>();
-		
-		Connection conn = null;
-		ResultSet rs = null;
-		String sql = "select * from Product where ";
-		try {
-			if(searchText != null && !searchText.equals("")) {
-				sql += "Like '%"+searchText.trim()+"%'order by pname desc limit 12" ;
-			}
-			conn = DBManager.getConnection();
-			PreparedStatement pstmt = null;
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				ProductVO pvo = new ProductVO();
-				pvo.setPictureurl(rs.getString(1));
-				pvo.setCatecode(rs.getString(2));
-				pvo.setPcode(rs.getInt(3));
-				pvo.setPname(rs.getString(4));
-				pvo.setPrice(rs.getInt(5));
-				pvo.setPstatus(rs.getString(6));
-				pvo.setPstock(rs.getInt(7));
-				list.add(pvo);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}return list;
-	}
+		// 검색 메서드
+		public List<ProductVO> searchProduct(String searchText) {
+		    List<ProductVO> list = new ArrayList<ProductVO>();
 
+		    Connection conn = null;
+		    PreparedStatement pstmt = null;
+		    ResultSet rs = null;
+		    String sql = "select * from Product where pname like ? order by pname desc limit 12";
+		    try {
+		        if (searchText != null && !searchText.equals("")) {
+		            conn = DBManager.getConnection();
+		            pstmt = conn.prepareStatement(sql);
+		            pstmt.setString(1, "%" + searchText.trim() + "%"); // 검색어 설정
+		            rs = pstmt.executeQuery();
+
+		            while (rs.next()) {
+		                ProductVO pvo = new ProductVO();
+		                pvo.setPictureurl(rs.getString(1));
+		                pvo.setCatecode(rs.getString(2));
+		                pvo.setPcode(rs.getInt(3));
+		                pvo.setPname(rs.getString(4));
+		                pvo.setPrice(rs.getInt(5));
+		                pvo.setPstatus(rs.getString(6));
+		                pvo.setPstock(rs.getInt(7));
+		                list.add(pvo);
+		            }
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    } finally {
+		        DBManager.close(conn, pstmt, rs);
+		    }
+		    return list;
+		}
 }
+
+
 
 
