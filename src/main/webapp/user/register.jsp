@@ -7,7 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript" src="script/shop.js"></script>
+
 <link rel="stylesheet" type="text/css" href="css/regi.css">
+
+
 <title>회원가입</title>
 
 </head>
@@ -31,7 +34,7 @@
 				<li>
 					<label for="upwd_re">비밀번호 확인</label>
 					<input type="password" name="upwd_re"
-						placeholder="비밀번호 재입력" onclick="return pwdTest()" class="box">
+						placeholder="비밀번호 재입력"  class="box">
 				</li>
 				<li>
 					<label for="name">이름</label>
@@ -57,8 +60,9 @@
 					<div class="downline"></div>
 				</li>
 				<li class="btn_wrap">
-					<input type="submit" value="회원가입하기"  class="joinbtn">
+					<input type="submit" value="회원가입하기" onclick="return pwdTest()" class="joinbtn">
 				</li>
+				
 			</ul>
 		</nav>
 			${message }

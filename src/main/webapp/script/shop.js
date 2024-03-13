@@ -58,45 +58,27 @@ function idok(){
    
 }
 
-	
-function pwdTest() {
-      var p1 = document.getElementById("upwd").value;
-      var p2 = document.getElementById("upwd_re").value;
-      if( p1 != p2 ) {
-        alert("비밀번호가 일치 하지 않습니다");
-        return false;
-      } else{
-        alert("비밀번호가 일치합니다");
-        return true;
-      }
-
-    }
-    
-    
-    function joinCheck(){
-   if(document.frm.name.value.length==0){
+	//회원가입 시 안내창 
+  function pwdTest(){
+   if(document.frm.uname.value.length==0){
       alert("이름을 써 주세요");
-      frm.name.focus();
+      frm.uname.focus();
       return false;
    }
    if(document.frm.id.value.length==0){
       alert("아이디를 써 주세요");
-      frm.userid.focus();
-      return false;
-   }
-   if(document.frm.id.value.length<4){
-      alert("아이디는 최소 4글자 이상이어야 합니다");
       frm.id.focus();
       return false;
    }
-   if(document.frm.pwd.value==""){
+   
+   if(document.frm.upwd.value==""){
       alert("암호는 반드시 입력해야 합니다");
-      frm.pwd.focus();
+      frm.upwd.focus();
       return false;
    }
-   if(document.frm.pwd.value != document.frm.upwd_re.value){
+   if(document.frm.upwd.value != document.frm.upwd_re.value){
       alert("암호가 일치하지 않습니다.");
-      frm.pwd.focus();
+      frm.upwd.focus();
       return false;
    }
    if(document.frm.reid.value.length==0){
