@@ -24,7 +24,7 @@ const swiper = new Swiper(".slider_wrap", {
 </head>
 <body>
 <jsp:include page="main.jsp"/>
-<div id="container">
+<div id="content">
 	<section class="shop1">
 		<div class="swiper slider_wrap">
 			<div class="inner">
@@ -59,7 +59,7 @@ const swiper = new Swiper(".slider_wrap", {
 						<div class="img_wrap">
 							<img src="img/apple.jpg">
 						</div>
-						<a href="#" class="cart_btn">
+						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
 							<img src="icon/sh_cart" class="s_cart">
 							담기
 						</a>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../main.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 <link rel = "stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<div id="container">
+<div id="login_wrap">
 	<form action="login.do" method="post" class="main">
 	<table class="log">
 		<tr>

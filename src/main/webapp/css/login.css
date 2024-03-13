@@ -14,7 +14,7 @@ a {
 	text-decoration: none;
 	color: black;
 }
-#container {
+#login_wrap{
 	background-color: #FFFFFF;
 	height: 100vh;
 	display: flex;
@@ -80,6 +80,7 @@ input.blog{
 	background-color: #5F0080;
 	border:1px solid #5F0080;
 	margin-bottom: 3px;
+	z-index:4;
 }
 
 input.regi{

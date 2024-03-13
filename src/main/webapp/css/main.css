@@ -1,5 +1,9 @@
 @import url(style.css);
 
+#content {
+	position:relative;
+	min-height: 100%;
+}
 .tit_wrap {
 	display: none;
 }
@@ -168,7 +172,6 @@ footer{
 	height: 525px;
 	width:100%;
 	bottom: 0;
-	z-index:4;
 }
 
 .mid {

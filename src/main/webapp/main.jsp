@@ -11,6 +11,7 @@
 </head>
 <body>
 <div id="container">
+<div id="content">
 	<header>
 		<div class="inner">
 			<nav class="h_top">
@@ -56,7 +57,8 @@
         	 	</nav>
 			</div>
 		</div>
-	</header> 
+	</header>
+</div> 
 	<footer>
 		<div class="mid">
 			<div class="ft_shop1">
