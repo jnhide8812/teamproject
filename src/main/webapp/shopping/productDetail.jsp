@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="../main.jsp" %>
+<%-- <%@ include file="../main.jsp" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +60,12 @@ h1{
 <body>
 
     <div id="wrap">
+ 
         <table id="product_detail">
+        	<tr>
+        	<td><input type="hidden" name="pcode" value="${ pcode}">
+        	</td>
+        	</tr>
             <tr>
                 <td class="product-image" rowspan="4">
                     <img src="img/${productDetail.pictureurl}" alt="Product Image">
@@ -75,6 +80,11 @@ h1{
             </tr>
             <tr>
                 <td colspan="2">${productDetail.pinfo}</td>
+            </tr>
+            <tr>
+            	<td><input type="text" name="cartcnt" value="${cartcnt }" ></td>
+            	<td>총 상품 금액 ${productDetail.price * cartcnt}원</td>
+            	<td><a href ="cart.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a></td>
             </tr>
         </table>
     </div>
