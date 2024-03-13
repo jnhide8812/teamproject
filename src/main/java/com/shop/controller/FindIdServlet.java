@@ -39,15 +39,18 @@ public class FindIdServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	System.out.println("dkanrjsk");
 		
 		String uname = request.getParameter("uname");
 		String uphone = request.getParameter("uphone");
 		
 		UsersDAO fdao = UsersDAO.getInstance();
 		String id = fdao.findId(uname,uphone);
+		System.out.println("id:" + id);
 		request.setAttribute("id", id);
-		System.out.println("아이디 찾기 연결");
+		RequestDispatcher rd = request.getRequestDispatcher("user/resultFindId.jsp");
+		rd.forward(request, response);
+		
 		
 		
 	

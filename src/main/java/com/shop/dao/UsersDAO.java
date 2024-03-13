@@ -277,27 +277,32 @@ public class UsersDAO {
 				
 			}
 
-			//비밀번호를 찾는 메소드
+			// 비밀번호를 찾는 메소드
 			public String findPwd(String id, String uname, String uphone) {
 				Connection conn = null;
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;
-				
+
 				String upwd = null;
-				String sql = "select upwd from users where id=? & uname=? & uphone=?";
-				try
-				   {conn = DBManager.getConnection();
+				String sql = "select upwd from users where id=? and uname=? and uphone=?";
+				try {
+					conn = DBManager.getConnection();
 					pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, id);	
+					pstmt.setString(1, id);
 					pstmt.setString(2, uname);
 					pstmt.setString(3, uphone);
-					pstmt.executeQuery();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}finally {
-							DBManager.close(conn, pstmt,rs);
-						}return upwd;
-				
-				
+					rs = pstmt.executeQuery();
+					
+					if (rs.next()) {
+						upwd = rs.getString("upwd");
+						return upwd;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					DBManager.close(conn, pstmt, rs);
+				}
+				return upwd;
+
 			}
 }
