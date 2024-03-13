@@ -36,8 +36,8 @@ public class MainServlet extends HttpServlet {
 		ProductDAO pdao = ProductDAO.getInstance();
 		List<ProductVO> product = pdao.selectSellProduct();
 		request.setAttribute("product", product);
-		
-		
+		System.out.println("product: "+ product);
+		System.out.println("dddd");
 		
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage.jsp");
 		rd.forward(request, response);
