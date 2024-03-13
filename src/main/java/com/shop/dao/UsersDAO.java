@@ -334,4 +334,22 @@ public class UsersDAO {
 		}
 		return uvo;
 	}
+	
+	//회원 탈퇴 메소드
+	public void deleteUser(String id){
+		String sql = "delete from users where id=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "id");
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 }

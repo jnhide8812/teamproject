@@ -36,11 +36,11 @@ public class MyPageServlet extends HttpServlet {
 				UsersDAO udao = UsersDAO.getInstance();
 				UsersVO loginUser = udao.selectById(id);
 				request.setAttribute("loginUser", loginUser);
-				System.out.println("마이페이지 연결1");
+				
 				RequestDispatcher rd = request.getRequestDispatcher("user/mypage.jsp");
 			
 				rd.forward(request, response);
-				System.out.println("마이페이지 연결2");
+				
 			}
 
 	
