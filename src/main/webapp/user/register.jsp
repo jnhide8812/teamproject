@@ -20,7 +20,7 @@
 			<ul>
 				<li>
 					<label for="id">아이디</label>
-					<input type="text" name="id" placeholder="아이디 입력" class="box">
+					<input type="text" name="id" placeholder="아이디 입력" class="idbox">
 					<input type="button" value="중복 확인" onclick="idCheck()" class="idbtn"> 
 					<input type="hidden" name="reid">
 				</li>
