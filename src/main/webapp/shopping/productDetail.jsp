@@ -31,6 +31,7 @@ h1{
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
+//ajax 참고
 $(document).ready(function(){
     // 수량 변경 시 이벤트 처리
     $("input[name='cartcnt']").on('input', function(){
