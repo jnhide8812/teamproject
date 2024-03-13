@@ -31,10 +31,10 @@ table#list td, table#list th{
 
 table {
 	width: 100%;
-	height: 120px;
-	border: 3px solid #5f0080;
-	
+	height: 60px;
+	border: 3px solid #5f0080;	
 }
+
 
 table th {
 	font-weight: bold;
@@ -42,7 +42,7 @@ table th {
 	font-size: 1.5em;
 	color: #5f0080;
 	
-} 
+}
 
 table a {
 	font-size: 16px;
