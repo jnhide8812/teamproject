@@ -13,9 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.shop.dao.UsersDAO;
 import com.shop.dto.UsersVO;
 
-/**
- * Servlet implementation class MyPageServlet
- */
+
 @WebServlet("/mypage.do")
 public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
