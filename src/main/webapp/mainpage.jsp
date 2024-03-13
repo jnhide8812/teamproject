@@ -24,6 +24,8 @@ const swiper = new Swiper(".slider_wrap", {
 </head>
 <body>
 <jsp:include page="main.jsp"/>
+<jsp:include page="footer.jsp"/>
+
 <div id="container">
 	<section class="shop1">
 		<div class="swiper slider_wrap">
