@@ -57,7 +57,7 @@ public class ManagerWriteServlet extends HttpServlet {
 		String catecode = multi.getParameter("catecode");
 		String pstatus = multi.getParameter("pstatus");
 		String pinfo = multi.getParameter("pinfo");
-		String pictureurl = multi.getParameter("pictureurl");
+		String pictureurl = multi.getFilesystemName("pictureurl");
 		
 		ProductVO vo = new ProductVO();
 		vo.setPname(pname);
