@@ -3,12 +3,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+<head>
     <meta charset="UTF-8">
-    <title>검색 결과</title>
+    <title>상품 목록</title>
+    <style>
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-item {
+            width: 30%; /* 각 상품이 차지하는 너비 */
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+   
+  
 </head>
 <body>
     <h1>검색 결과</h1>
-   <%--  <p>검색어: ${searchText}</p> --%>
 
     <%-- 검색 결과를 반복문으로 출력 --%>
     <c:forEach items="${searchResult}" var="product">
