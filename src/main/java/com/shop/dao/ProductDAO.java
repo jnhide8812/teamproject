@@ -200,7 +200,7 @@ public class ProductDAO {
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 
-			String sql = "select * from product where pstock>=1 order by pcode desc";
+			String sql = "select * from product where pstock>=1 and pictureurl is not null order by pcode desc";
 
 			List<ProductVO> list = new ArrayList<ProductVO>();
 			try {
@@ -209,13 +209,13 @@ public class ProductDAO {
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 					ProductVO vo = new ProductVO();
-					vo.setPname(rs.getString("pname"));
+					vo.setPname(rs.getString("pname").trim());
 					vo.setPrice(rs.getInt("price"));
 					vo.setPstock(rs.getInt("pstock"));
-					vo.setPstatus(rs.getString("pstatus"));
-					vo.setPinfo(rs.getString("pinfo"));
-					vo.setPictureurl(rs.getString("pictureurl"));
-					vo.setCatecode(rs.getString("catecode"));
+					vo.setPstatus(rs.getString("pstatus").trim());
+					vo.setPinfo(rs.getString("pinfo").trim());
+					vo.setPictureurl(rs.getString("pictureurl").trim());
+					vo.setCatecode(rs.getString("catecode").trim());
 					vo.setPcode(rs.getInt("pcode"));
 					list.add(vo);
 				}

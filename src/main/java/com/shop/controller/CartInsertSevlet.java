@@ -1,6 +1,8 @@
 package com.shop.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +38,15 @@ public class CartInsertSevlet extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
+		if(session.getAttribute("loginUser") == null){
+			response.sendRedirect("login.do");
+		}
+		else {
+		
 		UsersVO loginUser = (UsersVO) session.getAttribute("loginUser");
+		
+		
+		
 
 		int pcode = Integer.parseInt(request.getParameter("pcode"));
 		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
@@ -49,7 +59,9 @@ public class CartInsertSevlet extends HttpServlet {
 		CartDAO cdao = CartDAO.getInstance();
 		cdao.insertCart(cvo);
 		
-		
+		RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
+		rd.forward(request, response);
+		}
 	}
 
 	/**
