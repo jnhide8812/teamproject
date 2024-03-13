@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>검색 결과</h1>
-    <p>검색어: ${searchText}</p>
+   <%--  <p>검색어: ${searchText}</p> --%>
 
     <%-- 검색 결과를 반복문으로 출력 --%>
     <c:forEach items="${searchResult}" var="product">
