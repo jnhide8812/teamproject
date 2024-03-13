@@ -32,14 +32,7 @@
 	<table>
 		<tr>
 			<td>
-				<c:choose>
-					<c:when test="${empty product.pictureurl}">
-						<img id="picture" src="img/noimg.png">
-					</c:when>
-					<c:otherwise>
-						<img id="picture">
-					</c:otherwise>
-				</c:choose>
+			<div align="center" id="image_container"></div>
 			</td>
 			<td>
 				<table id="writelist">
@@ -91,17 +84,61 @@
 					<tr>
 						<th id="inner">상품 설명</th>
 						<td>
-							<textarea rows="7" cols="60" name="pinfo">
-								${product.pinfo}
-							</textarea>
+							<textarea rows="7" cols="60" name="pinfo">${product.pinfo}</textarea>
 						</td>
 					</tr>
 					
 					<tr>
 						<th id="inner">상품 사진</th>
 						<td>
-							<input type="file" name="pictureurl"><br>
-							<img id="picture"/>
+							<input type="file" id="image" accept="image/*" name="pictureurl" onchange="setThumbnail(event);" required="required"><br>
+							<script>
+								    function setThumbnail(event) {
+								        var reader = new FileReader();
+								
+								        reader.onload = function(event) {
+								            //기존 이미지 없애기
+								            var container = document.getElementById("image_container");
+								            while (container.firstChild) {
+								                container.removeChild(container.firstChild);
+								            }
+								
+								            //새 이미지 넣기
+								           var img = new Image();
+								            img.src = event.target.result;
+								            img.onload = function() {
+								                var maxWidth = 300; // 최대 너비
+								                var maxHeight = 300; // 최대 높이
+								                var width = img.width;
+								                var height = img.height;
+								
+								                // 이미지의 비율을 유지하면서 너비와 높이를 조정
+								                if (width > height) {
+								                    if (width > maxWidth) {
+								                        height *= maxWidth / width;
+								                        width = maxWidth;
+								                    }
+								                } else {
+								                    if (height > maxHeight) {
+								                        width *= maxHeight / height;
+								                        height = maxHeight;
+								                    }
+								                }
+								                // 이미지 요소 생성
+								                var imgElement = document.createElement("img");
+								                imgElement.src = event.target.result;
+								                imgElement.width = width;
+								                imgElement.height = height;
+
+								                // 이미지를 컨테이너에 추가
+								                container.appendChild(imgElement);
+								            };
+								        };
+
+								        reader.readAsDataURL(event.target.files[0]);
+								    }
+								</script>
+						
 						</td>
 					</tr>
 				</table>
