@@ -24,15 +24,15 @@
 </header>
 <div id="wrap" align="center">
 	<table id="list">
-		<tr>
+		<tr style="background-color: #5f0080;">
 			<td colspan="8" style="border:white; text-align:right">
-				<a id="littlepadding" href="ManagerWrite.do">상품 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a id="littlepadding" href="Manager.do">메인 화면</a>
+				<a id="littlepadding" href="ManagerWrite.do" style="color: white;">상품 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a id="littlepadding" href="Manager.do" style="color: white;">메인 화면</a>
 			</td>
 		</tr> 
 		
 		
-		<tr id="textcenter">
+		<tr id="textcenter" style="background-color: #5f0080; color: white;">
 			<td>상품 코드</td>
 			<td>상품 이름</td>
 			<td>상품 가격</td>

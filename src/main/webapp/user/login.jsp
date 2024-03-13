@@ -35,7 +35,7 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="button"  value="회원가입" class="regi">
+				<input type="button" value="회원가입" onclick="location.href='register.do'" class="regi">
 			</td>
 		</tr>
 	</table>

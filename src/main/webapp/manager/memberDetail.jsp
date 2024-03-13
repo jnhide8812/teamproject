@@ -11,7 +11,7 @@
 <header>
 <table>
 	<tr>
-		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
@@ -22,18 +22,14 @@
 </header>
 <div id="wrap" align="center">
 <form method="post" action="MemberDetail.do">
-
-	<table class="list">
-		<tr>
-			<td>
-				<table>
+				<table id="list" style="width: 500px;">
 					<tr>
-					<th>아이디</th>
-						<td><input type="text" name="id" value="${memberDetail.id}" readonly></td>
+					<th style="text-align: right; font-size: 16px;">아이디</th>
+						<td><input type="text" name="id" value="${memberDetail.id}" readonly size="30"></td>
 					</tr>
 					
 					<tr>
-						<th>회원 등급</th>
+						<th style="text-align: right; font-size: 16px;">회원 등급</th>
 						<td>
 							<select name="ugrade">
 								<option value="1" selected>BASIC</option>
@@ -43,21 +39,18 @@
 					</tr>
 				
 					<tr>
-						<th>등록 주소</th>
+						<th style="text-align: right; font-size: 16px;">등록 주소</th>
 						<td>
-							<input type="text" name="uaddress" value="${memberDetail.uaddress}">
+							<input type="text" name="uaddress" value="${memberDetail.uaddress}" size="30">
 						</td>
 					</tr>
 					
 					<tr>
-						<th>전화 번호</th>
+						<th style="text-align: right; font-size: 16px;">전화 번호</th>
 						<td>
-							<input type="text" name="uphone" value="${memberDetail.uphone}">
+							<input type="text" name="uphone" value="${memberDetail.uphone}" size="30">
 						</td>
 					</tr>
-				</table>
-			</td>
-		</tr>
 	</table>
 	<br>
 	<input type="submit" value="확인" onclick="location.href='MemberList.do'">&nbsp;&nbsp;
