@@ -12,7 +12,7 @@
 <header>
 <table>
 	<tr>
-		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td>
+		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
@@ -22,9 +22,8 @@
 </table>
 </header>
 <div id="wrap" align="center">
-	<table class="list">
-	
-		<tr>
+	<table id="list">
+		<tr id="textcenter">
 			<td>주문 번호</td>
 			<td>아이디</td>
 			<td>주 소</td>
@@ -33,7 +32,7 @@
 		
 		<c:forEach var="managerOrderList" items="${managerOrderList}">
 		<tr class="recode">
-			<td><a href="ManagerOrderDetail.do?ordernumber=${managerOrderList.ordernumber}">${managerOrderList.ordernumber}</a></td>
+			<td align="center"><a href="ManagerOrderDetail.do?ordernumber=${managerOrderList.ordernumber}">${managerOrderList.ordernumber}</a></td>
 			<td>${managerOrderList.id}</td>
 			<td>${managerOrderList.daddress}</td>
 			<td>${managerOrderList.orderstatus}</td>
