@@ -62,7 +62,7 @@ public class MemberDetailServlet extends HttpServlet {
 		uvo.setUphone(uphone);
 		
 		UsersDAO udao = UsersDAO.getInstance();
-		udao.updateUser(uvo); //업데이트
+		udao.updateUsers(uvo); //업데이트
 		
 		response.sendRedirect("MemberList.do");
 		
