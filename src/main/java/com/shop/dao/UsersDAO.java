@@ -206,7 +206,7 @@ public class UsersDAO {
 				if (pstmt != null)
 					pstmt.close();
 				if (conn != null)
-					pstmt.close();
+					conn.close();
 
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -311,19 +311,21 @@ public class UsersDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "update users set id=?, ugrade=?, uaddress=?, uphone=? where id=?";
+		String sql = "update users set ugrade=?, uaddress=?, uphone=? where id=?";
 		
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, uvo.getId());
-			pstmt.setString(2, uvo.getUgrade());
-			pstmt.setString(3, uvo.getUaddress());
-			pstmt.setString(4, uvo.getUphone());
+			
+			pstmt.setString(1, uvo.getUgrade());
+			pstmt.setString(2, uvo.getUaddress());
+			pstmt.setString(3, uvo.getUphone());
+			pstmt.setString(4, uvo.getId());
+			
+			
 			
 			pstmt.executeUpdate();
-			
 
 		}catch (Exception e) {
 			e.printStackTrace();

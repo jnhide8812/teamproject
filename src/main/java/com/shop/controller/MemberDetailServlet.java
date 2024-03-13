@@ -47,7 +47,7 @@ public class MemberDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Post서블릿");
+		//System.out.println("Post서블릿");
 		request.setCharacterEncoding("UTF-8");
 		
 		String id = request.getParameter("id");
@@ -62,7 +62,7 @@ public class MemberDetailServlet extends HttpServlet {
 		uvo.setUphone(uphone);
 		
 		UsersDAO udao = UsersDAO.getInstance();
-		udao.updateUsers(uvo); //업데이트
+		udao.updateUsers(uvo); //업데이트  
 		
 		response.sendRedirect("MemberList.do");
 		
