@@ -26,7 +26,7 @@ const swiper = new Swiper(".slider_wrap", {
 <jsp:include page="main.jsp"/>
 <jsp:include page="footer.jsp"/>
 
-<div id="container">
+<div id="content">
 	<section class="shop1">
 		<div class="swiper slider_wrap">
 			<div class="inner">
@@ -55,25 +55,27 @@ const swiper = new Swiper(".slider_wrap", {
 					컬리 추천 특가템 최대 50%
 				</p>
 			</div>
+		<c:forEach var="product" items="${product }" end="12" >
 			<ul class="shop2_list">
 				<li>
-					<a href="#">
+					<a href="productDetail.do">
 						<div class="img_wrap">
-							<img src="img/apple.jpg">
+							<img src="img/${product.pictureurl}">
 						</div>
-						<a href="#" class="cart_btn">
+						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
 							<img src="icon/sh_cart" class="s_cart">
 							담기
 						</a>
 						<h4	class="p_tit">
-							상품명
+							${product.pname}
 						</h4>
 						<p class="price">
 							<span class="discount">50%</span>
-							상품 가격
+							 ${product.price}
 						</p>
 					</a>
 				</li>
+		</c:forEach>
 				<li>
 					<a href="#">
 						<div class="img_wrap">

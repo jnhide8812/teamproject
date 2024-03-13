@@ -1,9 +1,17 @@
+@import url(style.css);
+#content {
+	width: 1050px;
+	height: 100%;
+	margin: 0px auto;
+	position:relative;
+	
+}
+/*shop1*/
 .slider_wrap{
 	height: 368px;
 	width:100%;
 }
 .slider_wrap .swiper_slide {
-	background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -31,14 +39,7 @@
 .slider_wrap .swiper-slide.s08 {
 	background-image: url(img/sh18.jpg);
 }
-.inner {
-    max-width: 1900px;
-    height: 100%;
-    margin:auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .slider_wrap  .swiper-button-next:after, 
 .slider_wrap  .swiper-button-prev:after{
     display: none;
