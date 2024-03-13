@@ -13,7 +13,7 @@
 <header>
 <table>
 	<tr>
-		<td><a href="main.do"><img src="icon/kurly.jpeg"></a></td> 
+		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td> 
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
@@ -23,9 +23,9 @@
 </table>
 </header>
 <div id="wrap" align="center">
-	<table class="list">		
+	<table id="list">		
 		
-		<tr>
+		<tr id="textcenter">
 			<td>회원 아이디</td>
 			<td>회원 등급</td>
 			<td>등록 주소</td>		
