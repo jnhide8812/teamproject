@@ -11,6 +11,7 @@ footer{
 	height: 525px;
 	width:100%;
 	bottom: 0;
+	z-index:4;
 }
 
 .mid {

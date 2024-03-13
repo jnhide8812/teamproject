@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,14 +21,14 @@ const swiper = new Swiper(".slider_wrap", {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-<!--<link rel="stylesheet" href="css/mainpage.css">  -->
+<link rel="stylesheet" href="css/mainpage.css">
 </head>
 <body>
 <jsp:include page="main.jsp"/>
 <jsp:include page="footer.jsp"/>
 
 <div id="content">
-	<section class="shop1">
+	<!--  <section class="shop1">
 		<div class="swiper slider_wrap">
 			<div class="inner">
 				<div class="swiper-slide s01"></div>
@@ -43,93 +44,39 @@ const swiper = new Swiper(".slider_wrap", {
         	<div class="swiper-button-prev"></div>
         	<div class="swiper-pagination"></div>
 		</div>	
-	</section>
+	</section>-->
 	<section class="shop2">
 		<div class="inner">
 			<div class="tit_wrap">
 				<h3 class="main_tit">
-					지금 가장 많이 담는 특가
-					<img src="icon/r_errow.png" class="errow">
+					지금 가장 많이 담는 특가!
 				</h3>
 				<p class="con_txt">
 					컬리 추천 특가템 최대 50%
 				</p>
 			</div>
-		<c:forEach var="product" items="${product }" end="12" >
+		<c:forEach var="product" items="${product }" end="8" >
 			<ul class="shop2_list">
 				<li>
-					<a href="productDetail.do">
+					<a href="productDetail.do?pcode=${product.pcode }">
 						<div class="img_wrap">
 							<img src="img/${product.pictureurl}">
 						</div>
 						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
-							<img src="icon/sh_cart" class="s_cart">
+							<img src="icon/sh_cart.png" class="s_cart">
 							담기
 						</a>
-						<h4	class="p_tit">
-							${product.pname}
-						</h4>
-						<p class="price">
-							<span class="discount">50%</span>
-							 ${product.price}
-						</p>
-					</a>
-				</li>
-		</c:forEach>
-				<li>
-					<a href="#">
-						<div class="img_wrap">
-							<img src="img/apple.jpg">
+						<div class="info">
+							<h4	class="p_tit">
+								${product.pname}
+							</h4>
+							<p class="price">
+								<span class="discount">50%</span>
+								 ${product.price}
+							</p>
 						</div>
-						<a href="#" class="cart_btn">
-							<img src="icon/sh_cart" class="s_cart">
-							담기
-						</a>
-						<h4	class="p_tit">
-							상품명
-						</h4>
-						<p class="price">
-							<span class="discount">50%</span>
-							상품 가격
-						</p>
 					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="img_wrap">
-							<img src="img/apple.jpg">
-						</div>
-						<a href="#" class="cart_btn">
-							<img src="icon/sh_cart" class="s_cart">
-							담기
-						</a>
-						<h4	class="p_tit">
-							상품명
-						</h4>
-						<p class="price">
-							<span class="discount">50%</span>
-							상품 가격
-						</p>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="img_wrap">
-							<img src="img/apple.jpg">
-						</div>
-						<a href="#" class="cart_btn">
-							<img src="icon/sh_cart" class="s_cart">
-							담기
-						</a>
-						<h4	class="p_tit">
-							상품명
-						</h4>
-						<p class="price">
-							<span class="discount">50%</span>
-							상품 가격
-						</p>
-					</a>
-				</li>
+				</li>				
 			</ul>
 		</div>
 	</section>
@@ -157,68 +104,49 @@ const swiper = new Swiper(".slider_wrap", {
 				</p>
 			</div>
 		</div>
-		<ul class="shop4_lists">
+		<ul class="shop4_list">
 			<li>
-				<a href="#">
-					<div class="img_wrap">
-						<img src="img/apple.jpg">
-					</div>
-					
-					<a href="#" class="cart_btn">
-						<img src="icon/sh_cart" class="s_cart">
+					<a href="productDetail.do?pcode=${product.pcode }">
+						<div class="img_wrap">
+							<img src="img/${product.pictureurl}">
+						</div>
+						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+							<img src="icon/sh_cart.png" class="s_cart">
 							담기
+						</a>
+						<div class="info">
+							<h4	class="p_tit">
+								${product.pname}
+							</h4>
+							<p class="price">
+								<span class="discount">50%</span>
+								 ${product.price}
+							</p>
+						</div>
 					</a>
-					
-					<h4	class="p_tit">
-						상품명
-					</h4>
-					<p class="price">
-						<span class="discount">50%</span>
-						상품 가격
-					</p>
-				</a>
-			</li>
+				</li>	
 			<li>
-				<a href="#">
-					<div class="img_wrap">
-						<img src="img/apple.jpg">
-					</div>
-					
-					<a href="#" class="cart_btn">
-						<img src="icon/sh_cart" class="s_cart">
+					<a href="productDetail.do?pcode=${product.pcode }">
+						<div class="img_wrap">
+							<img src="img/${product.pictureurl}">
+						</div>
+						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+							<img src="icon/sh_cart.png" class="s_cart">
 							담기
+						</a>
+						<div class="info">
+							<h4	class="p_tit">
+								${product.pname}
+							</h4>
+							<p class="price">
+								<span class="discount">50%</span>
+								 ${product.price}
+							</p>
+						</div>
 					</a>
-					
-					<h4	class="p_tit">
-						상품명
-					</h4>
-					<p class="price">
-						<span class="discount">50%</span>
-						상품 가격
-					</p>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<div class="img_wrap">
-						<img src="img/apple.jpg">
-					</div>
-					
-					<a href="#" class="cart_btn">
-						<img src="icon/sh_cart" class="s_cart">
-							담기
-					</a>
-					
-					<h4	class="p_tit">
-						상품명
-					</h4>
-					<p class="price">
-						<span class="discount">50%</span>
-						상품 가격
-					</p>
-				</a>
-			</li>
-		</ul>
+				</li>
+			</ul>
+		</c:forEach>
 	</section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

@@ -29,7 +29,7 @@
 			<div class="middle">
 				<div class="logo">
 					<img src="./icon/h_logo.png" class="h_logo">
-					<h1><a href="mainpage.jsp" class="char_lg">마켓컬리</a></h1>
+					<h1><a href="main.do" class="char_lg">마켓컬리</a></h1>
 				</div>
 				<form action="search.do">
             	<div class="search">
