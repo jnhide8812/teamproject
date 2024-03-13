@@ -193,4 +193,39 @@ public class ProductDAO {
 		}return list;
 	}
 
+	
+	// 상품 재고 1 이상인 것만 메인 페이지에 출력
+		public List<ProductVO> selectSellProduct() {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+
+			String sql = "select * from product where pstock>=1 order by pcode desc";
+
+			List<ProductVO> list = new ArrayList<ProductVO>();
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+					ProductVO vo = new ProductVO();
+					vo.setPname(rs.getString("pname"));
+					vo.setPrice(rs.getInt("price"));
+					vo.setPstock(rs.getInt("pstock"));
+					vo.setPstatus(rs.getString("pstatus"));
+					vo.setPinfo(rs.getString("pinfo"));
+					vo.setPictureurl(rs.getString("pictureurl"));
+					vo.setCatecode(rs.getString("catecode"));
+					vo.setPcode(rs.getInt("pcode"));
+					list.add(vo);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			return list;
+		}
+	
 }
