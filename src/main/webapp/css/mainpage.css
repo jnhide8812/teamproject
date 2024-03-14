@@ -140,10 +140,15 @@ ul.shop4_list li{
 	
 }
 .img_wrap {
-	height: 250px;
-	width: auto;
+	height: 320px;
+	width: 250px;
 	border-radius: 4px;
+	object-fit:cover;
+	cursor:pointer;
 	overflow:hidden;
+	display:block;
+	box-sizing: border-box;
+	
 }
 img.s_cart{
 	width: 20px;
@@ -189,3 +194,4 @@ p.price{
 	line-height: 1.5;
 	color: #333;
 }
+

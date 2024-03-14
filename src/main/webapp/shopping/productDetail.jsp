@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../main.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +40,6 @@ function calculateTotalPrice() {
 </script>
 </head>
 <body>
-
     <div id="detail_wrap">
        <div class="content_pro">
             <section class="left">
@@ -65,27 +65,29 @@ function calculateTotalPrice() {
                     </ul>
                 </div>
                 <div class="order">
-                	<form action="cartInsert.do"> 
+                    <form action="cartInsert.do"> 
                     <ul>
                         <li>
                             <div class="cnt">
+                            	<label for="amount">상품 수량</label>
                                 <input type="text" name="cartcnt" value="${empty cartcnt ? '1' : cartcnt}"  >
                                 <input type ="hidden" name="pcode" value="${productDetail.pcode }">
                                  <input type="hidden" name="cartcnt" value="${cartcnt }" >
-                                
                             </div>
                         </li>
                         <li>
                             <div class="tt_price">
-                                 총 상품 금액 ${productDetail.price * cartcnt}원
+                                 총 상품 금액 <span>${productDetail.price * cartcnt}</span>원
                             </div>
                         </li>
                         <li>
-                            <div class="cart_btn"><button type="submit" value="장바구니 담기" >장바구니담기</button>
-                              
+                            <div class="cart_btn">
+                                <button type="submit" value="장바구니 담기" ><span>장바구니 담기</span></button>
+                                
                             </div>
                         </li>
-                    </ul></form>
+                    </ul>
+                    </form>
                 </div>
             </section>
        </div>
