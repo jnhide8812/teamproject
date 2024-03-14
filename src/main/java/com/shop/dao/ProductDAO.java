@@ -208,12 +208,13 @@ public class ProductDAO {
 		    Connection conn = null;
 		    PreparedStatement pstmt = null;
 		    ResultSet rs = null;
-		    String sql = "select * from Product where pname like ? order by pname desc";
+		    String sql = "select * from Product where pname like ? or pinfo like ? order by pname desc";
 		    try {
 		        if (searchText != null && !searchText.equals("")) {
 		            conn = DBManager.getConnection();
 		            pstmt = conn.prepareStatement(sql);
 		            pstmt.setString(1, "%" + searchText.trim() + "%"); // 검색어 설정
+		            pstmt.setString(2, "%" + searchText.trim() + "%");
 		            rs = pstmt.executeQuery();
 
 		            while (rs.next()) {
