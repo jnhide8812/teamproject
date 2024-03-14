@@ -29,16 +29,21 @@
 	<input type="hidden" name="pcode" value="${product.pcode}" >
 	<input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
 	
-	<table>
-		<tr>
+	<table style="margin-left: auto; margin-right: auto; width: 900px;">
+         <tr>
 			<td>
 				<c:choose>
                <c:when test="${empty product.pictureurl}">
-                  <img id="picture" src="img/noimg.png">
+                  <div class="image" align="right">
+                        <img src="img/noimg.png">
+                     </div>
                </c:when>
                <c:otherwise>
-                  <img id="picture" src="img/${product.pictureurl}">
-               </c:otherwise>
+                <div class="image" align="right" style="
+               display:block; margin:20px;">
+                        <img src="img/${product.pictureurl}">
+                     </div>
+                     </c:otherwise>
             </c:choose>
 			</td>
 			<td>
