@@ -55,7 +55,7 @@
                         <td><input type="text" name="pname"></td>
                      </tr>
 
-                     <tr>
+                     <tr> 
                         <th id="inner">상품 가격</th>
                         <td><input type="text" name="price">&nbsp;원</td>
                      </tr>

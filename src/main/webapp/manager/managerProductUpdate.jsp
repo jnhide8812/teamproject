@@ -85,7 +85,7 @@
                   <td>
                      <textarea rows="7" cols="60" name="pinfo">${product.pinfo}</textarea>
                   </td> 
-               </tr>
+               </tr> 
                
                <tr>
                   <th id="inner">상품 사진</th>
