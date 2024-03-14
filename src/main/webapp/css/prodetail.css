@@ -8,11 +8,12 @@
 }
 .content_pro{
 	display:flex;
-	justify-content:between-space;
+	justify-content:space-between;
 }
 .product_img{
 	width: 430px;
-	overflow:hidden;
+	height:550px; 
+	object-fit:cover;
 }
 section.right{
 	width:560px;
@@ -21,14 +22,112 @@ section.right{
 }
 .info{
 	border-bottom:1px solid rgb(244, 244, 244);
-	width:100%;
+	width:450px;
 }
-ul{
+#detail_wrap ul{
 	display:flex;
 	flex-direction: column;
+	width:450px;
 }
-ul li{
+
+.info span{
+	font-weight: 500;
+	line-height: 1.36;
+	letter-spacing: -0.5px;
+	color: rgb(153, 153, 153);
+	margin-bottom: 6px;
+	width: 500px;
+}
+section.right h1{
+	width: 500px;
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(51, 51, 51);
+    line-height: 34px;
+    letter-spacing: -0.5px;
+    margin-right: 20px;
+}
+section.right h2{
+	padding-top: 20px;
+	font-weight: bold;
+	line-height: 30px;
+	letter-spacing: -0.5px;
+	font-size:28px;
+	color: #333;
+}
+section.right p{
+	color: #333;
+	font-size: 18px;
+	letter-spacing: -0.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 450px;
+}
+.order .cnt{
+	border-bottom: 1px solid rgb(244, 244, 244);
+	display: flex;
+	flex-direction:row;
+	align-items: center;
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	width:450px;
+	padding: 2px 0px;
+}
+.cnt label{
+	width: 150px;
+	height: 100%;
+	color: rgb(102. 102, 102);
+	font-weight: 400;
+	line-height: 19px;
+	font-size: 16px;
 	display:flex;
-	flex-direction: row;
-	align-items: flex-start;
+	text-align:center;
+	justify-content: center;
+	
+}
+.cnt input{
+	display:flex;
+	justify-content: flex-end;
+	border-radius: 5px;
+	border: 1px solid #f7f7f7;
+	height: 40px;
+	width: 280px;
+	padding-left: 10px;
+	text-align:right;
+}
+.tt_price {
+	padding-top:40px;
+	border-top: 1px solid rgb(244, 244, 244);
+	text-align:right;
+	font-size: 20px;
+	width:450px;
+}
+
+.cart_btn button{
+	margin-top: 20px;
+	display:block;
+	overflow:hidden;
+	width: 450px;
+	height: 56px;
+	border-radius: 5px;
+	background-color: #5F0080;
+	border: 0px none;
+	
+}
+.cart_btn button span{
+	padding: 15px 10px;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 20px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+}
+.tt_price span{
+	font-weight: bold;
+	font-size: 70pxl;
+	color: #333;
+	line-height: 36px;
+	padding: 0px 10px;
 }

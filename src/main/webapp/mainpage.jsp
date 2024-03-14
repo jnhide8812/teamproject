@@ -55,98 +55,111 @@ const swiper = new Swiper(".slider_wrap", {
 					컬리 추천 특가템 최대 50%
 				</p>
 			</div>
-		<c:forEach var="product" items="${product }" end="8" >
 			<ul class="shop2_list">
 				<li>
-					<a href="productDetail.do?pcode=${product.pcode }">
-						<div class="img_wrap">
-							<img src="img/${product.pictureurl}">
-						</div>
-						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
-							<img src="icon/sh_cart.png" class="s_cart">
-							담기
+					<c:forEach var="product" items="${product }" end="0" >
+						<a href="productDetail.do?pcode=${product.pcode }">
+							<div class="img_wrap">
+								<img src="img/${product.pictureurl}">
+							</div>
+							<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+								<img src="icon/sh_cart.png" class="s_cart">
+								담기
+							</a>
+							<div class="info">
+								<h4	class="p_tit">
+									${product.pname}
+								</h4>
+								<p class="price">
+									<span class="discount">50%</span>
+									 ${product.price}원
+								</p>
+							</div>
 						</a>
-						<div class="info">
-							<h4	class="p_tit">
-								${product.pname}
-							</h4>
-							<p class="price">
-								<span class="discount">50%</span>
-								 ${product.price}
-							</p>
-						</div>
-					</a>
-				</li>				
+					</c:forEach>
+				</li>	
+				<li>
+					<c:forEach var="product" items="${product }" end="0" >
+						<a href="productDetail.do?pcode=${product.pcode }">
+							<div class="img_wrap">
+								<img src="img/${product.pictureurl}">
+							</div>
+							<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+								<img src="icon/sh_cart.png" class="s_cart">
+								담기
+							</a>
+							<div class="info">
+								<h4	class="p_tit">
+									${product.pname}
+								</h4>
+								<p class="price">
+									<span class="discount">50%</span>
+									 ${product.price}원
+								</p>
+							</div>
+						</a>
+					</c:forEach>
+				</li>	
+				<li>
+					<c:forEach var="product" items="${product }" end="0" >
+						<a href="productDetail.do?pcode=${product.pcode }">
+							<div class="img_wrap">
+								<img src="img/${product.pictureurl}">
+							</div>
+							<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+								<img src="icon/sh_cart.png" class="s_cart">
+								담기
+							</a>
+							<div class="info">
+								<h4	class="p_tit">
+									${product.pname}
+								</h4>
+								<p class="price">
+									<span class="discount">50%</span>
+									 ${product.price}원
+								</p>
+							</div>
+						</a>
+					</c:forEach>
+				</li>	
 			</ul>
-		</div>
-	</section>
-	<section class="shop3">
-		<div class="inner">
-			<div class="tit_wrap">
-				<h5 class="main_tit">
-					라포슈포제 마스크팩 6천원대!
-				</h5>
-				<p class="con_txt">
-					선착순 600개 한정! 38% 할인 + 10%쿠폰 
-				</p>
-			</div>
 		</div>
 	</section>
 	<section class="shop4">
 		<div class="inner">
 			<div class="tit_wrap">
 				<h6 class="main_tit">
-					매일 오전 11시<br>
-					OPEN!
+				컬리멤버스 특가
 				</h6>
 				<p class="con_txt">
-					24시간 한정 일일특가
+					매일 달라지는 특가 찬스! 
 				</p>
 			</div>
-		</div>
-		<ul class="shop4_list">
-			<li>
-					<a href="productDetail.do?pcode=${product.pcode }">
-						<div class="img_wrap">
-							<img src="img/${product.pictureurl}">
-						</div>
-						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
-							<img src="icon/sh_cart.png" class="s_cart">
-							담기
+			<ul class="shop2_list">
+				<li>
+					<c:forEach var="product" items="${product }" end="0" >
+						<a href="productDetail.do?pcode=${product.pcode }">
+							<div class="img_wrap">
+								<img src="img/${product.pictureurl}">
+							</div>
+							<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+								<img src="icon/sh_cart.png" class="s_cart">
+								담기
+							</a>
+							<div class="info">
+								<h4	class="p_tit">
+									${product.pname}
+								</h4>
+								<p class="price">
+									<span class="discount">50%</span>
+									 ${product.price}원
+								</p>
+							</div>
 						</a>
-						<div class="info">
-							<h4	class="p_tit">
-								${product.pname}
-							</h4>
-							<p class="price">
-								<span class="discount">50%</span>
-								 ${product.price}
-							</p>
-						</div>
-					</a>
-				</li>	
-			<li>
-					<a href="productDetail.do?pcode=${product.pcode }">
-						<div class="img_wrap">
-							<img src="img/${product.pictureurl}">
-						</div>
-						<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
-							<img src="icon/sh_cart.png" class="s_cart">
-							담기
-						</a>
-						<div class="info">
-							<h4	class="p_tit">
-								${product.pname}
-							</h4>
-							<p class="price">
-								<span class="discount">50%</span>
-								 ${product.price}
-							</p>
-						</div>
-					</a>
-				</li>
+					</c:forEach>
+				</li>				
 			</ul>
-		</c:forEach>
+		</div>
 	</section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

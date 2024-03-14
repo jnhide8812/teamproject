@@ -54,7 +54,7 @@ public class ManagerWriteServlet extends HttpServlet {
 		String pname = multi.getParameter("pname");
 		int price = Integer.parseInt(multi.getParameter("price"));
 		int pstock = Integer.parseInt(multi.getParameter("pstock"));
-		Integer catecode = Integer.parseInt(multi.getParameter("catecode"));
+		int catecode = Integer.parseInt(multi.getParameter("catecode"));
 		String pstatus = multi.getParameter("pstatus");
 		String pinfo = multi.getParameter("pinfo");
 		String pictureurl = multi.getFilesystemName("pictureurl");
@@ -75,7 +75,7 @@ public class ManagerWriteServlet extends HttpServlet {
 		
 		response.sendRedirect("ManagerList.do");
 		
-		
+		 
 	}
 
 }

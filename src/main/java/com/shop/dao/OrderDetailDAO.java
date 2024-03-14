@@ -2,6 +2,11 @@ package com.shop.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.shop.dto.OrderDetailVO;
 
@@ -47,7 +52,40 @@ public class OrderDetailDAO {
 		
 	}
 	
-	//주문 상세 리스트로 출력하기
-	//public List<Object> 
+	//주문 상세 내역 출력하기
+	public List<Object> selectOrderDetail(int ordernumber) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select a.ordercnt, a.daddress, a.dname, b.pname, b.price, b.pictureurl from orderdetail a join product b on a.pcode=b.pcode where a.ordernumber=?";
+		List<Object> list = new ArrayList<Object>();
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ordernumber);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Map<String, Object> hm = new HashMap<>();
+				hm.put("ordercnt", rs.getInt("ordercnt"));
+				hm.put("daddress", rs.getString("daddress"));
+				hm.put("dname", rs.getString("dname"));
+				hm.put("pname", rs.getString("pname"));
+				hm.put("price", rs.getInt("price"));
+				hm.put("pictureurl", rs.getString("pictureurl"));
+				list.add(hm);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return list;
+		
+		
+	}
 	
 }
