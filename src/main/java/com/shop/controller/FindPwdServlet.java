@@ -30,7 +30,7 @@ public class FindPwdServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("user/findPwd");
+		RequestDispatcher rd = request.getRequestDispatcher("user/findPwd.jsp");
 		rd.forward(request, response);
 		
 	}
@@ -46,6 +46,10 @@ public class FindPwdServlet extends HttpServlet {
 		UsersDAO fdao = UsersDAO.getInstance();
 		String upwd = fdao.findPwd(id, uname, uphone);
 		request.setAttribute("upwd", upwd);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("user/resultFindPwd.jsp");
+		rd.forward(request, response);
+		
 	}
 
 }
