@@ -9,10 +9,11 @@
 
 #join_wrap {
 	background-color: #FFFFFF;
-	margin-top: 100px;
+	padding-top: 230px;
 	height: 100vh;
 	margin: 0px auto;
 	width: 1050px;
+	padding-bottom: 525px;
 }
 ul{
 	width: 640px;
