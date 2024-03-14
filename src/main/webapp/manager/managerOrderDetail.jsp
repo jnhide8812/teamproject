@@ -18,44 +18,44 @@
 <body>
 	<form name="frm" method="post" action="ManagerOrderDetail.do">
 		<div id="wrap" align="center">
-			<h1>주문 상세 페이지 - 관리자</h1>
+			<h1 style="color: #5f0080">주문 상세 페이지 - 관리자</h1>
 			
 			<input type="hidden" name="orderdetailnumber"
 				value="${orderdetail.orderdetailnumber}">
 			<hr>
 			<hr>
 
-			<table>
+			<table id="list" style="width: 500px;">
 				<tr>
-					<th style="width: 80px">아이디</th>
+					<th style="text-align: right; font-size: 16px;">아이디</th>
 					<td><input type="text" name="id"
 						value="${orderdetail.id}" readonly></td>
 				</tr>
 
 				<tr>
-					<th>배송지 주소</th>
+					<th style="text-align: right; font-size: 16px;">배송지 주소</th>
 					<td><input type="text" name="daddress"></td>
 				</tr>
 
 				<tr>
-					<th>상품 코드</th>
+					<th style="text-align: right; font-size: 16px;">상품 코드</th>
 					<td><input type="text" name="pcode"
 						value="${orderdetail.pcode}" readonly></td>
 				</tr>
 
 				<tr>
-					<th>상품 이름</th>
+					<th style="text-align: right; font-size: 16px;">상품 이름</th>
 					<td><input type="text" name="pname"
 						value="${orderdetail.pname}" readonly></td>
 				</tr>
 
 				<tr>
-					<th>Total 금액</th>
+					<th style="text-align: right; font-size: 16px;">Total 금액</th>
 					<td><input type="text" name="totalprice">&nbsp;원</td>
 				</tr>
 
 				<tr>
-					<th>주문 상태 변경</th>
+					<th style="text-align: right; font-size: 16px;">주문 상태 변경</th>
 					<td><select name="oderstatus">
 							<option value="1" selected>결제완료</option>
 							<option value="2">배송중</option>

@@ -25,7 +25,7 @@
 <div id="wrap" align="center">
 	<table id="list">		
 		
-		<tr id="textcenter">
+		<tr id="textcenter" style="background-color: #5f0080; color: white;">
 			<td>회원 아이디</td>
 			<td>회원 등급</td>
 			<td>등록 주소</td>		

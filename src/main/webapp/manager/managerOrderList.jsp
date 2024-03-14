@@ -23,7 +23,7 @@
 </header>
 <div id="wrap" align="center">
 	<table id="list">
-		<tr id="textcenter">
+		<tr id="textcenter" style="background-color: #5f0080; color: white;">
 			<td>주문 번호</td>
 			<td>아이디</td>
 			<td>주 소</td>
