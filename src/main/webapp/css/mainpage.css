@@ -1,4 +1,8 @@
 @import url(style.css);
+body{
+	min-height: calc(100vh - 190px - 525px);
+}
+
 #content {
 	width: 1050px;
 	height: 100%;
