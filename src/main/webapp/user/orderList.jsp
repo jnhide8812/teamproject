@@ -51,7 +51,7 @@ h3{
 		<table id="list">
 			<c:forEach var="orderList" items="${orderList }">
 				<tr>
-					<td colspan="2"><a href="#"><h3>주문 내역 상세 보기</h3></a></td>
+					<td colspan="2"><a href="orderDetail.do?ordernumber=${orderList.ordernumber }"><h3>주문 내역 상세 보기</h3></a></td>
 					
 				</tr>
 				<tr>

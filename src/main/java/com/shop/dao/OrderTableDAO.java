@@ -150,35 +150,27 @@ public class OrderTableDAO {
 	}
 	
 	
-	//개인 주문 내역 정보 전부 출력 ---- 사용XXXX
-		public List<Object> selectOrderListById(String id){
+	//주문 상세 내역
+		public OrderTableVO selectOrderTableByOrdernumber(int ordernumber){
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
-			String sql = "select c.pname, a.ordernumber, a.id, a.totalprice, a.orderstatus, a.payment, b.orderdetailnumber, b.pcode, b.ordercnt, b.daddress, b.dname from ordertable a join orderdetail b on a.ordernumber = b.ordernumber join product c on b.pcode=c.pcode where a.id=? order by ordernumber desc";
-			List<Object> list = new ArrayList<>();
+			String sql = "select * from ordertable where ordernumber=?";
+			OrderTableVO ovo = new OrderTableVO();
 			
 			try {
 				conn = DBManager.getConnection();
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, id);
+				pstmt.setInt(1, ordernumber);
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
-					Map<String,Object> hm = new HashMap<>();
-					hm.put("pname", rs.getString("pname"));
-					hm.put("ordernumber", rs.getInt("ordernumber"));
-					hm.put("id", rs.getString("id"));
-					hm.put("totalprice", rs.getInt("totalprice"));
-					hm.put("orderstatus", rs.getString("orderstatus"));
-					hm.put("payment", rs.getString("payment"));
-					hm.put("orderdetailnumber", rs.getInt("orderdetailnumber"));
-					hm.put("pcode", rs.getInt("pcode"));
-					hm.put("ordercnt", rs.getInt("ordercnt"));
-					hm.put("daddress", rs.getString("daddress"));
-					hm.put("dname", rs.getString("dname"));
 					
-					list.add(hm);
+					ovo.setOrdernumber(rs.getInt("ordernumber"));
+					ovo.setId(rs.getString("id"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					ovo.setOrderstatus(rs.getString("orderstatus"));
+					ovo.setPayment(rs.getString("payment"));
 					
 				}
 			} catch (Exception e) {
@@ -186,9 +178,8 @@ public class OrderTableDAO {
 			}finally {
 				DBManager.close(conn, pstmt, rs);
 			}
-			return list;
+			return ovo;
 			
 		}
-	
 	
 }
