@@ -53,6 +53,7 @@ $(document).ready(function(){
                         <li>
                             <div class="cnt">
                                 <input type="text" name="cartcnt" value="${cartcnt }" >
+                                <input type ="hidden" name="pcode" value="${productDetail.pcode }">
                             </div>
                         </li>
                         <li>
