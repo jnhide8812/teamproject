@@ -21,9 +21,25 @@ $(document).ready(function(){
         $(this).closest('.order').find('.tt_price').text('총 상품 금액 ' + totalPrice + '원');
     });
 });
+$(document).ready(function(){
+    // 수량 변경 시 이벤트 처리
+    $("input[name='cartcnt']").on('input', function(){
+        calculateTotalPrice();
+    });
+    
+    // 페이지 로딩 시 초기 상품 금액 계산 및 tt_price에 표시
+    calculateTotalPrice();
+});
+function calculateTotalPrice() {
+    var cnt = $("input[name='cartcnt']").val();
+    var price = ${productDetail.price};
+    var totalPrice = price * cnt;
+    $('.tt_price').text('총 상품 금액 ' + totalPrice + '원');
+}
 </script>
 </head>
 <body>
+
     <div id="detail_wrap">
        <div class="content_pro">
             <section class="left">
@@ -49,11 +65,13 @@ $(document).ready(function(){
                     </ul>
                 </div>
                 <div class="order">
+                	<form action="cartInsert.do"> 
                     <ul>
                         <li>
                             <div class="cnt">
-                                <input type="text" name="cartcnt" value="${cartcnt }" >
+                                <input type="text" name="cartcnt" value="${empty cartcnt ? '1' : cartcnt}"  >
                                 <input type ="hidden" name="pcode" value="${productDetail.pcode }">
+                                 <input type="hidden" name="cartcnt" value="${cartcnt }" >
                                 
                             </div>
                         </li>
@@ -63,11 +81,11 @@ $(document).ready(function(){
                             </div>
                         </li>
                         <li>
-                            <div class="cart_btn">
-                                <a href ="cartInsert.do?pcode=${productDetail.pcode }&cartcnt=${cartcnt }">장바구니 담기</a>
+                            <div class="cart_btn"><button type="submit" value="장바구니 담기" >장바구니담기</button>
+                              
                             </div>
                         </li>
-                    </ul>
+                    </ul></form>
                 </div>
             </section>
        </div>
