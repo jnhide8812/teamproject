@@ -9,7 +9,7 @@ public class ProductVO {
 	private String pinfo;
 	private String pictureurl;
 	private Integer pcode;
-	private String catecode;
+	private Integer catecode;
 	
 	
 	public String getPname() {
@@ -54,10 +54,10 @@ public class ProductVO {
 	public void setPcode(Integer pcode) {
 		this.pcode = pcode;
 	}
-	public String getCatecode() {
+	public Integer getCatecode() {
 		return catecode;
 	}
-	public void setCatecode(String catecode) {
+	public void setCatecode(Integer catecode) {
 		this.catecode = catecode;
 	}
 	@Override

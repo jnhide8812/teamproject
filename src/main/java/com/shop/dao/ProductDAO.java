@@ -43,7 +43,7 @@ public class ProductDAO {
 				vo.setPstatus(rs.getString("pstatus"));
 				vo.setPinfo(rs.getString("pinfo"));
 				vo.setPictureurl(rs.getString("pictureurl"));
-				vo.setCatecode(rs.getString("catecode"));
+				vo.setCatecode(rs.getInt("catecode"));
 				vo.setPcode(rs.getInt("pcode"));
 				list.add(vo);
 			}
@@ -69,7 +69,7 @@ public class ProductDAO {
 			pstmt.setString(1, vo.getPname());
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setInt(3, vo.getPstock());
-			pstmt.setString(4, vo.getCatecode());
+			pstmt.setInt(4, vo.getCatecode());
 			pstmt.setString(5, vo.getPstatus());
 			pstmt.setString(6, vo.getPinfo());
 			pstmt.setString(7, vo.getPictureurl());
@@ -106,7 +106,7 @@ public class ProductDAO {
 				vo.setPstatus(rs.getString("pstatus"));
 				vo.setPinfo(rs.getString("pinfo"));
 				vo.setPictureurl(rs.getString("pictureurl"));
-				vo.setCatecode(rs.getString("catecode"));
+				vo.setCatecode(rs.getInt("catecode"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -129,7 +129,7 @@ public class ProductDAO {
 			pstmt.setString(1, vo.getPname());
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setInt(3, vo.getPstock());
-			pstmt.setString(4, vo.getCatecode());
+			pstmt.setInt(4, vo.getCatecode());
 			pstmt.setString(5, vo.getPstatus());
 			pstmt.setString(6, vo.getPinfo());
 			pstmt.setString(7, vo.getPictureurl());
@@ -185,7 +185,7 @@ public class ProductDAO {
 					vo.setPstatus(rs.getString("pstatus").trim());
 					vo.setPinfo(rs.getString("pinfo").trim());
 					vo.setPictureurl(rs.getString("pictureurl").trim());
-					vo.setCatecode(rs.getString("catecode").trim());
+					vo.setCatecode(rs.getInt("catecode"));
 					vo.setPcode(rs.getInt("pcode"));
 					list.add(vo);
 				}
@@ -219,7 +219,7 @@ public class ProductDAO {
 		            while (rs.next()) {
 		                ProductVO pvo = new ProductVO();
 		                pvo.setPictureurl(rs.getString(1));
-		                pvo.setCatecode(rs.getString(2));
+		                pvo.setCatecode(rs.getInt(2));
 		                pvo.setPcode(rs.getInt(3));
 		                pvo.setPname(rs.getString(4));
 		                pvo.setPrice(rs.getInt(5));
