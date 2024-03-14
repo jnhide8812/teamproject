@@ -201,7 +201,7 @@ public class ProductDAO {
 		
 		
 
-//검색 메소든
+		//검색 메소드
 		public List<ProductVO> searchProduct(String searchText) {
 		    List<ProductVO> list = new ArrayList<ProductVO>();
 
@@ -218,13 +218,13 @@ public class ProductDAO {
 
 		            while (rs.next()) {
 		                ProductVO pvo = new ProductVO();
-		                pvo.setPictureurl(rs.getString(1));
-		                pvo.setCatecode(rs.getString(2));
-		                pvo.setPcode(rs.getInt(3));
-		                pvo.setPname(rs.getString(4));
-		                pvo.setPrice(rs.getInt(5));
-		                pvo.setPstatus(rs.getString(6));
-		                pvo.setPstock(rs.getInt(7));
+		                pvo.setPictureurl(rs.getString("pictureurl"));
+		                pvo.setCatecode(rs.getString("catecode"));
+		                pvo.setPcode(rs.getInt("pcode"));
+		                pvo.setPname(rs.getString("pname"));
+		                pvo.setPrice(rs.getInt("price"));
+		                pvo.setPstatus(rs.getString("pstatus"));
+		                pvo.setPstock(rs.getInt("pstock"));
 		                list.add(pvo);
 		            }
 		        }

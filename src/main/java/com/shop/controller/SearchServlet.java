@@ -32,13 +32,15 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("1111");
 		String searchText = request.getParameter("searchText");
+		System.out.println(searchText);
 		
-		ProductDAO ProductDAO = new ProductDAO();
-		List<ProductVO> searchResult = ProductDAO.searchProduct(searchText);
+		ProductDAO pdao = ProductDAO.getInstance();
+		List<ProductVO> searchResult = pdao.searchProduct(searchText);
 		request.setAttribute("searchText", searchText);
 		request.setAttribute("searchResult", searchResult);
-		System.out.println("검색기능");
+
 		RequestDispatcher rd = request.getRequestDispatcher("shopping/searchMain.jsp");
 		rd.forward(request, response);
 	}
@@ -47,7 +49,8 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		RequestDispatcher rd = request.getRequestDispatcher("shopping/searchMain.jsp");
+		rd.forward(request, response);
 		doGet(request, response);
 	}
 
