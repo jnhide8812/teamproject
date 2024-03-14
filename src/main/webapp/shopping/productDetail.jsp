@@ -7,28 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
-<style>
-h1{
-   font-size:1.5em;
-   color:#5F0080;
-   font-weight: bold;
-}
-#wrap{
-   margin:5px;
-   padding:5px;
-}
-#product_detail{
-   width:1000px;
-   font-size:1.2em;
-   table-layout: fixed;
-   margin:0 auto;
-}
-#product_detail td, th{
-   padding:5px;
-   text-align: center;
-   vertical-align: middle;
-}
-</style>
+<link rel="stylesheet" href="css/prodetail.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -45,37 +24,52 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-    <div id="wrap">
-        <table border ="1" id="product_detail">
-        	<tr>
-        	<td><input type="hidden" name="pcode" value="${ pcode}">
-        	</td>
-        	</tr>
-            <tr>
-                <td class="product-image" rowspan="4">
+    <div id="detail_wrap">
+       <div class="content_pro">
+            <section class="left">
+                <div class="product_img">
                     <img src="img/${productDetail.pictureurl}" alt="Product Image">
-                </td>
-                <td>${productDetail.pstatus}</td> 
-            </tr>
-            <tr>
-                <td>${productDetail.pname}</td>
-            </tr>
-            <tr>
-                <td>${productDetail.price}원</td>
-            </tr>
-            <tr>
-                <td colspan="2">${productDetail.pinfo}</td>
-            </tr>
-            <tr>
-            	<td><input type="text" name="cartcnt" value="${cartcnt }" ></td>
-            </tr>
-            <tr>	
-            <td class="total-price">총 상품 금액 ${productDetail.price * cartcnt}원</td>
-            </tr>
-            <tr>
-            	<td><a href ="cartInsert.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a></td>
-            </tr>
-        </table>
+                </div>
+            </section>
+            <section class="right">
+                <div class="info">
+                    <ul>
+                        <li>
+                            <span>${productDetail.pstatus}</span>
+                        </li>
+                        <li>
+                            <h1>${productDetail.pname}</h1>
+                        </li>
+                        <li>
+                            <h2>${productDetail.price}원</h2>
+                        </li>
+                        <li>
+                            <p>${productDetail.pinfo}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order">
+                    <ul>
+                        <li>
+                            <div class="cnt">
+                                <input type="text" name="cartcnt" value="${cartcnt }" >
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tt_price">
+                                 총 상품 금액 ${productDetail.price * cartcnt}원
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cart_btn">
+                                <a href ="cartInsert.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+       </div>
     </div>
+</body>
 </body>
 </html>

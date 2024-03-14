@@ -1,0 +1,34 @@
+@import url(style.css);
+#detail_wrap {
+	position: relative;
+	width: 1050px;
+	margin: 0px auto;
+	padding-top:130px;
+	padding-bottom: 525px;
+}
+.content_pro{
+	display:flex;
+	justify-content:between-space;
+}
+.product_img{
+	width: 430px;
+	overflow:hidden;
+}
+section.right{
+	width:560px;
+	display:flex;
+	flex-direction: column;
+}
+.info{
+	border-bottom:1px solid rgb(244, 244, 244);
+	width:100%;
+}
+ul{
+	display:flex;
+	flex-direction: column;
+}
+ul li{
+	display:flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
