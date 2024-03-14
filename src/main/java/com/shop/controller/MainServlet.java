@@ -37,12 +37,6 @@ public class MainServlet extends HttpServlet {
 		List<ProductVO> product = pdao.selectSellProduct();
 		request.setAttribute("product", product);
 		
-		System.out.println("product: "+ product);
-		System.out.println("dddd");
-		
-
-		
-	//	RequestDispatcher rd = request.getRequestDispatcher("user/imsi.jsp");  //임시 삭제 예정
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage.jsp");
 		rd.forward(request, response);
 				

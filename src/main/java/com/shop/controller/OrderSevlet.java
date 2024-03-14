@@ -79,11 +79,9 @@ public class OrderSevlet extends HttpServlet {
 
 		OrderTableDAO odao = OrderTableDAO.getInstance();
 		odao.insertOrder(ovo);
-		System.out.println("주문테이블에 등록성공 : " + ovo);
 
 		// 주문 상세테이블에 인서트 준비(주문 넘버 셀렉)
 		int ordernumber = odao.selectOrdernumber(id);
-		System.out.println("ordernumber2: " + ordernumber); // 완료되면 지울 예정
 
 		// 주문상세: 아이디, 상품코드(pcode), 상품수량(ordercnt), 배송주소(daddress), 수령인명(dname)
 		int result = 0; // 주문상세에 리스트가 insert 되면 1반환
@@ -102,7 +100,7 @@ public class OrderSevlet extends HttpServlet {
 
 			OrderDetailDAO oddao = OrderDetailDAO.getInstance();
 			result = oddao.insertOrderDetail(odvo); // 주문상세가 등록되면 1반환
-			System.out.println("주문상세페이지에 등록 성공" + odvo); // 삭제예정
+
 		}
 
 		// 주문 상세가 등록되면 1, 아니면 0 / 1이면 주문테이블의 상태를 주문중에서 주문완료로 변경
@@ -127,7 +125,6 @@ public class OrderSevlet extends HttpServlet {
 			url = "user/cart.jsp";
 		}
 
-		System.out.println("result: " + result);
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 
