@@ -101,7 +101,7 @@
 					</tr>
 					
 					<tr>
-						<th id="inner">상품 사진</th>
+						<th id="inner">상품 사진</th> 
 						<td>
 							<input type="file" name="pictureurl"><br>
 							<img id="picture"/>

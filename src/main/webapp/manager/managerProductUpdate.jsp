@@ -97,7 +97,7 @@
          </td>
       </tr>
    </table>
-   <br>
+   <br> 
  
    	<input type="hidden" name="pcode" value="${product.pcode}">
 	<input type="submit" value="수정완료" onclick="return shopCheck()">
