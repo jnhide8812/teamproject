@@ -18,7 +18,7 @@ $(document).ready(function(){
         var cnt = $(this).val();
         var price = ${productDetail.price};
         var totalPrice = price * cnt;
-        $(this).closest('li').find('.total-price').text('총 상품 금액 ' + totalPrice + '원');
+        $(this).closest('.order').find('.tt_price').text('총 상품 금액 ' + totalPrice + '원');
     });
 });
 </script>
