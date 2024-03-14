@@ -16,10 +16,10 @@ h1 {
     text-align: center;
 }
 form {
-    width: 400px;
+    width: 350px;
     position: relative;
     padding: 0px 10px 6px;
-    border-top: 2px solid purple;
+    border-top: 2px solid #5F0080;
 	margin:0px auto;
 }
 .find {
@@ -29,22 +29,29 @@ form {
     align-items: center;
     justify-content: center;
 }
-ul{
-    display: flex;
-    flex-direction: column;
-}
+
 li{
+	display: flex;
+    flex-direction: column;
     padding-bottom: 12px;
     list-style: none;
 }
 li.phone {
     margin-top: 8px;
+
 }
-lable{
+ul{
+	display: flex;
+    flex-direction: column;
+	width:350px;
+	justify-content:center;
+	align-items: center;
+}
+label{
     display:inline-block;
-    padding: 8px 0px 11px;
+    padding: 8px 0px 8px ;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 19px;
     color: #333;
 }
@@ -53,7 +60,7 @@ lable{
     height: 48px;
 }*/
 input{
-    width: 100%;
+    width: 350px;
     height: 46px;
     padding: 0px 11px 1px 15px;
     border-radius: 4px;
@@ -73,7 +80,7 @@ input.fbtn{
     padding: 0px 10px;
     text-align: center;
     overflow: hidden;
-    width: 100%;
+    width: 350px;
     height: 52px;
     border-radius: 4px;
     color: white;
