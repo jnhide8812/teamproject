@@ -33,13 +33,13 @@
 		<tr>
 			<td>
 				<c:choose>
-					<c:when test="${empty product.pictureurl}">
-						<img id="picture" src="img/noimg.png">
-					</c:when>
-					<c:otherwise>
-						<img id="picture">
-					</c:otherwise>
-				</c:choose>
+               <c:when test="${empty product.pictureurl}">
+                  <img id="picture" src="img/noimg.png">
+               </c:when>
+               <c:otherwise>
+                  <img id="picture" src="img/${product.pictureurl}">
+               </c:otherwise>
+            </c:choose>
 			</td>
 			<td>
 				<table id="writelist">
