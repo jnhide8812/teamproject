@@ -75,7 +75,7 @@ public class ManagerWriteServlet extends HttpServlet {
 		
 		response.sendRedirect("ManagerList.do");
 		
-		
+		 
 	}
 
 }

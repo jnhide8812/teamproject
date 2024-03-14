@@ -72,7 +72,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 
 		if (pictureurl == null)
 			pictureurl = multi.getParameter("nonmakeImg");
-
+ 
 		ProductVO pvo = new ProductVO();
 		pvo.setPcode(Integer.parseInt(pcode));
 		pvo.setPname(pname);
