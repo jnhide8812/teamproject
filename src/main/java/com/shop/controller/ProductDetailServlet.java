@@ -28,8 +28,8 @@ public class ProductDetailServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String pcode = request.getParameter("pcode"); //피코드를 이용해서 검색하고 싶으니까
-		String pcode = "1"; //테스트용 삭제예정
+		String pcode = request.getParameter("pcode"); //피코드를 이용해서 검색하고 싶으니까
+		 //테스트용 삭제예정
 		ProductDAO pdao = ProductDAO.getInstance();
 		ProductVO productDetail = pdao.selectProductByPcode(pcode);
 		request.setAttribute("productDetail", productDetail);

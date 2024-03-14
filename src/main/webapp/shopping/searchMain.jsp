@@ -35,7 +35,9 @@
     <%-- 검색 결과를 반복문으로 출력 --%>
     <c:forEach items="${searchResult}" var="product">
         <div>
+            <a href="productDetail.do?pcode=${product.pcode }">
             <img src="img/${product.pictureurl}" alt="Product Image" width="100">
+            </a>
             <p>상품명: ${product.pname}</p>
             <p>가격: ${product.price}원</p>
         </div>
