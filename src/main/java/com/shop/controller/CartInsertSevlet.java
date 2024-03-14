@@ -59,8 +59,8 @@ public class CartInsertSevlet extends HttpServlet {
 		CartDAO cdao = CartDAO.getInstance();
 		cdao.insertCart(cvo);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
-		rd.forward(request, response);
+		response.sendRedirect("cart.do");
+
 		}
 	}
 

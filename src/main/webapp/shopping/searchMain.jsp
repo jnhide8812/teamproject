@@ -39,7 +39,6 @@
             <p>상품명: ${product.pname}</p>
             <p>가격: ${product.price}원</p>
         </div>
-        
     </c:forEach>
 </body>
 </html>

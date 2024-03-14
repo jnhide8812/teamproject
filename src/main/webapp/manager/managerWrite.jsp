@@ -47,11 +47,11 @@
 					<th id="inner">카테고리</th>
 						<td>
 							<select name="catecode">
-								<option value="1(육류)" selected>육류</option>
-								<option value="2(채소)">채소</option>
-								<option value="3(가공식품)">가공식품</option>
-								<option value="4(유제품)">유제품</option>
-								<option value="5(과일)">과일</option>
+								<option value="1" selected>육류</option>
+								<option value="2">채소</option>
+								<option value="3">가공식품</option>
+								<option value="4">유제품</option>
+								<option value="5">과일</option>
 							</select>
 						</td>
 					</tr>
@@ -91,9 +91,7 @@
 					<tr>
 						<th id="inner">상품 설명</th>
 						<td>
-							<textarea rows="7" cols="60" name="pinfo">
-								${product.pinfo}
-							</textarea>
+							<textarea rows="7" cols="60" name="pinfo">${product.pinfo}</textarea>
 						</td>
 					</tr>
 					

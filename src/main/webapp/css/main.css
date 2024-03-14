@@ -108,15 +108,13 @@ button {
 	border: none;
 	
 }
-input.search_icon {
+button.search_icon {
 	position: relative;
 	width: 30px;
 	height: 30px;
 	margin-right:10px;
 	margin-top: 10px;
 	background: url(../icon/search.png) 0px 0px no-repeat;
-	border: none;
-	outline:none;
 }
 
 .h_bottom {
