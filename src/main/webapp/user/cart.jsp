@@ -61,7 +61,16 @@ h1{
 	padding:20px 20px 1px 20px;
 	table-layout: fixed;
 }
-
+.paybtn{
+	width:280px;
+	height: 50px;
+	color: #FFFFFF;
+	background-color: #5F0080;
+	border:1px solid #5F0080;
+	font-size: 16px;
+	text-align:center;
+	border-radius: 5px;
+}
 
 
 </style>
@@ -152,8 +161,8 @@ h1{
 						<td>&nbsp;</td>
 						<td></td>
 					</tr>
-					<tr align="center">
-						<td colspan="2"><input type="submit" value="결제하기"></td>
+					<tr align="center" >
+						<td colspan="2"><input type="submit" value="결제하기" class="paybtn"></td>
 					</tr>
 				</table>
 			

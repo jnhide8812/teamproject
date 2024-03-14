@@ -14,10 +14,10 @@
 #wrap{
 	margin:100px;
 	padding:5px;
-
 }
+
 h1{
-	font-size:1.5em;
+	font-size: 26px;
 	color:#5F0080;
 	font-weight: bold;
 	
@@ -52,6 +52,16 @@ h1{
 	padding:20px 20px 1px 20px;
 	table-layout: fixed;
 	}
+.paybtn{
+	width:280px;
+	height: 50px;
+	color: #FFFFFF;
+	background-color: #5F0080;
+	border:1px solid #5F0080;
+	font-size: 16px;
+	text-align:center;
+	border-radius: 5px;
+}
 
 </style>
 
@@ -107,7 +117,7 @@ h1{
 	<td>${totalprice }원 <input type ="hidden" name="totalprice" value="${totalprice }"></td>
 </tr>
 <tr>
-	<td colspan="2" align="center"><input type="submit" value="결제하기"></td>
+	<td colspan="2" align="center"><input type="submit" value="결제하기" class="paybtn"></td>
 </tr>
 <tr>
 	<td>&nbsp;</td><td></td>
