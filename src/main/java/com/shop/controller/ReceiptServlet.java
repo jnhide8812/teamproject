@@ -48,8 +48,8 @@ public class ReceiptServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
 		
-		String totalprice = request.getParameter("totalprice");
-		
+		//String totalprice = request.getParameter("totalprice");
+		String totalprice = request.getParameter("total");
 		
 		CartDAO cdao = CartDAO.getInstance();
 		List<Object> orderList = cdao.selectCartById(loginUser.getId());

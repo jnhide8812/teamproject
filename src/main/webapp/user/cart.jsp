@@ -48,7 +48,7 @@ h1{
 	align: center;
 }
 #calcbox{
-	width:300px;
+	width:400px;
 	background-color: rgb(250, 250, 250);
 	border: 1px solid rgb(242,242,242);
 	margin:5px;
@@ -143,8 +143,8 @@ h1{
 							</tr>
 							<tr>
 								<td align="left">결제예정금액</td>
-								<td align="right" style="font-size:1.4em; font-weight:bold; color:#5F0080;">${totalprice+4000 }원</td>
-								
+								<td align="right" style="font-size:1.4em; font-weight:bold; color:#5F0080;">${totalprice = totalprice+4000 }원</td>
+								<input type="hidden" name="total" value="${totalprice}"> 
 							</tr>
 						</c:otherwise>
 					</c:choose>
@@ -155,7 +155,6 @@ h1{
 					<tr align="center">
 						<td colspan="2"><input type="submit" value="결제하기"></td>
 					</tr>
-					
 				</table>
 			
 			</div>
