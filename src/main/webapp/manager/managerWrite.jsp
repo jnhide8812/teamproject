@@ -106,7 +106,7 @@
 							<input type="file" name="pictureurl"><br>
 							<img id="picture"/>
 						</td>
-					</tr>
+					</tr> 
 				</table>
 			</td>
 		</tr>
