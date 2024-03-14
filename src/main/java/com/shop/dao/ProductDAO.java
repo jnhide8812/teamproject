@@ -202,14 +202,13 @@ public class ProductDAO {
 		
 
 
-		// 검색 메서드
 		public List<ProductVO> searchProduct(String searchText) {
 		    List<ProductVO> list = new ArrayList<ProductVO>();
 
 		    Connection conn = null;
 		    PreparedStatement pstmt = null;
 		    ResultSet rs = null;
-		    String sql = "select * from Product where pname like ? order by pname desc limit 12";
+		    String sql = "select * from Product where pname like ? order by pname desc";
 		    try {
 		        if (searchText != null && !searchText.equals("")) {
 		            conn = DBManager.getConnection();
@@ -237,7 +236,6 @@ public class ProductDAO {
 		    return list;
 		}
 }
-
 
 
 
