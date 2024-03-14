@@ -16,7 +16,7 @@
     width:1050px;
     margin: 0px auto;
     background-color: white;
-    padding: 250px 0px 50px 0px;
+    padding: 250px 0px 525px 0px;
 }
 h2 {
     padding-bottom: 30px;
