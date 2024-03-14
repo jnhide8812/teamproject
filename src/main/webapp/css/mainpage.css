@@ -61,7 +61,7 @@
     background-image: url(../icon/s1_left.png);
 }*/
 
-.tit_wrap {
+#id .tit_wrap {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

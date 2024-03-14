@@ -31,7 +31,7 @@
 					<img src="./icon/h_logo.png" class="h_logo">
 					<h1><a href="main.do" class="char_lg">마켓컬리</a></h1>
 				</div>
-				<form action="search.do">
+				<form action="search.do" class="fs">
             	<div class="search">
                 	<input type="text" placeholder="검색어를 입력해주세요" name="searchText" class="main_search">
                 	<input type ="button" onclick="location.href='search.do'" class="search_icon">

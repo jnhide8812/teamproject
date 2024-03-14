@@ -59,6 +59,7 @@ nav.h_top ul li.regi a{
 	align-items: center;
 	justify-content: space-between;
 	height: 45px;
+	flex-direction: row;
 }
 .middle .logo{
 	display: flex;
@@ -77,6 +78,10 @@ img.h_logo{
 	width: 90px;
 	height: 48px;
 }
+form.fs{
+	display:flex;
+	justify-content:center;
+}
 .search{
 	display: flex;
 	align-items: center;
@@ -85,10 +90,10 @@ img.h_logo{
 	border: 1px solid #5f0080;
 	border-radius: 6px;
 	padding-left: 14px;
-	width: 350px;
+	width: 400px;
 	height: 45px;
 	top: 40px;
-	left: 445px;
+	left: 400px;
 	background-color: rgb(255, 255, 255);
 	box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
 }
@@ -108,13 +113,15 @@ button {
 	border: none;
 	
 }
-button.search_icon {
+
+input.search_icon {
 	position: relative;
 	width: 30px;
 	height: 30px;
 	margin-right:10px;
 	margin-top: 10px;
 	background: url(../icon/search.png) 0px 0px no-repeat;
+	border:none;
 }
 
 .h_bottom {
@@ -143,6 +150,7 @@ img.menu {
 	flex-direction: row;
 	line-height: 20px;
 	text-align: center;
+	padding-right:25px;
 }
 .h_bottom nav ul li{
 	width:150px;
