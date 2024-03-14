@@ -16,15 +16,20 @@
 
    <input type="hidden" name="pcode" value="${product.pcode}" >
    <input type="hidden" name="nonmakeImg" value="${product.pictureurl}" >
-   <table style="margin-left: auto; margin-right: auto;">
+   <table style="margin-left: auto; margin-right: auto; width: 900px;">
       <tr>
          <td>
             <c:choose>
                <c:when test="${empty product.pictureurl}">
+               <div class="image" align="right">
                   <img id="picture" src="img/noimg.png">
+               </div>
                </c:when>
                <c:otherwise>
-                  <img id="picture" src="img/${product.pictureurl}">
+               <div class="image" align="right" style="
+               display:block; margin:20px;">
+                  <img src="img/${product.pictureurl}">
+               </div>
                </c:otherwise>
             </c:choose>
          </td>
@@ -85,7 +90,7 @@
                <tr>
                   <th id="inner">상품 사진</th>
                   <td>
-                     <input type="file" name="pictureurl" value="${product.pictureurl}"><br>
+                     <input type="file" name="pictureurl" value="${product.pictureurl}">
                   </td>
                </tr>
             </table>

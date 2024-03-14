@@ -13,14 +13,19 @@
    <div id="wrap" align="center">
       <h1 style="color: #5f0080">상품 삭제 - 관리자</h1>
       <form method="post" action="ManagerProductDelete.do">
-         <table style="margin-left: auto; margin-right: auto;">
+         <table style="margin-left: auto; margin-right: auto; width: 900px;">
             <tr>
                <td><c:choose>
                      <c:when test="${empty product.pictureurl}">
+                     <div class="image" align="right">
                         <img src="img/noimg.png">
+                     </div>
                      </c:when>
                      <c:otherwise>
+                     <div class="image" align="right" style="
+               display:block; margin:20px;">
                         <img src="img/${product.pictureurl}">
+                     </div>
                      </c:otherwise>
                   </c:choose></td>
                <td>
