@@ -74,7 +74,7 @@
 
                      <tr>
                         <th id="inner">상품 사진</th>
-                        <td><input type="file" name="pictureurl"><br>
+                        <td><input type="file" name="pictureurl" value="${product.pictureurl}"><br>
                         </td>
                      </tr>
                   </table>

@@ -26,10 +26,7 @@
                </div>
                </c:when>
                <c:otherwise>
-               <div class="image" align="right" style="
-               display:block; margin:20px;">
-                  <img src="img/${product.pictureurl}">
-               </div>
+                  <img src="img/${product.pictureurl}">              
                </c:otherwise>
             </c:choose>
          </td>
@@ -90,7 +87,7 @@
                <tr>
                   <th id="inner">상품 사진</th>
                   <td>
-                     <input type="file" name="pictureurl" value="${product.pictureurl}">
+                     <input type="file" name="pictureurl">
                   </td>
                </tr>
             </table>
