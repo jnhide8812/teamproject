@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
     <meta charset="UTF-8">
     <title>상품 목록</title>
     <style>

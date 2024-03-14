@@ -219,13 +219,7 @@ public class ProductDAO {
 
 		            while (rs.next()) {
 		                ProductVO pvo = new ProductVO();
-		                pvo.setPictureurl(rs.getString(1));
-		                pvo.setCatecode(rs.getInt(2));
-		                pvo.setPcode(rs.getInt(3));
-		                pvo.setPname(rs.getString(4));
-		                pvo.setPrice(rs.getInt(5));
-		                pvo.setPstatus(rs.getString(6));
-		                pvo.setPstock(rs.getInt(7));
+		        
 		                pvo.setPictureurl(rs.getString("pictureurl"));
 		                pvo.setCatecode(rs.getInt("catecode"));
 		                pvo.setPcode(rs.getInt("pcode"));
