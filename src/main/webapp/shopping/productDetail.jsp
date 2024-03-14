@@ -18,7 +18,7 @@ $(document).ready(function(){
         var cnt = $(this).val();
         var price = ${productDetail.price};
         var totalPrice = price * cnt;
-        $(this).closest('tr').find('.total-price').text('총 상품 금액 ' + totalPrice + '원');
+        $(this).closest('li').find('.total-price').text('총 상품 금액 ' + totalPrice + '원');
     });
 });
 </script>
@@ -54,6 +54,7 @@ $(document).ready(function(){
                             <div class="cnt">
                                 <input type="text" name="cartcnt" value="${cartcnt }" >
                                 <input type ="hidden" name="pcode" value="${productDetail.pcode }">
+                                
                             </div>
                         </li>
                         <li>
@@ -63,7 +64,7 @@ $(document).ready(function(){
                         </li>
                         <li>
                             <div class="cart_btn">
-                                <a href ="cartInsert.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a>
+                                <a href ="cartInsert.do?pcode=${productDetail.pcode }&cartcnt=${cartcnt }">장바구니 담기</a>
                             </div>
                         </li>
                     </ul>
