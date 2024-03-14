@@ -72,7 +72,7 @@ $(document).ready(function(){
             <td class="total-price">총 상품 금액 ${productDetail.price * cartcnt}원</td>
             </tr>
             <tr>
-            	<td><a href ="cart.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a></td>
+            	<td><a href ="cartInsert.do?pcode=${pcode}&cartcnt=${cartcnt }">장바구니 담기</a></td>
             </tr>
         </table>
     </div>
