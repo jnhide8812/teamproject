@@ -28,23 +28,6 @@ const swiper = new Swiper(".slider_wrap", {
 <jsp:include page="footer.jsp"/>
 
 <div id="content">
-	<!--  <section class="shop1">
-		<div class="swiper slider_wrap">
-			<div class="inner">
-				<div class="swiper-slide s01"></div>
-				<div class="swiper-slide s02"></div>
-				<div class="swiper-slide s03"></div>
-				<div class="swiper-slide s04"></div>
-				<div class="swiper-slide s05"></div>
-				<div class="swiper-slide s06"></div>
-				<div class="swiper-slide s07"></div>
-				<div class="swiper-slide s08"></div>
-			</div>
-			<div class="swiper-button-next"></div>
-        	<div class="swiper-button-prev"></div>
-        	<div class="swiper-pagination"></div>
-		</div>	
-	</section>-->
 	<section class="shop2">
 		<div class="inner">
 			<div class="tit_wrap">
@@ -79,7 +62,7 @@ const swiper = new Swiper(".slider_wrap", {
 					</c:forEach>
 				</li>	
 				<li>
-					<c:forEach var="product" items="${product }" end="0" >
+					<c:forEach var="product" items="${product }" begin="1" end="1" >
 						<a href="productDetail.do?pcode=${product.pcode }">
 							<div class="img_wrap">
 								<img src="img/${product.pictureurl}">
@@ -101,7 +84,7 @@ const swiper = new Swiper(".slider_wrap", {
 					</c:forEach>
 				</li>	
 				<li>
-					<c:forEach var="product" items="${product }" end="0" >
+					<c:forEach var="product" items="${product }" begin="2" end="2" >
 						<a href="productDetail.do?pcode=${product.pcode }">
 							<div class="img_wrap">
 								<img src="img/${product.pictureurl}">
@@ -137,7 +120,7 @@ const swiper = new Swiper(".slider_wrap", {
 			</div>
 			<ul class="shop2_list">
 				<li>
-					<c:forEach var="product" items="${product }" end="0" >
+					<c:forEach var="product" items="${product }" begin="3" end="3" >
 						<a href="productDetail.do?pcode=${product.pcode }">
 							<div class="img_wrap">
 								<img src="img/${product.pictureurl}">
