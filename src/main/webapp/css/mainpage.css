@@ -5,7 +5,7 @@
 	margin: 0px auto;
 	position:relative;
 	padding-top: 130px;
-	padding-bottom: 525px;
+	padding-bottom: 700px;
 }
 
 #id .tit_wrap {
@@ -25,8 +25,7 @@ section.shop2 {
 	padding: 40px 0px;
 }
 
-
-h3.main_tit {
+.main_tit {
 	font-size: 28px;
 	line-height: 1.15;
 	letter-spacing: -0.26px;
@@ -35,7 +34,7 @@ h3.main_tit {
 	text-align: center;
 }
 
-.shop2 .con_txt {
+.con_txt {
 	font-size: 16px;
 	font-weight: normal;
 	line-height:1.45;
@@ -45,14 +44,14 @@ h3.main_tit {
 	margin-top: 5px;
 }
 
-ul.shop2_list {
+#content ul.shop_list {
 	display:flex;
 	justify-content:center;
 }
 
 
 
-ul.shop2_list li{
+#content ul.shop_list  li{
 	display:flex;
 	flex-direction: column;
 	margin-right: 18px;
@@ -62,7 +61,7 @@ ul.shop2_list li{
 	
 }
 
-.shop2 .img_wrap {
+#content .img_wrap {
 	height: 320px;
 	width: 250px;
 	border-radius: 4px;
@@ -78,7 +77,7 @@ img.s_cart{
 	height: 20px;
 	margin: 1px 4px 0px 0px;
 }
-.shop2 a.cart_btn{
+a.cart_btn{
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -92,19 +91,19 @@ img.s_cart{
 	border-radius: 4px;
 	
 }
-.shop2 .info{
+.info{
 	position:relative;
 	padding: 8px 10px 0px 0px;
 }
 
-.shop2 span.discount{
+span.discount{
 	margin-right: 7px;
 	font-size: 16px;
 	font-weight: 800;
 	line-height: 1.5;
 	color: rgb(250, 98, 47);
 }
-.shop2 p.price{
+p.price{
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.5;
@@ -117,80 +116,4 @@ section.shop4 {
 	margin: 0px auto;
 	padding: 40px 0px;
 }
-h6.main_tit {
-	font-size: 28px;
-	line-height: 1.15;
-	letter-spacing: -0.26px;
-	font-weight: 500;
-	color: #333333;
-}
-.shop4 .con_txt {
-	font-size: 16px;
-	font-weight: normal;
-	line-height:1.45;
-	letter-spacing: -0.2px;
-	color: #333333;
-	margin-top: 5px;
-	text-align: left;
-}
-ul.shop4_list {
-	display:flex;
-	justify-content:center;
-}
-ul.shop4_list li{
-	display:flex;
-	flex-direction: column;
-	margin-right: 18px;
-	width: 250px;
-	text-align: left;
-	cursor: pointer;
-	
-}
-.shop4 .img_wrap {
-	height: 348px;
-	width: 695px;
-	border-radius: 4px;
-	object-fit:cover;
-	cursor:pointer;
-	overflow:hidden;
-	display:block;
-	box-sizing: border-box;
-	
-}
-.shop4 a.cart_btn{
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	width: 695px;
-	height: 36px;
-	margin-top:6px;
-	padding-bottom: 1px;
-	font-size:16px;
-	line-height: 29px;
-	border: 1px solid rgb(221, 221, 221);
-	border-radius: 4px;
-	
-}
-.shop4 .info{
-	padding-top: 9px;
-}
-.shop4 h4.p_tit{
-	font-size: 18px;
-	line-height: 2;
-	font-weight: 400;
-	color: #333;
-	margin-bottom: 6px;
-}
-.shop4 span.discount{
-	margin-right: 7px;
-	font-size: 20px;
-	font-weight: 800;
-	line-height: 30px;
-	color: rgb(250, 98, 47);
-}
-.shop4 p.price{
-	font-size: 20px;
-	font-weight: 700;
-	line-height: 30px;
-	color: #333;
-}
+

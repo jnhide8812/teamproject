@@ -37,7 +37,7 @@ const swiper = new Swiper(".slider_wrap", {
 					컬리 추천 특가템 최대 50%
 				</p>
 			</div>
-			<ul class="shop2_list">
+			<ul class="shop_list">
 				<li>
 					<c:forEach var="product" items="${product }" end="0" >
 						<a href="productDetail.do?pcode=${product.pcode }">
@@ -117,9 +117,53 @@ const swiper = new Swiper(".slider_wrap", {
 					매일 달라지는 특가 찬스! 
 				</p>
 			</div>
-			<ul class="shop2_list">
+			<ul class="shop_list">
 				<li>
 					<c:forEach var="product" items="${product }" begin="3" end="3" >
+						<a href="productDetail.do?pcode=${product.pcode }">
+							<div class="img_wrap">
+								<img src="img/${product.pictureurl}">
+							</div>
+							<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+								<img src="icon/sh_cart.png" class="s_cart">
+								담기
+							</a>
+							<div class="info">
+								<h4	class="p_tit">
+									${product.pname}
+								</h4>
+								<p class="price">
+									<span class="discount">50%</span>
+									 ${product.price}원
+								</p>
+							</div>
+						</a>
+					</c:forEach>
+				</li>				
+				<li>
+					<c:forEach var="product" items="${product }" begin="4" end="4" >
+						<a href="productDetail.do?pcode=${product.pcode }">
+							<div class="img_wrap">
+								<img src="img/${product.pictureurl}">
+							</div>
+							<a href="cartInsert.do?pcode=${product.pcode }&cartcnt=1" class="cart_btn">
+								<img src="icon/sh_cart.png" class="s_cart">
+								담기
+							</a>
+							<div class="info">
+								<h4	class="p_tit">
+									${product.pname}
+								</h4>
+								<p class="price">
+									<span class="discount">50%</span>
+									 ${product.price}원
+								</p>
+							</div>
+						</a>
+					</c:forEach>
+				</li>				
+				<li>
+					<c:forEach var="product" items="${product }" begin="5" end="5" >
 						<a href="productDetail.do?pcode=${product.pcode }">
 							<div class="img_wrap">
 								<img src="img/${product.pictureurl}">
