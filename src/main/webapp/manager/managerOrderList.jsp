@@ -28,7 +28,7 @@
 			<td>아이디</td>
 			<td>결제 금액</td>
 			<td>결제 방법</td>
-			<td>배송 상태</td>			
+			<td>주문 상태</td>			
 		</tr>
 		
 		<c:forEach var="managerOrderList" items="${managerOrderList}">

@@ -52,29 +52,29 @@
 
                      <tr>
                         <th id="inner" style="width: 80px">상품 이름</th>
-                        <td><input type="text" name="pname"></td>
+                        <td><input type="text" name="pname" readonly="readonly"></td>
                      </tr>
 
                      <tr> 
                         <th id="inner">상품 가격</th>
-                        <td><input type="text" name="price">&nbsp;원</td>
+                        <td><input type="text" name="price" readonly="readonly">&nbsp;원</td>
                      </tr>
 
                      <tr>
                         <th id="inner">상품 재고</th>
-                        <td><input type="text" name="pstock">&nbsp;개</td>
+                        <td><input type="text" name="pstock" readonly="readonly">&nbsp;개</td>
                      </tr>
 
                      <tr>
                         <th id="inner">상품 설명</th>
                         <td>
-                        	<textarea rows="7" cols="60" name="pinfo"></textarea>
+                        	<textarea rows="7" cols="60" name="pinfo" readonly="readonly"></textarea>
                         </td>
                      </tr> 
 
                      <tr>
                         <th id="inner">상품 사진</th>
-                        <td><input type="file" name="pictureurl" value="${product.pictureurl}"><br>
+                        <td><input type="file" name="pictureurl" value="${product.pictureurl}" readonly="readonly"><br>
                         </td> 
                      </tr>
                   </table>

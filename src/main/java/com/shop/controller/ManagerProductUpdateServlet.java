@@ -67,7 +67,7 @@ public class ManagerProductUpdateServlet extends HttpServlet {
 		int pstock = Integer.parseInt(multi.getParameter("pstock"));
 		String pstatus = multi.getParameter("pstatus");
 		String pinfo = multi.getParameter("pinfo");
-		String pictureurl = multi.getParameter("pictureurl");
+		String pictureurl = multi.getFilesystemName("pictureurl");
 		int catecode = Integer.parseInt(multi.getParameter("catecode"));
 
 		if (pictureurl == null)

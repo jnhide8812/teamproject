@@ -136,6 +136,8 @@ public class ProductDAO {
 			pstmt.setInt(8, vo.getPcode());
 
 			pstmt.executeUpdate();
+			
+			System.out.println(vo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
