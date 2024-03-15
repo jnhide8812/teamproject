@@ -159,7 +159,7 @@
 						</c:otherwise>
 					</c:choose>
 					<tr>
-						<td>&nbsp;</td>
+						<td><input type="hidden" name="total" value="${totalprice}"> </td>
 						<td></td>
 					</tr>
 					<tr align="center" >

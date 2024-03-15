@@ -57,7 +57,7 @@ public class ReceiptServlet extends HttpServlet {
 		request.setAttribute("orderList", orderList);
 		request.setAttribute("totalprice", totalprice);
 		
-		
+		System.out.println("totalprice :"+totalprice);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("user/receipt.jsp");
 		rd.forward(request, response);
