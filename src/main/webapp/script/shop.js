@@ -66,7 +66,7 @@ function pwdTest() {
         alert("비밀번호가 일치 하지 않습니다");
         return false;
       } else{
-        alert("비밀번호가 일치합니다");
+        
         return true;
       }
 

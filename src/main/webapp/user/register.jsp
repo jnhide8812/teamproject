@@ -26,12 +26,12 @@
 				</li>
 				<li>
 					<label for="pwd">비밀번호</label>
-					<input type="password" name="upwd" onclick="return pwdTest()" placeholder="비밀번호 입력" class="box">
+					<input type="password" name="upwd" placeholder="비밀번호 입력" class="box">
 				</li>
 				<li>
 					<label for="upwd_re">비밀번호 확인</label>
 					<input type="password" name="upwd_re"
-						placeholder="비밀번호 재입력" onclick="return pwdTest()" class="box">
+						placeholder="비밀번호 재입력"  class="box">
 				</li>
 				<li>
 					<label for="name">이름</label>
@@ -57,7 +57,7 @@
 					<div class="downline"></div>
 				</li>
 				<li class="btn_wrap">
-					<input type="submit" value="회원가입하기"  class="joinbtn">
+					<input type="submit"  onclick="return pwdTest()" value="회원가입하기"  class="joinbtn">
 				</li>
 			</ul>
 		</nav>
