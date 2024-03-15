@@ -50,6 +50,7 @@ public class FindIdServlet extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("user/resultFindId.jsp");
 		rd.forward(request, response);
+		//수정중
 		
 		
 	
