@@ -30,9 +30,19 @@ public class MyPageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		        String id = request.getParameter("id"); 	
-				UsersDAO udao = UsersDAO.getInstance();
-				UsersVO loginUser = udao.selectById(id);
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("loginUser") == null){
+			response.sendRedirect("login.do");
+		}
+		else {
+			UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
+		
+		
+		
+		
+		//		UsersDAO udao = UsersDAO.getInstance();
+		//		UsersVO loginUser = udao.selectById(id);
 				request.setAttribute("loginUser", loginUser);
 				
 				RequestDispatcher rd = request.getRequestDispatcher("user/mypage.jsp");
@@ -40,7 +50,7 @@ public class MyPageServlet extends HttpServlet {
 				rd.forward(request, response);
 				
 			}
-
+	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

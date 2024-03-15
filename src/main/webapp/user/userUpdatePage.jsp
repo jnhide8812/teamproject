@@ -10,12 +10,36 @@
 <script type="text/javascript" src="script/shop.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="../css/style.css"> -->
 <title>개인정보 수정 페이지</title>
+<style>
 
+
+#wrap{
+   width: 1050px;
+   margin: 0px auto;
+   padding-top: 200px;
+
+}
+
+.list{
+	width:600px;	
+	font-size:1.2em;
+	table-layout: fixed;
+	align:center;
+	
+}
+
+.list td, th{
+	padding:5px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #5F0080;
+}
+</style>
 </head>
 <body>
 <div id = "wrap">
 	<form action="userUpdate.do" method="post">
-		<table align="center" width="550">
+		<table class="list">
 			<tr>
 				<td colspan="2" align="center">개인정보수정</td>
 			</tr>
@@ -52,14 +76,11 @@
 				<td><input type="text" name="uaddress"
 					value="${loginUser.uaddress}"></td>
 			</tr>
+			
 			<tr>
-				<td><input type="text" name="ugrade"
-					value="${loginUser.ugrade}"></td>
-				<td><input type="hidden" name="upoint"
-					value="${loginUser.upoint}"></td>
-			</tr>
-			<tr>
-			<td colspan="2" align="center"><input type="submit" value="수정"></td>
+			<td colspan="2" align="center"><input type="submit" value="수정">
+			<input type="button" value="마이페이지로" onClick='location.href="mypage.do"'>
+			</td>
 			</tr>
 		</table>
 	</form>

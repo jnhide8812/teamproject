@@ -32,17 +32,20 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id= request.getParameter("id");
-		
-		UsersDAO udao = UsersDAO.getInstance();
-		
-		UsersVO uvo = udao.selectById(id);
-		
 		HttpSession session = request.getSession();
-	
-		session.setAttribute("loginUser", uvo);
+		
+		if(session.getAttribute("loginUser") == null){
+			response.sendRedirect("login.do");
+		}
+		else {
+			UsersVO loginUser = (UsersVO)session.getAttribute("loginUser");
+			request.setAttribute("loginUser", loginUser);
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher("user/userUpdatePage.jsp");
 		rd.forward(request, response);
+	
+		}
 	}
 
 	/**
