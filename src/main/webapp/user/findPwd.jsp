@@ -85,7 +85,7 @@ input.fbtn{
     height: 52px;
     border-radius: 4px;
     color: white;
-    background-color: purple;
+    background-color: #5F0080;
     border: 0px none;
     font-size: 16px;
     font-weight: 500;
