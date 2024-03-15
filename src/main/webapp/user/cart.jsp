@@ -101,7 +101,7 @@
 						<!-- <input type="checkbox" name="chk"> -->
 						<td>	<input type="hidden" name="pcode[]" value="${cartList.pcode }">
 						</td>
-						<td><a href="productDetail.do?code=${cartList.pcode }"><img src="img/${cartList.pictureurl }"></a></td>
+						<td><a href="productDetail.do?pcode=${cartList.pcode }"><img src="img/${cartList.pictureurl }"></a></td>
 						<td>${cartList.pname }</td>
 						<td>
 							<a href="cartUpdate.do?cartcnt=${cartList.cartcnt }&cartnumber=${cartList.cartnumber}&name=minus"><img src="icon/minus.png" class="btn"></a>&nbsp;
