@@ -185,7 +185,7 @@ public class UsersDAO {
 	//마이페이지에서 수정(업데이트)
 	public int updateUser(UsersVO uvo) {
 		int result = -1; // 정보수정 실패 시 -1 반환
-		String sql = "update users set uphone=?, uaddress=?, ugrade=? where id=?";
+		String sql = "update users set uphone=?, uaddress=? where id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -194,7 +194,7 @@ public class UsersDAO {
 			pstmt.setString(1, uvo.getUphone());
 			pstmt.setString(2, uvo.getUaddress());
 			pstmt.setString(3, uvo.getId());
-			pstmt.setString(4, uvo.getUgrade());
+
 
 			result = pstmt.executeUpdate(); // 정보수정 완료시 1 반환
 

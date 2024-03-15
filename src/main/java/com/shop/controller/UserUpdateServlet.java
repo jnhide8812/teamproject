@@ -77,8 +77,17 @@ public class UserUpdateServlet extends HttpServlet {
 		
 		
 		UsersDAO udao = UsersDAO.getInstance();
-		udao.updateUser(uvo);
-		response.sendRedirect("mypage.do");
+		int result = udao.updateUser(uvo);
+		
+		if (result==1) {
+		
+			HttpSession session = request.getSession();
+			session.setAttribute("loginUser", uvo);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("user/mypage.jsp");
+		rd.forward(request, response);
+		}
+		
 		
 		
 		

@@ -140,7 +140,12 @@ td.line{
 					value="${loginUser.uaddress}"></td>
 			</tr>
 			<tr>
-				<td colspan="2" class="line"></td>
+				<td colspan="2" class="line">
+				<input type="hidden" name="ugrade" class="up"
+					value="${loginUser.ugrade}">
+					<input type="hidden" name="upoint" class="up"
+					value="${loginUser.upoint}">
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center" >
