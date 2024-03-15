@@ -9,36 +9,45 @@
 <style>
 
 
-#wrap{
+#owrap{
 	 width: 1050px;
    margin: 0px auto;
    padding-top: 200px;
 }
 
 
-h1{
+#owrap h1{
 	font-size:1.5em;
 	color:#5F0080;
 	font-weight: bold;
 	
 }
 
-h3{
+#owrap h3{
 	color:#5F0080;
 	font-weight: bold;
+	text-align:center;
+	border-bottom: 1px solid #5F0080;
+	font-size: 26px;
+	padding-bottom: 10px;
+	width: 450px;
 	
 }
 #list{
-	width:600px;
+	width:500px;
 	font-size:1.2em;
 	table-layout: fixed;
-	align: center;
+	display:flex;
+	justify-content:center;
+	align-items: center;
 	
 }
 #list td{
 	line-height: 1em;
 	padding:10px 10px 1px 10px;
 	table-layout: fixed;
+	width:600px;
+	text-align:center;
 }
 
 
@@ -46,7 +55,7 @@ h3{
 </style>
 </head>
 <body>
-	<div id="wrap" align="center">
+	<div id="owrap" align="center">
 
 
 		<table id="list">

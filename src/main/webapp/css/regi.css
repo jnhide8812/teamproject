@@ -9,13 +9,13 @@
 
 #join_wrap {
 	background-color: #FFFFFF;
-	padding-top: 230px;
+	padding-top: 130px;
 	height: 100vh;
 	margin: 0px auto;
 	width: 1050px;
 	padding-bottom: 525px;
 }
-ul{
+#join_wrap ul{
 	width: 640px;
 	margin: 0px auto;
 	margin-top: 50px;
@@ -25,13 +25,13 @@ ul{
 	align-items: center;
 	justify-content: center;
 }
-li{
+#join_wrap li{
 	display: inline-flex;
 	width: 100%;
-	padding: 10px 20px; 
+	padding-bottom:20px; 
 }
 
-h1{ 
+#join_wrap h1{ 
 	padding-bottom: 50px;
 	font-size: 35px;
 	font-weight: 500;
@@ -47,12 +47,12 @@ h1{
 	line-height: 17px;
 	margin: 0px auto;
 }
-label{
+#join_wrap label{
 	font-size: 16px;
 	width: 139px;
 	padding-top: 12px;
 }
-input{
+#join_wrap input{
 	width: 100%;
 	height: 46px;
 	padding: 0px 11px 1px 15px;
@@ -67,12 +67,11 @@ input{
 input.box {
 	width: 340px;
 }
-input.idbox{
-	margin-left: 5px;
-	width: 340px;
+#join_wrap input.idbox{
+	width: 438px;
 }
-input.idbtn{
-	width: 120px;
+#join_wrap input.idbtn{
+	width: 170px;
 	margin-left: 8px;
 	border: 1px solid #5F0080;
 	color: #5F0080;
@@ -89,7 +88,7 @@ li.btn_wrap{
 	padding: 40px 0px;
 	border-top: 1px solid #333;
 }
-input.joinbtn{
+#join_wrap input.joinbtn{
 	display:block;
 	padding: 0px 10px;
 	text-align: center;
@@ -97,7 +96,7 @@ input.joinbtn{
 	width: 240px;
 	height: 56px;
 	border-radius: 3px;
-	color: #fff;
+	color: #ffffff;
 	background-color: #5F0080;
 	border: 0px none;
 }
