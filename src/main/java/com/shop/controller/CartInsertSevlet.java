@@ -45,13 +45,7 @@ public class CartInsertSevlet extends HttpServlet {
 		
 		UsersVO loginUser = (UsersVO) session.getAttribute("loginUser");
 		
-		
-		System.out.println("1111" + request.getParameter("pcode"));
-
 		int pcode = Integer.parseInt(request.getParameter("pcode"));
-		
-		System.out.println("99999" + request.getParameter("cartcnt"));
-		
 		int cartcnt = Integer.parseInt(request.getParameter("cartcnt"));
 
 		CartVO cvo = new CartVO();
