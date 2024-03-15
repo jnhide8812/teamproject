@@ -15,12 +15,16 @@
 	margin: 0px auto;
 	padding-top: 300px;
 	padding-bottom: 525px;
+	background-color: #f7f7f7;
 }
 .ground{
 	display:flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	width: 1050px;
+	height: 250px;
+	background-color: #ffffff;
 }
 .good {
 	display:flex;

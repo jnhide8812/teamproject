@@ -21,8 +21,10 @@ h1{
 }
 
 #wrap{
-	margin:100px;
-	padding:5px;
+	width: 1050px;
+    margin: 0px auto;
+    padding-top: 200px;
+
 
 }
 
