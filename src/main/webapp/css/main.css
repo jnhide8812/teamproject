@@ -1,5 +1,10 @@
 @import url(style.css);
-
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	
+}
 .tit_wrap {
 	display: none;
 }

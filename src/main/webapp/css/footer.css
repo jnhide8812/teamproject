@@ -10,13 +10,11 @@ footer{
 	height: 525px;
 	width:100%;
 	bottom: 0;
-	z-index:4;
 
 }
 
 .mid {
 	max-width: 1050px;
-	margin: auto;
 	position: relative;
 	height: 100%;
 }
