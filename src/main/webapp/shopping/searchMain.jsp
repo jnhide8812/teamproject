@@ -52,7 +52,6 @@
    
   
 </head>
-<!--  -->
 <body>
 <div id="result">
 	<div class="rs">
