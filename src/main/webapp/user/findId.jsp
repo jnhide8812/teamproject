@@ -67,7 +67,7 @@ input{
     border: 1px solid rgb(221, 221, 221);
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.5; //ㅇㅇㄴ
+    line-height: 1.5; 
     color: #333;
     outline: none;
     box-sizing: border-box;

@@ -267,7 +267,7 @@ public class UsersDAO {
 
 			if (rs.next()) {
 				id = rs.getString("id");
-
+				System.out.println("id: "+id);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

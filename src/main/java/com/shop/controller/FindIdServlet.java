@@ -39,7 +39,7 @@ public class FindIdServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		System.out.println("aaaa");
 		
 		String uname = request.getParameter("uname");
 		String uphone = request.getParameter("uphone");
@@ -47,7 +47,7 @@ public class FindIdServlet extends HttpServlet {
 		UsersDAO fdao = UsersDAO.getInstance();
 		String id = fdao.findId(uname,uphone);
 		request.setAttribute("id", id);
-		
+		System.out.println("id :" + id);
 		RequestDispatcher rd = request.getRequestDispatcher("user/resultFindId.jsp");
 		rd.forward(request, response);
 		//수정중
