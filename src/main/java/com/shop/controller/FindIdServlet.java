@@ -41,8 +41,8 @@ public class FindIdServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("aaaa");
 		
-		String uname = request.getParameter("uname");
-		String uphone = request.getParameter("uphone");
+		String uname = request.getParameter("uname").trim();
+		String uphone = request.getParameter("uphone").trim();
 		
 		UsersDAO fdao = UsersDAO.getInstance();
 		String id = fdao.findId(uname,uphone);

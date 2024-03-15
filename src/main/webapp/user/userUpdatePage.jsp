@@ -119,13 +119,13 @@ td.line{
 
 			<tr>
 				<th align="center">이름</th>
-				<td><input type="text" name="uname" class="up" value="${loginUser.uname }"
+				<td><input type="text" name="uname" class="up" value="${loginUser.uname}"
 					readonly></td>
 			</tr>
 			<tr>
 				<th align="center">전화번호</th>
 				<td><input type="text" name="uphone" class="up" 
-					value="${loginUser.uphone} "></td>
+					value="${loginUser.uphone}"></td>
 			</tr>
 
 			<tr>
