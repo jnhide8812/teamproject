@@ -1,8 +1,3 @@
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -11,21 +6,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주문 상세 페이지 - 관리자</title>
+<title></title>
 <link rel="stylesheet" type="text/css" href="css/manager.css">
 <script type="text/javascript" src="script/shop.js"></script>
 </head>
 <body>
-	<form name="frm" method="post" action="ManagerOrderDetail.do">
-		<div id="wrap" align="center">
-			<h1 style="color: #5f0080">주문 상세 페이지 - 관리자</h1>
-			
-			<input type="hidden" name="orderdetailnumber"
-				value="${orderdetail.orderdetailnumber}">
-			<hr>
-			<hr>
+<header>
 
-			<table id="list" style="width: 500px;">
+<table>
+	<tr>
+		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td>
+		<th>${users.uname}관리자님 환영합니다.</th>
+			<td align="right" id="padding">
+			<a href="logout.do">로그아웃</a> &nbsp;
+			<a href="Manager.do">관리자 메인으로</a>
+			</td>
+	</tr> 
+</table>
+
+</header>
+	<form method="post" action="ManagerOrderDetail.do">
+		<div id="image_container" align="center">
+			
+			<input type="hidden" name="orderdetailnumber" 
+			value="${orderdetail.orderdetailnumber}">
+		<br>
+		<table id="list" style="width: 500px;">
 				<tr>
 					<th style="text-align: right; font-size: 16px;">아이디</th>
 					<td><input type="text" name="id"
@@ -34,7 +40,8 @@
 
 				<tr>
 					<th style="text-align: right; font-size: 16px;">배송지 주소</th>
-					<td><input type="text" name="daddress"></td>
+					<td><input type="text" name="daddress" 
+					value="${orderdetail.daddress}" readonly></td>
 				</tr>
 
 				<tr>
@@ -44,9 +51,15 @@
 				</tr>
 
 				<tr>
-					<th style="text-align: right; font-size: 16px;">상품 이름</th>
+					<th style="text-align: right; font-size: 16px;">수령인 이름</th>
 					<td><input type="text" name="pname"
-						value="${orderdetail.pname}" readonly></td>
+						value="${orderdetail.dname}" readonly></td>
+				</tr>
+				
+				<tr>
+					<th style="text-align: right; font-size: 16px;">주문 물품 수량</th>
+					<td><input type="text" name="ordercnt"
+						value="${orderdetail.ordercnt}" readonly>&nbsp;개</td>
 				</tr>
 
 				<tr>
@@ -56,17 +69,19 @@
 
 				<tr>
 					<th style="text-align: right; font-size: 16px;">주문 상태 변경</th>
-					<td><select name="oderstatus">
+					<td>
+						<select name="oderstatus">
 							<option value="1" selected>결제완료</option>
 							<option value="2">배송중</option>
 							<option value="3">배송완료</option>
-					</select></td>
-				</tr>
-
+					</select>
+					</td>
+				</tr>		
 			</table>
 			
+			<br>
 			<input type="submit" value="확인" onclick="location href='ManagerOrderDetail.do'">
-		</div>
+		</div> 
 	</form>
 </body>
 </html>

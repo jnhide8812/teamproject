@@ -24,8 +24,8 @@
                      <c:otherwise>
                      <div class="image" align="right" style="
                display:block; margin:20px;">
-                        <img src="img/${product.pictureurl}">
-                     </div>
+                        <img src="img/${product.pictureurl}" style="width: 300px; height: auto;">
+                     </div>  
                      </c:otherwise>
                   </c:choose></td>
                <td>
