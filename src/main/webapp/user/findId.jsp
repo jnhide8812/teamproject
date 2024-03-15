@@ -94,7 +94,7 @@ input.fbtn{
 <body>
 <div id="wrap">
 	<h2>아이디 찾기</h2>
-	<form method="post" action="findPwd.do">
+	<form method="post" action="findId.do">
 		<div class="find">
 	            <ul>
 	                <li>
