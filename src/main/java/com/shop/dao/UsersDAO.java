@@ -70,12 +70,12 @@ public class UsersDAO {
 		return result;
 	}
 
-	public void insertUsers(UsersVO member) {
+	public int insertUsers(UsersVO member) {
 		// System.out.println("dao");
 		String sql = "insert into users values(?,?,?,?,?,?,?,?)";
 		Connection conn = null;
+		int result = 0;
 		PreparedStatement pstmt = null;
-		System.out.println(member.getUbirth());
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -87,8 +87,8 @@ public class UsersDAO {
 			pstmt.setString(6, member.getUaddress());
 			pstmt.setString(7, member.getUgrade());
 			pstmt.setInt(8, member.getUpoint());
-			pstmt.executeUpdate();
-
+			result = pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -102,6 +102,7 @@ public class UsersDAO {
 			}
 
 		}
+		return result;
 
 	}
 

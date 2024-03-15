@@ -50,20 +50,16 @@ public class RegisterServlet extends HttpServlet {
 
 		
 		UsersDAO usersdao = UsersDAO.getInstance(); 
-	    usersdao.insertUsers(member);
-		
-		  request.setAttribute("loginUser", member); 
-		  request.setAttribute("message", "회원등록에 성공했습니다"); 
-		  String url ="login.do"; 
+	    int result = usersdao.insertUsers(member);
 		 
-		  RequestDispatcher rd =request.getRequestDispatcher(url); 
-		  rd.forward(request, response);
-		
-		 
-			
-		
+		    if(result == 1) {
+		    
+			  response.sendRedirect("login.do");
+			  
+		    }else {
+		    	 response.sendRedirect("register.do");
+		    }
+	    
 		
 	}
-		
 }
-

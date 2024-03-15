@@ -26,7 +26,7 @@
 				</li>
 				<li>
 					<label for="pwd">비밀번호</label>
-					<input type="password" name="upwd" placeholder="비밀번호 입력" class="box">
+					<input type="password" name="upwd" onclick="return pwdTest()" placeholder="비밀번호 입력" class="box">
 				</li>
 				<li>
 					<label for="upwd_re">비밀번호 확인</label>
@@ -61,7 +61,6 @@
 				</li>
 			</ul>
 		</nav>
-			${message }
 		</form>
 	</div>
 </body>

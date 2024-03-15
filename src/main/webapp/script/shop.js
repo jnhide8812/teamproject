@@ -60,8 +60,8 @@ function idok(){
 
 	
 function pwdTest() {
-      var p1 = document.getElementById("upwd").value;
-      var p2 = document.getElementById("upwd_re").value;
+      var p1 = document.frm.upwd.value;
+      var p2 = document.frm.upwd_re.value;
       if( p1 != p2 ) {
         alert("비밀번호가 일치 하지 않습니다");
         return false;
