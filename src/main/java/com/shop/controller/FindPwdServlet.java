@@ -42,7 +42,7 @@ public class FindPwdServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String uname = request.getParameter("uname");
 		String uphone = request.getParameter("uphone");
-		System.out.println("비밀번호 찾기 연결");
+		
 		UsersDAO fdao = UsersDAO.getInstance();
 		String upwd = fdao.findPwd(id, uname, uphone);
 		request.setAttribute("upwd", upwd);

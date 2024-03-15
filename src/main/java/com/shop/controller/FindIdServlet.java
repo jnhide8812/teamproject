@@ -32,7 +32,7 @@ public class FindIdServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("user/findId.jsp");
 		rd.forward(request, response);
-		System.out.println("page 연결");
+		
 	}
 //찾은 아이디 올릴 창 만들기!!
 	/**
@@ -47,7 +47,9 @@ public class FindIdServlet extends HttpServlet {
 		UsersDAO fdao = UsersDAO.getInstance();
 		String id = fdao.findId(uname,uphone);
 		request.setAttribute("id", id);
-		System.out.println("아이디 찾기 연결");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("user/resultFindId.jsp");
+		rd.forward(request, response);
 		
 		
 	
