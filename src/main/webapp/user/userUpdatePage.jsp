@@ -18,6 +18,7 @@
    margin: 0px auto;
    padding-top: 200px;
 
+ 
 }
 
 .list{
