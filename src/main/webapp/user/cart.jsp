@@ -14,16 +14,17 @@
 	height:68px;
 	object-fit:cover;
 }
-h1{
-	font-size:1.5em;
+.cartlist h1{
+	font-size:26px;
 	color:#5F0080;
 	font-weight: bold;
-	
+	padding-bottom: 30px;
 }
 
 #wrap{
-	margin:100px;
-	padding:5px;
+	width: 1050px;
+	margin: 0px auto;
+	padding-top: 230px;
 
 }
 
@@ -51,7 +52,7 @@ h1{
 	width:400px;
 	background-color: rgb(250, 250, 250);
 	border: 1px solid rgb(242,242,242);
-	margin:5px;
+	margin:10px;
 	padding:18px;
 
 }
