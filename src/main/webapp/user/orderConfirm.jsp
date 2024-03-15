@@ -12,7 +12,7 @@
 
 #wrap{
 	width:1050px;
-	padding-top: 180px;
+	padding-top: 250px;
 	margin:0px auto;
 
 }

@@ -10,11 +10,12 @@
 
 
 #wrap{
-	aling:center;
-	margin:100px;
-	padding:5px;
-
+	 width: 1050px;
+   margin: 0px auto;
+   padding-top: 200px;
 }
+
+
 h1{
 	font-size:1.5em;
 	color:#5F0080;
