@@ -20,9 +20,9 @@
 			<a href="manager.do">관리자 메인으로</a>
 			</td>
 	</tr>
-
 </table>
 </header>
+<br>
 <div id="wrap" align="center">
 <form method="post" name="frm" enctype="multipart/form-data">
 

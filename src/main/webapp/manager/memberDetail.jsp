@@ -20,6 +20,7 @@
 	</tr> 
 </table>
 </header>
+<br>
 <div id="wrap" align="center">
 <form method="post" action="MemberDetail.do">
 				<table id="list" style="width: 500px;">

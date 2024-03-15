@@ -10,15 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shop.dao.ManagerOrderDetailDAO;
-import com.shop.dto.ManagerOrderDetailVO;
+import com.shop.dao.OrderTableDAO;
+import com.shop.dto.OrderTableVO;
+
+
+
 
 
 
 /**
  * Servlet implementation class ManagerOrderListServlet
  */
-@WebServlet("/ManagerOrderList.do")
+@WebServlet("/ManagerOrderList.do") 
 public class ManagerOrderListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,9 +37,9 @@ public class ManagerOrderListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("Test");
-		ManagerOrderDetailDAO modao = ManagerOrderDetailDAO.getInstance();
-		List<ManagerOrderDetailVO> managerOrderList = modao.selectOrderList();
+		//System.out.println("Get");
+		OrderTableDAO odao = OrderTableDAO.getInstance();
+		List<OrderTableVO> managerOrderList = odao.selectAllOrders();
 		request.setAttribute("managerOrderList", managerOrderList);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("manager/managerOrderList.jsp");
@@ -49,6 +52,6 @@ public class ManagerOrderListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-	}
+	} 
 
 }

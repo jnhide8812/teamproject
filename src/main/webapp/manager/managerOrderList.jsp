@@ -9,14 +9,14 @@
 <link rel="stylesheet" type="text/css" href="css/manager.css">
 </head>
 <body>
-<header>
+<header> 
 <table>
 	<tr>
 		<td><a href="main.do"><img id="logo" src="icon/kurly.jpeg"></a></td>
 		<th>${users.uname}관리자님 환영합니다.</th>
 			<td align="right" id="padding">
 			<a href="logout.do">로그아웃</a> &nbsp;
-			<a href="manager.do">관리자 메인으로</a>
+			<a href="Manager.do">관리자 메인으로</a>
 			</td>
 	</tr>
 </table>
@@ -26,7 +26,8 @@
 		<tr id="textcenter" style="background-color: #5f0080; color: white;">
 			<td>주문 번호</td>
 			<td>아이디</td>
-			<td>주 소</td>
+			<td>결제 금액</td>
+			<td>결제 방법</td>
 			<td>배송 상태</td>			
 		</tr>
 		
@@ -34,12 +35,13 @@
 		<tr class="recode">
 			<td align="center"><a href="ManagerOrderDetail.do?ordernumber=${managerOrderList.ordernumber}">${managerOrderList.ordernumber}</a></td>
 			<td>${managerOrderList.id}</td>
-			<td>${managerOrderList.daddress}</td>
+			<td>${managerOrderList.totalprice}</td>
+			<td>${managerOrderList.payment}</td>
 			<td>${managerOrderList.orderstatus}</td>
 		</tr>
 		</c:forEach>
 		
-	</table>
+	</table> 
 </div>
 </body>
 </html>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ public class OrderTableDAO {
 	private static OrderTableDAO instance = new OrderTableDAO();
 	
 	public static OrderTableDAO getInstance() {
-		return instance;
+		return instance; 
 	}
 	
 	//INSERT INTO ordertable (id, totalprice, orderstatus, payment)
@@ -115,6 +116,74 @@ public class OrderTableDAO {
 		}
 	}
 	
+
+	
+
+	//주문 목록 리스트로 출력하기
+	public List<OrderTableVO> selectAllOrders(){
+			//System.out.println("list테스트");
+			
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			String sql = "select * from ordertable order by ordernumber desc";
+			
+			List<OrderTableVO> orderlist = new ArrayList<OrderTableVO>();
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					OrderTableVO ovo = new OrderTableVO();
+					
+					ovo.setOrdernumber(rs.getInt("ordernumber"));
+					ovo.setId(rs.getString("id"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					ovo.setOrderstatus(rs.getString("orderstatus"));
+					ovo.setPayment(rs.getString("payment"));
+					
+					orderlist.add(ovo);
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			return orderlist;
+		}
+	
+	//주문 목록 수정
+	public OrderTableVO selectOrderTableByOrdernumber(String ordernumber) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from ordertable where ordernumber=?";
+		OrderTableVO ovo = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, ordernumber);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				ovo = new OrderTableVO();
+				ovo.setOrdernumber(rs.getInt("ordernumber"));
+				ovo.setId(rs.getString("id"));
+				ovo.setPayment(rs.getString("payment"));
+				ovo.setOrderstatus(rs.getString("orderstatus"));
+				ovo.setTotalprice(rs.getInt("totalprice"));
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return ovo;
+	}
+
 	//주문 완료 내역 출력
 	public List<OrderTableVO> selectOrderTableById(String id){
 		Connection conn = null;
@@ -122,7 +191,7 @@ public class OrderTableDAO {
 		ResultSet rs = null;
 		String sql = "select * from ordertable where id=? order by ordernumber desc";
 		List<OrderTableVO> list = new ArrayList<OrderTableVO>();
-		
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -146,7 +215,7 @@ public class OrderTableDAO {
 			DBManager.close(conn, pstmt, rs);
 		}
 		return list;
-		
+
 	}
 	
 	

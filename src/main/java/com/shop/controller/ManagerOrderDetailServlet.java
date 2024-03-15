@@ -3,22 +3,19 @@ package com.shop.controller;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.shop.dao.ManagerOrderDetailDAO;
-import com.shop.dto.ManagerOrderDetailVO;
+import com.shop.dao.OrderDetailDAO;
+import com.shop.dto.OrderDetailVO;
 
 /**
  * Servlet implementation class ManagerOrderDetailServlet
  */
-@WebServlet("/managerOrderDetail.do")
+@WebServlet("/ManagerOrderDetail.do") 
 public class ManagerOrderDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,11 +31,12 @@ public class ManagerOrderDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String orderdetailnumber = request.getParameter("orderdetailnumber");
-		ManagerOrderDetailDAO dao = ManagerOrderDetailDAO.getInstance();
-		ManagerOrderDetailVO vo = dao.selectOrderDetailByNumber(orderdetailnumber);
-
-		request.setAttribute("manager", vo);
+		//System.out.println("수정");
+		String ordernumber = request.getParameter("ordernumber");
+		OrderDetailDAO odao = OrderDetailDAO.getInstance();
+		OrderDetailVO ovo = odao.selectOrderDetailByOrdernumber(ordernumber);
+		request.setAttribute("orderdetail", ovo);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("manager/managerOrderDetail.jsp");
 		rd.forward(request, response);
 		}
@@ -48,34 +46,31 @@ public class ManagerOrderDetailServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		ServletContext context = getServletContext();
-		String encType = "UTF-8";
 		
-		MultipartRequest multi = new MultipartRequest(
-				request, 
-				encType);
+		String ordernumber = request.getParameter("ordernumber");
+		int orderdetailnumber = Integer.parseInt(request.getParameter("orderdetailnumber"));
+		int pcode = Integer.parseInt(request.getParameter("pcode"));
+		int ordercnt = Integer.parseInt(request.getParameter("ordercnt"));
+		String id = request.getParameter("id");
+		String daddress = request.getParameter("daddress");
+		String dname = request.getParameter("dname");
 		
-		String dname = multi.getParameter("dcode");
-		String daddress = multi.getParameter("daddress");
-		String pcode = multi.getParameter("pcode");
-		String pname = multi.getParameter("pname");
-		int totalprice = Integer.parseInt(multi.getParameter("totalprice"));
-		String orderstatus = multi.getParameter("orderstatus");
-	
-		ManagerOrderDetailVO vo = new ManagerOrderDetailVO();
-		vo.setDname(dname);
-		vo.setDaddress(daddress);
-		vo.setPcode(Integer.parseInt(pcode));
-		vo.setPname(pname);
-		vo.setTotalprice(totalprice);
-		vo.setOrderstatus(orderstatus);
-	
-		ManagerOrderDetailDAO dao = ManagerOrderDetailDAO.getInstance();
-		dao.updateOrderstatus(vo);
+		OrderDetailVO ovo = new OrderDetailVO();
+		ovo.setOrdernumber(Integer.parseInt(ordernumber));
+		ovo.setOrderdetailnumber(orderdetailnumber);
+		ovo.setOrdercnt(ordercnt);
+		ovo.setPcode(pcode);
+		ovo.setId(id);
+		ovo.setDaddress(daddress);
+		ovo.setDname(dname);
+
 		
-		response.sendRedirect("managerOrderList.do");
+		OrderDetailDAO odao = OrderDetailDAO.getInstance();
+		odao.updateOrderDetail(ovo);
+		
+		response.sendRedirect("ManagerOrderList.do");
 		
 		
-	}
+	} 
 
 }
