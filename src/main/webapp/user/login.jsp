@@ -39,6 +39,8 @@
 				<input type="button" value="회원가입" onclick="location.href='register.do'" class="regi">
 			</td>
 		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr><td align="center">${message }</td></tr>
 	</table>
 	</form>
 

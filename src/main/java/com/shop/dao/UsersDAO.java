@@ -43,9 +43,8 @@ public class UsersDAO {
 					// 회원등급
 					if (ugrade.equals(rs.getString("ugrade"))) {
 						result = 2; // 관리자 로그인 성공
-						if (ugrade.equals("ugrade")) {
-							result = 1;// 일반회원, vip 로그인 성공
-						}
+					}else {
+						result=1;	//일반회원 로그인 성공
 					}
 				} else {
 					result = 0; // 비밀번호가 맞지 않을 때
