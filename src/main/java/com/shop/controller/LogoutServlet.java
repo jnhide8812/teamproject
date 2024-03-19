@@ -32,7 +32,7 @@ public class LogoutServlet extends HttpServlet {
 		System.out.println("logout");
 		HttpSession session = request.getSession();
 		session.invalidate();
-		RequestDispatcher rd = request.getRequestDispatcher("mainpage.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("main.do");
 		rd.forward(request, response);
 		
 	}
