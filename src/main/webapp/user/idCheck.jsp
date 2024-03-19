@@ -11,7 +11,7 @@
 <body>
 <h2>아이디 중복 확인</h2>
 <form action ="idCheck.do" method ="get" name="frm">
-아이디 : <input type="text" name="id" value="${Users.id }">
+아이디 : <input type="text" name="id" value="${id}">
 <input type="submit" value="중복체크">
 <br>
 <c:if test ="${result ==1 }">

@@ -13,16 +13,17 @@
 </head>
 <body>
 <div id="join_wrap">
-	<form action="register.do" name = "frm" method="post" class="big">
+	<form action="register.do" name = "frm" method="get" class="big">
 	<h1>회원가입</h1>
 		<div class="upline"></div>
 		<nav>
 			<ul>
 				<li>
 					<label for="id">아이디</label>
-					<input type="text" name="id" placeholder="아이디 입력" class="idbox">
-					<input type="button" value="중복 확인" onclick="idCheck()" class="idbtn"> 
+					<input type="text" name="id" value="${id}" placeholder="아이디 입력" class="idbox">
 					<input type="hidden" name="reid">
+					<input type="button" value="중복 확인" onclick="idCheck()" class="idbtn"> 
+					
 				</li>
 				<li>
 					<label for="pwd">비밀번호</label>
