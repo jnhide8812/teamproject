@@ -1,22 +1,35 @@
 @import url(style.css);
 
 /*footer*/
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	
+}
 
-
-footer{
+#ft_section{
 	background-color: #fff;
 	border-top: 1px solid rgb(247, 247, 247);
 	padding-top: 30px;
 	height: 480px;
-	width:100%;
+	width:1050px;
 	bottom: 0;
+	margin: 0px auto;
+	position:relative;
+	transform: translateY(300%);
+	
+}
+footer{
 
+	align-items: center;
 }
 
 .mid {
 	max-width: 1050px;
 	position: relative;
 	height: 100%;
+
 }
 
 .ft_shop1 .inner{
