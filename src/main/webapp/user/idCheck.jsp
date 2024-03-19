@@ -18,10 +18,10 @@
 	<script type="text/javascript">
 	opener.docoument.frm.id.value="";
 	</script>
-	${users.id }는 이미 사용중인 아이디입니다.
+	${id }는 이미 사용중인 아이디입니다.
 	</c:if>
 	<c:if test = "${result==-1 }">
-	${users.id }는 사용가능한 아이디 입니다.
+	${id }는 사용가능한 아이디 입니다.
 	<input type="button" value="사용" class = "cancle" onclick="idok()">
 	</c:if>
 
