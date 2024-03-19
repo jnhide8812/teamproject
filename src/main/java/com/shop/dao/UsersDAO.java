@@ -353,4 +353,27 @@ public class UsersDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
+	public void upwdUpdate(String id,String upwd) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "update users set upwd = ? where id=?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,upwd);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+			System.out.println("upwd dao"+upwd);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+		
+		
+	}
+	
 }

@@ -2,7 +2,6 @@ package com.shop.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.dao.UsersDAO;
 
 /**
- * Servlet implementation class FindPwdServlet
+ * Servlet implementation class UpwdUpdateServlet
  */
-@WebServlet("/findPwd.do")
-public class FindPwdServlet extends HttpServlet {
+@WebServlet("/upwdUpdate.do")
+public class UpwdUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FindPwdServlet() {
+    
+    public UpwdUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +27,6 @@ public class FindPwdServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("user/findPwd.jsp");
-		rd.forward(request, response);
 		
 	}
 
@@ -39,17 +34,15 @@ public class FindPwdServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("dddd");
+		request.setCharacterEncoding("UTF-8");
+		String upwd = request.getParameter("upwd");
 		String id = request.getParameter("id");
-		String uname = request.getParameter("uname");
-		String uphone = request.getParameter("uphone");
-		
-		UsersDAO fdao = UsersDAO.getInstance();
-		String upwd = fdao.findPwd(id, uname, uphone);
-		request.setAttribute("upwd", upwd);
-		request.setAttribute("id", id);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("user/resultFindPwd.jsp");
-		rd.forward(request, response);
+		System.out.println("id :"+id);
+		System.out.println("upwd"+upwd);
+		UsersDAO udao = UsersDAO.getInstance();
+		udao.upwdUpdate(id,upwd);
+		response.sendRedirect("login.do");
 		
 	}
 

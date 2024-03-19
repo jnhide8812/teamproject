@@ -64,24 +64,28 @@ input.lbtn{
 </head>
 <body>
 	<div id="rpwrap">
-		<form class="rp">
+		<form action="upwdUpdate.do" method="post" class="rp">
 			<div class="pur">
 				<table border="1" id="findpwd">
 					<tr>
-						<th>고객님의 컬리 비밀번호를 찾았습니다</th>
+						<th>새 비밀번호 등록</th>
+					</tr>
+					<tr><th><input type="text" name=upwd >		
+						<input type="hidden" name="id" value="${id}"></th>
+				
 					</tr>
 					<tr>
-						<th>비밀번호 확인 후 로그인해 주세요</th>
+						<th>새 비밀번호 확인</th>
 					</tr>
+					<tr>
+						<th><input type="password" name=re_upwd ></th>
+					</tr>
+					
 					<tr>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
-						<td>고객님의 비밀번호 : ${upwd}</td>
-					</tr>
-					<tr>
-						<td><input type="button" value="로그인"
-							onclick="location.href='login.do'" class="lbtn"></td>
+						<th><input type="submit" value="확인" ></th>
 					</tr>
 				</table>
 			</div>

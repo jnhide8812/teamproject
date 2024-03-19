@@ -115,7 +115,7 @@ input.fbtn{
 	                </li>
 	             </ul>   
 	             <div class="btn_wrap">
-	                 <input type="submit" value="찾기" class="fbtn">
+	                 <input type="submit" value="비밀번호 변경" class="fbtn">
 	             </div>
         </div>
 	</form>
