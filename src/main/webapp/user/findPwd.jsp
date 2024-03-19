@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../main.jsp" %>
+<%@ include file="../footer.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,26 +14,28 @@
     padding: 0;
     box-sizing: border-box;
 }
-#wrap{
+#fpwrap{
     width:1050px;
-    margin: 0px auto;
+    margin:auto;
     background-color: white;
-    padding: 250px 0px 525px 0px;
+    padding-bottom: 50px;
+   	max-height: 500px;
+   	
 }
-h2 {
+#fpwrap h2 {
     padding-bottom: 30px;
     font-weight: 500;
     font-size: 28px;
     text-align: center;
 }
-form {
+#fpwrap form {
     width: 350px;
     position: relative;
     padding: 0px 10px 6px;
     border-top: 2px solid #5F0080;
 	margin:0px auto;
 }
-.find {
+#fpwrap .find {
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
@@ -39,20 +43,20 @@ form {
     justify-content: center;
 }
 
-li{
+#fpwrap li{
 	display: flex;
     flex-direction: column;
     padding-bottom: 12px;
     list-style: none;
 }
-ul{
+#fpwrap ul{
 	display: flex;
     flex-direction: column;
 	width:350px;
 	justify-content:center;
 	align-items: center;
 }
-label{
+#fpwrap label{
     display:inline-block;
     padding: 8px 0px 8px ;
     font-size: 15px;
@@ -60,7 +64,7 @@ label{
     line-height: 19px;
     color: #333;
 }
-input{
+#fpwrap input{
     width: 350px;
     height: 46px;
     padding: 0px 11px 1px 15px;
@@ -73,10 +77,10 @@ input{
     outline: none;
     box-sizing: border-box;
 }
-.btn_wrap{
+#fpwrap .btn_wrap{
     margin-top: 18px;
 }
-input.fbtn{
+#fpwrap input.fbtn{
     display: block;
     padding: 0px 10px;
     text-align: center;
@@ -88,13 +92,13 @@ input.fbtn{
     background-color: #5F0080;
     border: 0px none;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 </style>
 </head>
 <body>
-<div id="wrap">
+<div id="fpwrap">
 	<h2>비밀번호 찾기</h2>
 	<form method="post" action="findPwd.do">
 		<div class="find">

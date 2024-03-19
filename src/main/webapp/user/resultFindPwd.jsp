@@ -13,6 +13,7 @@
 	margin: 0px auto;
 	padding-top: 300px;
 	width: 1050px;
+	min-height: 400px;
 }
 
 form.rp {
@@ -24,7 +25,7 @@ form.rp {
 }
 .pur{
 	width: 400px;
-	height: 250px;
+	height: 300px;
 	background-color:#F5F1FF;
 	border:1px solid #F5F1FF;
 	border-radius: 6px;
@@ -35,21 +36,47 @@ form.rp {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding-top: 50px;
+	padding-top: 30px;
+
+}
+#findpwd th h1{
+	font-size: 28px;
+	text-align: center;
+	vertical-align: middle;
+	letter-spacing: -.5px;
+	font-weight: 500;
+	padding-bottom: 10px;
 }
 #findpwd th{
-	font-size: 20px;
+	font-size: 14px;
 	padding: 5px;
-	text-align: center;
+	text-align: left;
 	vertical-align: middle;
 	letter-spacing: -.5px;
 }
 
 #findpwd td{
 	font-size: 18px;
-	
+	padding: 5px;
+	text-align: center;
+	letter-spacing: -.5px;
 }
-input.lbtn{
+#findpwd td.b {
+	text-align:center;
+}
+.box{
+	height:40px;
+}
+input.in{
+	width:250px;
+	height: 40px;
+	padding:0px 6px 1px 15px;
+	border:1px solid #5F0080;
+	border-radius: 4px;	
+}
+
+
+input.checkbtn{
 	width:250px;
 	height: 40px;
 	font-size: 18px;
@@ -57,7 +84,7 @@ input.lbtn{
 	border:1px solid #5F0080;
 	border-radius: 4px;
 	color: #fff;
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 </style>
@@ -68,24 +95,32 @@ input.lbtn{
 			<div class="pur">
 				<table border="1" id="findpwd">
 					<tr>
+						<th><h1>비밀번호 변경</h1></th>
+					</tr>
+					<tr>
 						<th>새 비밀번호 등록</th>
 					</tr>
-					<tr><th><input type="text" name=upwd >		
-						<input type="hidden" name="id" value="${id}"></th>
+					<tr>
+						<td>
+							<div class="box">
+								<input type="text" name=upwd placeholder="새 비밀번호를 입력해 주세요" class="in">		
+								<input type="hidden" name="id" value="${id}">
+							</div>
+						</td>
 				
 					</tr>
 					<tr>
 						<th>새 비밀번호 확인</th>
 					</tr>
 					<tr>
-						<th><input type="password" name=re_upwd ></th>
+						<td>
+							<div class="box">
+								<input type="password" name=re_upwd placeholder="새 비밀번호를 한 번 더 입력해 주세요" class="in">
+							</div>
+						</td>
 					</tr>
-					
 					<tr>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<th><input type="submit" value="확인" ></th>
+						<td class="b"><input type="submit" value="확인" class="checkbtn"></td>
 					</tr>
 				</table>
 			</div>
